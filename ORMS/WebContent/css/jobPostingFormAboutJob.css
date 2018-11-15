@@ -1,0 +1,43 @@
+						
+					#jobTitle{						
+						width: 400px;
+						border-top:none ; 
+						border-left:none ; 
+						border-right:none ; 
+						border-bottom-color:black ; 
+						margin-top: 50px;
+						margin-left:29px ; 
+					}
+					
+					#companyName{
+						
+						width: 400px;
+						border-top:none ; 
+						border-left:none ; 
+						border-right:none ; 
+						border-bottom-color:black ; 
+						margin-top: 20px;						
+					}
+					
+					
+						
+						
+						#jobPostingFormPair{
+							margin:25px ; 
+						}
+						
+					.jobPostInput{
+					width: 400px;
+ 					border-top:none ; 
+					border-left:none ; 
+					border-right:none ; 
+					border-bottom-color:black ; 
+					margin-top: 20px;
+					margin-left:30px ; 
+					}
+					
+					#jobDescription{
+					width: 424px;
+					height: 200px;
+					 border-top:black ; 
+					}

@@ -1,0 +1,16 @@
+					#skillsList{
+						 border-style:none ; 
+						 width:400px ; 
+						 background-color:linen ; 
+						 
+						}	
+						
+						#jobSeekerSkillsList{
+							border-style:none ; 
+							border:none ; 
+			         	    width:400px ; 
+							height:300px ; 
+						}
+						option{
+							margin:10px ; 
+						}

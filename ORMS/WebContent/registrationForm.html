@@ -1,0 +1,88 @@
+<!-- 
+<!doctype html>
+
+<html>
+
+	<head>
+		<title> Note to self </title>
+	    <meta charset="utf-8" >
+	<link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="css\registrationForm.css">
+	
+			<style>
+					
+			</style>	
+			
+				
+	</head>	
+	
+	<body>			
+ -->
+ 	
+	<!-- make it at center  -->
+		<div id="registrationForm" >
+			<div class="container">
+				<form class="form-horizontal"  onsubmit="return passwordEqualityCheck(this);" role="form"  action="SignUpServlet" method="post" >
+										
+					<div class="form-group">
+						<label for="register" class="col-sm-3 control-label"><h4>Register</h4></label>
+					</div>
+					
+					<div class="form-group">
+						<label for="email" class="col-sm-3 control-label">Email</label>
+						<div class="col-sm-5">
+						<!-- Before submitting test the validity by javaScript -->
+							<input type="email" id="email"  name="email" placeholder="Email" class="form-control" required="required"  >
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="firstName" class="col-sm-3 control-label">Name</label>
+						<div class="col-sm-5">
+							<input type="text" id="name" name="fullName"  placeholder="Full Name" class="form-control" autofocus required="required">
+ 						</div>
+					</div>
+					
+					<div class="form-group">
+						<label for="password" class="col-sm-3 control-label">Password</label>
+						<p class="col-sm-3 control-label" id="errorMessage" style="color:red;" ></p>
+						<div class="col-sm-5">
+							<input type="password" pattern=".{2,3}" id="password" name="password"	placeholder="Password at least 2 chars" class="form-control" required="required">
+						</div>
+					</div>    
+					
+					<div class="form-group">
+						<label for="password" class="col-sm-3 control-label">Confirm Password</label>
+						<p class="col-sm-3 control-label" id="errorMessage2" style="color:red;" ></p>
+						<div class="col-sm-5">
+							<input type="password" pattern=".{2,3}" id="confirmPassword" name="confirmPassword" placeholder="Password at least 2 chars" class="form-control" required="required">
+							
+						</div>
+					</div> 
+					
+					<div  id="userType" name="" class="col-sm-3 control-label" > 
+						<label for="userType" class="">You are a :</label>
+					
+						 <select name="userType"    >
+							  <option value="jobSeeker">Job Seeker</option>
+							  <option value="employeer">Employeer</option>
+							  
+						</select>
+						
+					</div>
+					
+				   <div class="form-group">
+						<div class="col-sm-5 col-sm-offset-3">
+							<input type="submit" class="btn btn-default" id="submitButton" value="Submit"> 
+						</div>
+					</div>
+					
+				</form> <!-- /form -->
+			</div> <!-- ./container -->
+		</div>
+		
+<!-- 
+	</body>
+	
+</html>
+ -->

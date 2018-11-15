@@ -1,0 +1,19 @@
+#activityList{
+						 border-style:none ; 
+						 width:400px ; 
+						 background-color:linen ; 
+						 
+						}	
+						
+						#jobSeekeractivityList{
+							border-style:none ; 
+							border:none ; 
+			         	    width:400px ; 
+							height:300px ; 
+						}
+						
+						#jobSeekerSkillsList option{
+							margin:10px ; 
+						}	 
+						
+ 

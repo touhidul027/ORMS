@@ -1,0 +1,17 @@
+			.navbar navbar-inverse{
+				float:left ; 
+			}
+						 
+				#generalTextInput{
+					
+					width: 400px;
+ 					border-top:none ; 
+					border-left:none ; 
+					border-right:none ; 
+					border-bottom-color:black ; 
+					margin-top: 50px;
+				}
+				
+				#generalTextInputSubmitButton{
+					width:100px ; 
+					margin-top:20px ; 				}

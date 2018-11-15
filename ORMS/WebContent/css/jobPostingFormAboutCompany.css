@@ -1,0 +1,30 @@
+					#jobPostingForm{
+							text-align:center ; 
+							padding-top:100px ; 	
+						}
+					 
+					
+					#jobPostingFormSubmitButton{
+						width:100px ; 
+						margin-top:20px ;						 
+						}
+						
+						#jobPostingFormPair{
+							margin:25px ; 
+						}
+						
+					.jobPostInput{
+					width: 400px;
+ 					border-top:none ; 
+					border-left:none ; 
+					border-right:none ; 
+					border-bottom-color:black ; 
+					margin-top: 20px;
+					margin-left:30px ; 
+					}
+					
+					#jobDescription{
+					width: 424px;
+					height: 200px;
+					 border-top:black ; 
+					}

@@ -1,0 +1,81 @@
+#profileViewA{
+					width:1000px ;
+					background-color:FFFFFF ; 
+						padding : 50px ; 
+					margin:40px ; 					
+				}
+			
+				#profileViewA{
+					
+					
+				}
+			
+				 td{
+				 padding-top:10px ; 
+				 }
+				 
+				
+				 #experienceInfoHeaderA{
+				 		background: #E6E6E6;
+
+				 }
+				 
+				 #InfoHeaderA{
+				 		background: #E6E6E6;
+
+				 }
+				 
+				  #careerObjectiveInfoHeaderA{
+				 		background: #E6E6E6;
+
+				 }
+				 
+				 .BDJHeadline01 {
+						font-size: 12px;
+						font-family: Verdana, Geneva, sans-serif;
+						font-weight: bold;
+						padding-left: 2px;
+						padding-top: 2px;
+						padding-bottom: 2px;
+				}
+				
+				.BDJNormalText02
+				{	
+				background:#FFFFFF;
+				font-size:11px;
+				font-family:Verdana, Geneva, sans-serif;
+
+				font-weight:normal;
+				padding-left:2px;
+				padding-top:2px;
+				padding-bottom:2px;
+				}	
+				
+				#experienceInfoA,careerObjectiveInfoA{
+					padding:200px ; 
+					background-color:FFFFFF ; 
+				}
+				
+				.divInfoA{
+					margin-left:30px ; 
+					width:500px ; 
+				}
+				
+				p{
+					margin-left: 50px ; 
+				}
+				
+				#jobResponsibilitiesDescriptionA{
+					width:500px ; 
+					margin-left:50px ; 
+				}
+				#jobRequirementDescriptionA{
+					width:500px ; 
+					margin-left:50px ; 
+				}
+				
+				#jobDescriptionA{
+					width:600px ; 
+					background-color:#E8EAED ; 
+					margin:50px ; 
+				}
