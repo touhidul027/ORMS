@@ -25,6 +25,13 @@
 	</head>		
 	
 	<body>		
+	    <%
+			response.setHeader("Cache-Control", "no-cache , no-store , must-revalidate");	
+				if (session.getAttribute("aJobSeeker")== null){		
+					response.sendRedirect("..\\index.jsp");		
+				}	
+		%>
+
 		
 		<!-- include job seeker start page Header Part . -->
 		<jsp:include page="jobSeekerStartPageHeader.jsp"></jsp:include>

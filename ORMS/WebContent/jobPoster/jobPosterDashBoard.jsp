@@ -25,5 +25,13 @@
 				<div >
 					 <a href="..\JobPostingGetAllPostedJobsServlet"><h1>My Posted Jobs</h1></a>
 				</div>
+				
+				<div> 
+					<form action="..\JobPostingLogOutServlet" method="post" >
+						 <a> 
+					       <input type="submit" value="Log Out" >
+					     </a>
+					</form>
+				</div>
 </body>
 </html>

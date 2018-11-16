@@ -1,6 +1,8 @@
 package jobPostingServlet;
 
 import java.io.IOException;
+import java.util.Enumeration;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +23,13 @@ public class JobPostingLogOutServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-		session.removeAttribute("aJobPoster");
-		session.invalidate();
+		
+		Enumeration<String> sessionAttributes= session.getAttributeNames() ;
+		
+		while(sessionAttributes.hasMoreElements()) {
+			session.removeAttribute(sessionAttributes.nextElement());
+		}
+		session.invalidate();		
 		response.sendRedirect("index.jsp");
 	}
 
