@@ -2,13 +2,18 @@ package com.generalDAO;
 
 public class BasicUser {
 	private String userType ; 
+	private int userSerial ; 
+	private String fullName ; 
+	private String password ;
+	private String email ; 
+	
 	@Override
 	public String toString() {
 		return "BasicUser [userType=" + userType + ", userSerial=" + userSerial + ", email=" + email + ", fullName="
 				+ fullName + ", password=" + password + "]";
 	}
 
-	private int userSerial ; 
+	
 	public BasicUser(int userSerial,String fullName,String email , String userType,String password) {
 		 
 		this.userType = userType;
@@ -36,7 +41,7 @@ public class BasicUser {
 		this.userType = userType;
 	}
 
-	private String email ; 
+	
 	 
 
 
@@ -64,8 +69,7 @@ public class BasicUser {
 		this.password = password;
 	}
 
-	private String fullName ; 
-	private String password ; 
+	 
 	
 	public BasicUser() {
 		

@@ -27,7 +27,7 @@
 	<body>		
 	    <%
 			response.setHeader("Cache-Control", "no-cache , no-store , must-revalidate");	
-				if (session.getAttribute("aJobSeeker")== null){		
+				if (session.getAttribute("jobSeeker")== null){		
 					response.sendRedirect("..\\index.jsp");		
 				}	
 		%>

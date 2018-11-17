@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.generalDAO.BasicUser;
 import com.generalDAO.SignInDAO;
 import com.generalDAO.User;
+import com.jobSeekerDAO.JobSeeker;
 
 /**
  * Servlet implementation class SignInServlet
@@ -55,7 +56,9 @@ public class SignInServlet extends HttpServlet {
 
 			// depending on the type set attribute to the session 
 			if(aBasicUser.getUserType().equals("jobSeeker")) {
-				userSession.setAttribute("aJobSeeker", aBasicUser );
+				JobSeeker jobSeeker = new JobSeeker(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword()) ;  ; 
+				
+				userSession.setAttribute("jobSeeker", jobSeeker );
 				request.removeAttribute("loginError");
 				response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
 			}

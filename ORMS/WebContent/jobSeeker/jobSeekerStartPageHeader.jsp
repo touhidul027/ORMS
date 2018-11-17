@@ -39,7 +39,7 @@
 			<div class="col-sm-4">
 				 
 				 <div class="dropdown">
-					<button onclick="myFunction()" class="dropbtn"> ${aJobSeeker.fullName }</button>
+					<button onclick="myFunction()" class="dropbtn"> ${jobSeeker.fullName }</button>
 					  <div id="myDropdown" class="dropdown-content">
 					  
 	 					<form action="../ProfileCreationJobSeekerServlet" method="post" >

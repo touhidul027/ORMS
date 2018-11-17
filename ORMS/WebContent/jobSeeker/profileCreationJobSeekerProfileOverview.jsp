@@ -69,21 +69,6 @@
 </head>
 <body>
  
- 
- 
- <!--  ${jobSeekerPersonalInfoObj } <br>
- ${ jobSeekerEducationObj} <br>
- ${ jobSeekerExperienceObj} <br>
- ${ jobSeekerSkillsObj} <br>
- ${jobSeekerActivityObj } <br>
- ${jobSeekerInterestsObj }  <br>
- ${jobSeekerSummaryObj}  <br>
- ${aJobSeeker}
- <br>
-  -->
- 
- 
- 
  <div id="profileView">
 			
 	<div>
@@ -100,7 +85,7 @@
 											<td width="73%" height="" align="left" valign="bottom" class="BDJApplicantsName">
 											
 												<!--Applicant's Name:-->
-												  ${aJobSeeker.fullName }
+												  ${jobSeeker.fullName }
 												
 											</td>
 										
@@ -121,22 +106,24 @@
 									<tr>
 										<td class="BDJNormalText04" align="left" valign="middle">
 										<!--Home Address:-->
-											<c:if test="${jobSeekerPersonalInfoObj.jobSeekerAddress != null}">										
-												${jobSeekerPersonalInfoObj.jobSeekerAddress}
+											<c:if test="${jobSeeker.adress != null}">										
+												Address : ${jobSeeker.adress}
 											</c:if>	
 											  
 										<!--Home Phone:-->
 										
+										 <c:if test="${jobSeeker.cellPhoneNumber!=null and (not empty jobSeeker.cellPhoneNumber)}"> 
+										 	<br> Hello :
+										 	<c:forEach var="cell" items="${jobSeeker.cellPhoneNumber}" >
+										 		${cell} 
+										 	</c:forEach>
+										 </c:if>	 
 											 
-											 <c:if test="${jobSeekerPersonalInfoObj.jobSeekerCellPhoneNumber != null}">
-												 <br>
-											     Mobile No : ${jobSeekerPersonalInfoObj.jobSeekerCellPhoneNumber}	 
- 											 </c:if>
-										
+											 
 										<!--Email:-->
 											 
 											 <br>		
-											 E-mail : ${aJobSeeker.email }
+											 E-mail : ${jobSeeker.email }
 											 
 											
 										</td>
@@ -149,8 +136,8 @@
 				</table>
 			</div>			
 					
- 				<c:if test="${jobSeekerSummaryObj.jobSeekerSummary != null }" >
- 					<c:if test="${not empty jobSeekerSummaryObj.jobSeekerSummary}">
+ 				<c:if test="${jobSeeker.objective != null }" >
+ 					<c:if test="${not empty jobSeeker.objective}">
 						<hr size=2 noshade >
 						<div id="careerObjective">
 							<div id="careerObjectiveInfoHeader">
@@ -164,7 +151,7 @@
 							
 							<table id="careerObjectiveInfo" >
 								<tr>
-									<td>  ${jobSeekerSummaryObj.jobSeekerSummary} </td>
+									<td>  ${jobSeeker.objective} </td>
 								</tr>
 								
 								 
@@ -176,7 +163,7 @@
 					
 					
 						
-				<c:if test="${jobSeekerExperienceObj!=null }">
+				<c:if test="${jobSeeker.experience!=null && (not empty jobSeeker.experience)}">
 						<hr size=2 noshade >
 						
 						<div id="experience">
@@ -188,9 +175,10 @@
 									</table>
 							</div>
 							
+			<c:forEach var="jobSeekerExperienceObj" items="${jobSeeker.experience}">
 							
 							<table id="experienceInfo" >
-								<c:if test="${jobSeekerExperienceObj.jobSeekerOrganizationName != null}" >
+								<c:if test="${jobSeekerExperienceObj.jobSeekerOrganizationName != null }" >
 									<tr>
 										<td> Company Name : ${jobSeekerExperienceObj.jobSeekerOrganizationName }</td>
 									</tr>
@@ -208,19 +196,20 @@
 										<td> Years : ${jobSeekerExperienceObj.jobSeekerEmploymentDuration} years </td>
 									</tr>
 								 </c:if>
+								 
 								<c:if test="${jobSeekerExperienceObj.jobSeekerProjectName != null}" >
 									<tr> 
 										<td><p>Project Name : ${jobSeekerExperienceObj.jobSeekerProjectName}</p></td>
 									</tr>
 								</c:if>
 							</table>
-							
+							</c:forEach>
 						</div>
 					</c:if>											
 											
 											
 												
- 	<c:if test="${jobSeekerEducationObj!=null }" >
+ 	<c:if test="${jobSeeker.education!=null && not empty jobSeeker.education}" >
 					<hr size=2 noshade>
 					
 					<div id="educationSection">
@@ -236,37 +225,39 @@
 							<tr>
 								  <td colspan="6" align="left" style="padding-left:5px;" class="BDJNormalText01">
 										<table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="border:1px solid #666666">
-											<tbody>
-													  <tr class="BDJNormalText02" >
-														  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Education Level</strong></td>
-														  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Instituition </strong></td>
-														  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Department</strong></td>
- 														  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Duration</strong></td> 				   													  
-													  </tr>			 
-											  
-													<tr class="BDJNormalText02">
-													<!--Exam Title:-->
-														<td width="25%" align="center" style="border-right:1px solid #666666;border-top:1px solid #666666;">
-														   ${jobSeekerEducationObj.jobSeekerEducationLevel }
- 														&nbsp;
-														</td>
-														<!--Concentration/Major:-->
-														<td width="25%" align="center" style="border-right:1px solid #666666;border-top:1px solid #666666;">
-															${jobSeekerEducationObj.jobSeekerEducationalInstituition}															&nbsp;
-														</td>
-														<!--Institute:-->
-														<td width="25%" align="center" style="border-right:1px solid #666666;border-top:1px solid #666666;">
-														&nbsp;		${jobSeekerEducationObj.jobSeekerEducationalDepartment}	
-														</td>
-			 										
-			 										 <!--Duration:-->
-														 <td width="25%" style="border-top:1px solid #666666" align="center">
-															 ${jobSeekerEducationObj.jobSeekerDuration}
-														 &nbsp;					
-														</td>
-														 
-													</tr>
-											</tbody>
+											 <c:forEach var="jobSeekerEducationObj" items="${jobSeeker.education}">
+												<tbody>
+														  <tr class="BDJNormalText02" >
+															  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Education Level</strong></td>
+															  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Instituition </strong></td>
+															  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Department</strong></td>
+	 														  <td width="25%" align="center" style="border-right:1px solid #666666"><strong>Duration</strong></td> 				   													  
+														  </tr>			 
+												  
+														<tr class="BDJNormalText02">
+														<!--Exam Title:-->
+															<td width="25%" align="center" style="border-right:1px solid #666666;border-top:1px solid #666666;">
+															   ${jobSeekerEducationObj.jobSeekerEducationLevel }
+	 														&nbsp;
+															</td>
+															<!--Concentration/Major:-->
+															<td width="25%" align="center" style="border-right:1px solid #666666;border-top:1px solid #666666;">
+																${jobSeekerEducationObj.jobSeekerEducationalInstituition}															&nbsp;
+															</td>
+															<!--Institute:-->
+															<td width="25%" align="center" style="border-right:1px solid #666666;border-top:1px solid #666666;">
+															&nbsp;		${jobSeekerEducationObj.jobSeekerEducationalDepartment}	
+															</td>
+				 										
+				 										 <!--Duration:-->
+															 <td width="25%" style="border-top:1px solid #666666" align="center">
+																 ${jobSeekerEducationObj.jobSeekerDuration}
+															 &nbsp;					
+															</td>
+															 
+														</tr>
+												</tbody>
+											</c:forEach> 
 										</table> 
 									 </td>
 							</tr>
@@ -276,7 +267,7 @@
 					
  					
 					
-					<c:if test="${jobSeekerSkillsObj.jobSeekerSkillsList!=null }">
+					<c:if test="${jobSeeker.skills !=null && not empty jobSeeker.skills}">
 						<hr size=2 noshade>
 					
 						<div id="skillsSection">
@@ -308,7 +299,7 @@
 													  <ul>
 													  <!-- Run the for loop here -->
 													  
-														  <c:forEach var="skill" items="${jobSeekerSkillsObj.jobSeekerSkillsList}"> 
+														  <c:forEach var="skill" items="${jobSeeker.skills}"> 
 															  <li> ${skill }</li>														   
 														  </c:forEach>
 													  </ul>
@@ -325,7 +316,7 @@
 						</div>
 				</c:if>
 				
-				<c:if test="${jobSeekerActivityObj.jobSeekerActivityLists!=null }">
+				<c:if test="${jobSeeker.activities!=null && not empty jobSeeker.activities}">
 						<hr size=2 noshade>
 					
 						<div id="skillsSection">
@@ -357,7 +348,7 @@
 													  <ul>
 													  <!-- Run the for loop here -->
 													  
-														  <c:forEach var="activity" items="${jobSeekerActivityObj.jobSeekerActivityLists}"> 
+														  <c:forEach var="activity" items="${jobSeeker.activities}"> 
 															  <li> ${activity }</li>														   
 														  </c:forEach>
 														  
@@ -376,7 +367,7 @@
 					</c:if>
 					
 				
-					<c:if test="${jobSeekerInterestsObj.jobSeekerInterestsList!=null }">
+					<c:if test="${jobSeeker.interests!=null && not empty jobSeeker.interests}">
 						<hr size=2 noshade>
 					
 						<div id="skillsSection">
@@ -408,7 +399,7 @@
 													  <ul>
 													  <!-- Run the for loop here -->
 													  
-														  <c:forEach var="interest" items="${jobSeekerInterestsObj.jobSeekerInterestsList}"> 
+														  <c:forEach var="interest" items="${jobSeeker.interests}"> 
 															  <li> ${interest }</li>														   
 														  </c:forEach>
 														  

@@ -16,55 +16,36 @@ public class JobSeeker {
 	
 	// 1-M
 	private	ArrayList<String> cellPhoneNumber ; 
-	private	ArrayList<String> experience[] ; 
+	private	ArrayList<JobSeekerExperience> experience ; 
 	
 	//M-M
-	private	ArrayList<String> activities[] ; 
-	private	ArrayList<String> education[] ; 
-	private	ArrayList<String> certification[] ; 
-	private	ArrayList<String> interests[] ; 
-	private	ArrayList<String> skills[] ; 
-	private	ArrayList<String> jobTypes[] ; 	
+	private	ArrayList<String> activities; 
+	private	ArrayList<JobSeekerEducation> education ; 
+	private	ArrayList<String> certification ; 
+	private	ArrayList<String> interests ; 
+	private	ArrayList<String> skills; 
+	private	ArrayList<String> jobTypes ; 	
+	
+	 
 	
 	@Override
 	public String toString() {
-		return "JobSeeker [id=" + id + ", fullName=" + fullName + ", objective=" + objective + ", email=" + email
-				+ ", adress=" + adress + ", password=" + password + ", gender=" + gender + ", nid=" + nid
-				+ ", cellPhoneNumber=" + cellPhoneNumber + ", experience=" + Arrays.toString(experience)
-				+ ", activities=" + Arrays.toString(activities) + ", education=" + Arrays.toString(education)
-				+ ", certification=" + Arrays.toString(certification) + ", interests=" + Arrays.toString(interests)
-				+ ", skills=" + Arrays.toString(skills) + ", jobTypes=" + Arrays.toString(jobTypes) + "]";
+		return "JobSeeker [id=" + id + ", fullName=" + fullName + ", userType=" + userType + ", objective=" + objective
+				+ ", email=" + email + ", adress=" + adress + ", password=" + password + ", gender=" + gender + ", nid="
+				+ nid + ", cellPhoneNumber=" + cellPhoneNumber + ", experience=" + experience + ", activities="
+				+ activities + ", education=" + education + ", certification=" + certification + ", interests="
+				+ interests + ", skills=" + skills + ", jobTypes=" + jobTypes + "]";
 	}
-	
-	public JobSeeker(String fullName, String email, String password) {
+
+	public JobSeeker(int id,String fullName, String email, String password) {
 		super();
+		this.id = id ; 
 		this.fullName = fullName;
 		this.email = email;
 		this.password = password;
 	}
 	
-	public JobSeeker(int id, String fullName, String objective, String email, String adress, String password,
-			String gender, String nid, ArrayList<String> cellPhoneNumber, ArrayList<String>[] experience,
-			ArrayList<String>[] activities, ArrayList<String>[] education, ArrayList<String>[] certification,
-			ArrayList<String>[] interests, ArrayList<String>[] skills, ArrayList<String>[] jobTypes) {
-		super();
-		this.id = id;
-		this.fullName = fullName;
-		this.objective = objective;
-		this.email = email;
-		this.adress = adress;
-		this.password = password;
-		this.gender = gender;
-		this.nid = nid;
-		this.cellPhoneNumber = cellPhoneNumber;
-		this.experience = experience;
-		this.activities = activities;
-		this.education = education;
-		this.certification = certification;
-		this.interests = interests;
-		this.skills = skills;
-		this.jobTypes = jobTypes;
-	}
+	 
 
 	public int getId() {
 		return id;
@@ -143,59 +124,59 @@ public class JobSeeker {
 		this.cellPhoneNumber = cellPhoneNumber;
 	}
 
-	public ArrayList<String>[] getExperience() {
+	public ArrayList<JobSeekerExperience> getExperience() {
 		return experience;
 	}
 
-	public void setExperience(ArrayList<String>[] experience) {
-		this.experience = experience;
+	public void setExperience(ArrayList<JobSeekerExperience> experience2) {
+		this.experience = experience2;
 	}
 
-	public ArrayList<String>[] getActivities() {
+	public ArrayList<String> getActivities() {
 		return activities;
 	}
 
-	public void setActivities(ArrayList<String>[] activities) {
+	public void setActivities(ArrayList<String> activities) {
 		this.activities = activities;
 	}
 
-	public ArrayList<String>[] getEducation() {
+	public ArrayList<JobSeekerEducation> getEducation() {
 		return education;
 	}
 
-	public void setEducation(ArrayList<String>[] education) {
+	public void setEducation(ArrayList<JobSeekerEducation> education) {
 		this.education = education;
 	}
 
-	public ArrayList<String>[] getCertification() {
+	public ArrayList<String> getCertification() {
 		return certification;
 	}
 
-	public void setCertification(ArrayList<String>[] certification) {
+	public void setCertification(ArrayList<String> certification) {
 		this.certification = certification;
 	}
 
-	public ArrayList<String>[] getInterests() {
+	public ArrayList<String> getInterests() {
 		return interests;
 	}
 
-	public void setInterests(ArrayList<String>[] interests) {
+	public void setInterests(ArrayList<String> interests) {
 		this.interests = interests;
 	}
 
-	public ArrayList<String>[] getSkills() {
+	public ArrayList<String> getSkills() {
 		return skills;
 	}
 
-	public void setSkills(ArrayList<String>[] skills) {
+	public void setSkills(ArrayList<String> skills) {
 		this.skills = skills;
 	}
 
-	public ArrayList<String>[] getJobTypes() {
+	public ArrayList<String> getJobTypes() {
 		return jobTypes;
 	}
 
-	public void setJobTypes(ArrayList<String>[] jobTypes) {
+	public void setJobTypes(ArrayList<String> jobTypes) {
 		this.jobTypes = jobTypes;
 	}
 }

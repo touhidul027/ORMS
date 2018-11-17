@@ -1,6 +1,8 @@
 package com.jobSeekerServlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.generalDAO.BasicUser;
+import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerPersonalInfo;
 
 /**
@@ -29,18 +33,24 @@ public class ProfileCreationJobSeekerPersonalInfoServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("get personal Info ");
-		String jobSeekerCellPhoneNumber=request.getParameter("cellPhoneNumber") ; 
-		String jobSeekerAddress=request.getParameter("address") ; 
-		String jobSeekerNid=request.getParameter("nidNumber") ; 
-		String jobSeekerGender=request.getParameter("gender") ; 
+		// System.out.println("get personal Info ");
+		String cellPhoneNumber=request.getParameter("cellPhoneNumber") ; 
+		String adress=request.getParameter("address") ; 
+		String nid=request.getParameter("nidNumber") ; 
+		String gender=request.getParameter("gender") ; 
 		
-		//create related DAO object  
-		JobSeekerPersonalInfo jobSeekerPersonalInfoObj = new JobSeekerPersonalInfo(jobSeekerGender,jobSeekerCellPhoneNumber,jobSeekerNid,jobSeekerAddress) ; 
-		
+		ArrayList<String> cellPhoneNumbers = new ArrayList<>() ;   
+		cellPhoneNumbers.add(cellPhoneNumber) ; 
+		cellPhoneNumbers.add("0000000") ; 
 		HttpSession session = request.getSession(); 		  
-		session.setAttribute("jobSeekerPersonalInfoObj", jobSeekerPersonalInfoObj );		
 		
+		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 
+		jobSeeker.setCellPhoneNumber(cellPhoneNumbers);
+		jobSeeker.setAdress(adress);
+		jobSeeker.setNid(nid);
+		jobSeeker.setGender(gender);
+		
+		session.setAttribute("jobSeeker", jobSeeker);
 		session.setAttribute("nextPageName", "profileCreationJobSeekerEducation.jsp");
 		response.sendRedirect("jobSeeker\\jobSeekerProfileCreationSeries.jsp");
 	}

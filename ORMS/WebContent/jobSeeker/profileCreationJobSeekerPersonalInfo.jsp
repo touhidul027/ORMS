@@ -29,14 +29,14 @@
 					<div class="form-group">
 						<label for="firstName" class="col-sm-3 control-label">Name</label>
 						<div class="col-sm-5">
-							<input type="text" name="fullName" id="name" placeholder="Full Name" value="${aJobSeeker.fullName}" class="form-control" autofocus>
+							<input type="text" name="fullName" id="name" placeholder="Full Name" value="${jobSeeker.fullName}" readonly class="form-control" autofocus>
  						</div>
 					</div>
 					
 					<div class="form-group">
 						<label for="email" class="col-sm-3 control-label">Email</label>
 						<div class="col-sm-5">
-							<input type="email" name="email" id="email" placeholder="Email" value="${aJobSeeker.email}" class="form-control">
+							<input type="email" name="email" id="email" placeholder="Email" value="${jobSeeker.email}" class="form-control" readonly>
 						</div>
 					</div>
 					

@@ -19,6 +19,7 @@ import javax.servlet.http.Part;
 
 import com.generalDAO.JDBCUtil;
 import com.generalDAO.User;
+import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerSummary;
 
 /**
@@ -38,17 +39,24 @@ public class ProfileCreationJobSeekerSummaryServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
- 		
-		String jobSeekerSummary = request.getParameter("jobSeekerSummary") ; 
+	 * String jobSeekerSummary = request.getParameter("jobSeekerSummary") ; 
 		 
 		JobSeekerSummary jobSeekerSummaryObj = new JobSeekerSummary(jobSeekerSummary) ; 
 		System.out.println(jobSeekerSummary);
 		HttpSession session = request.getSession() ; 
 		session.setAttribute("jobSeekerSummaryObj", jobSeekerSummaryObj);
+		response.sendRedirect("jobSeeker\\profileCreationJobSeekerProfileOverview.jsp");
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+ 		
+		String objective = request.getParameter("jobSeekerSummary") ; 		 
+ 		HttpSession session = request.getSession() ; 
+		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 	
+		jobSeeker.setObjective(objective);
+  		session.setAttribute("jobSeeker", jobSeeker);
+  		System.out.println(jobSeeker);
 		response.sendRedirect("jobSeeker\\profileCreationJobSeekerProfileOverview.jsp");
 	}
 

@@ -68,7 +68,7 @@ public class SignUpDAO {
 		 	        }		
 		        
 			     // insert into specific table with selecting the id from common table 
-					String insertJobSeeker = "INSERT INTO job_seeker(id,full_name) SELECT user_serial ,full_name FROM sign_up WHERE email=? LIMIT 1" ;
+					String insertJobSeeker = "INSERT INTO job_seeker(id) SELECT user_serial FROM sign_up WHERE email=? LIMIT 1" ;
 			        try {
 			        PreparedStatement pst2 =  conn.prepareStatement(insertJobSeeker) ; 		      
 	 		           pst2.setString(1, basicUser.getEmail() );

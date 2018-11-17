@@ -19,24 +19,6 @@
 	<body>		
 	
 	--------->
-	<!-- See the different way we can use the session object and it's property  -->
-	
-	<!-- using scriplet -->
-		 <% com.jobSeekerDAO.JobSeekerPersonalInfo jobSeekerPersonalInfo =
-		 	(com.jobSeekerDAO.JobSeekerPersonalInfo)session.getAttribute("jobSeekerPersonalInfoObj") ;    %>
- 		 <%= jobSeekerPersonalInfo.getJobSeekerAddress() %>
- 		<br>
- 	<!-- using jsp  bean -->
- 		 <jsp:useBean id="jobSeekerPersonalInformation" class="com.jobSeekerDAO.JobSeekerPersonalInfo" scope="session" >
- 		 		<jsp:setProperty name="jobSeekerPersonalInformation"  property="jobSeekerGender" param="gender" />
- 		 </jsp:useBean>
- 		
- 		 <jsp:getProperty property="jobSeekerGender" name="jobSeekerPersonalInformation"/>
- 	<br>
- 	<!-- using EL -->	 
- 	${jobSeekerPersonalInfoObj.jobSeekerAddress}
- 	
- 	
  	<!-- make it at center  -->
 		<div id="profileOfJobSeekerForm" class=" " >
 			<div class="container">
