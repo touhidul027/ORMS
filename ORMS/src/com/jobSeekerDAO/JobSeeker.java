@@ -15,16 +15,20 @@ public class JobSeeker {
 	private	String nid ; 
 	
 	// 1-M
-	private	ArrayList<String> cellPhoneNumber ; 
-	private	ArrayList<JobSeekerExperience> experience ; 
+	private	ArrayList<String> cellPhoneNumber ; // done
+	private	ArrayList<JobSeekerExperience> experience ; // done 
+	private	ArrayList<JobSeekerEducation> education ; // done 
+	private	ArrayList<String> activities; // done 
+	private	ArrayList<String> interests ; // done 
 	
 	//M-M
-	private	ArrayList<String> activities; 
-	private	ArrayList<JobSeekerEducation> education ; 
-	private	ArrayList<String> certification ; 
-	private	ArrayList<String> interests ; 
-	private	ArrayList<String> skills; 
-	private	ArrayList<String> jobTypes ; 	
+	
+	
+	private	ArrayList<String> certification ; // no need of db now
+	
+	 	
+	private	ArrayList<String> skills; // done
+	private	ArrayList<String> jobTypes ; 	// not available now 
 	
 	 
 	

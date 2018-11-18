@@ -2,6 +2,10 @@ package com.jobSeekerDAO;
 
 public class JobSeekerExperience {
  private String jobSeekerOrganizationName ; 
+ private String jobSeekerDesignation ; 
+ private String jobSeekerEmploymentDuration ; 
+ private String jobSeekerProjectName ; 
+
  public String getJobSeekerOrganizationName() {
 	return jobSeekerOrganizationName;
 }
@@ -34,13 +38,11 @@ public JobSeekerExperience(String jobSeekerOrganizationName, String jobSeekerDes
 	this.jobSeekerEmploymentDuration = jobSeekerEmploymentDuration;
 	this.jobSeekerProjectName = jobSeekerProjectName;
 }
-private String jobSeekerDesignation ; 
- private String jobSeekerEmploymentDuration ; 
+
  @Override
 public String toString() {
 	return "JobSeekerExperience [jobSeekerOrganizationName=" + jobSeekerOrganizationName + ", jobSeekerDesignation="
 			+ jobSeekerDesignation + ", jobSeekerEmploymentDuration=" + jobSeekerEmploymentDuration
 			+ ", jobSeekerProjectName=" + jobSeekerProjectName + "]";
 }
-private String jobSeekerProjectName ; 
 }

@@ -2,6 +2,10 @@ package com.jobSeekerDAO;
 
 public class JobSeekerEducation {
 	private String jobSeekerEducationLevel ; 
+	private String jobSeekerEducationalInstituition ; 
+	private String jobSeekerEducationalDuration ; 
+	private String jobSeekerEducationalDepartment ;
+	
 	@Override
 	public String toString() {
 		return "JobSeekerEducation [jobSeekerEducationLevel=" + jobSeekerEducationLevel
@@ -27,9 +31,7 @@ public class JobSeekerEducation {
 		this.jobSeekerEducationalDuration = jobSeekerDuration;
 	}
 	
-	private String jobSeekerEducationalInstituition ; 
-	private String jobSeekerEducationalDuration ; 
-	private String jobSeekerEducationalDepartment ; 
+	 
 	
 	public String getJobSeekerEducationalDepartment() {
 		return jobSeekerEducationalDepartment;

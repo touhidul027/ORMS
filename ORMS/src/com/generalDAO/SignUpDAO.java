@@ -74,7 +74,7 @@ public class SignUpDAO {
 	 		           pst2.setString(1, basicUser.getEmail() );
 
 		 	          if( pst2.executeUpdate()!=0 ) {
-		 	        	 // System.out.println("working");
+		 	        	 return true ; 
 		 	          }else {
 		 	        	//  System.out.println("not working");
 		 	          }

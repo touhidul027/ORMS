@@ -41,7 +41,6 @@ public class ProfileCreationJobSeekerPersonalInfoServlet extends HttpServlet {
 		
 		ArrayList<String> cellPhoneNumbers = new ArrayList<>() ;   
 		cellPhoneNumbers.add(cellPhoneNumber) ; 
-		cellPhoneNumbers.add("0000000") ; 
 		HttpSession session = request.getSession(); 		  
 		
 		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 

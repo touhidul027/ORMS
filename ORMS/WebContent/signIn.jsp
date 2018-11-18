@@ -22,18 +22,13 @@
 		 <jsp:include page="homePageHeader.html"></jsp:include>
 		 
 		 <!-- Own part -->
-		 <%
-			String loginMessage = (String)request.getAttribute("loginError") ; 
-		 		if(loginMessage==null){
-		 			loginMessage="" ; 
-		 		}
-		 %>
 		 
 		  
-		 
+		
 		 <form action="SignInServlet" method="post" >
-		 		 <div style="text-align:center" > <h3> <%= loginMessage %> </h3></div>
-		 		<div id="signInEmail" >
+		 
+ 		 		<div id="signInEmail" >
+ 		 		<h3> ${loginAfterSignUp}</h3>
 						Email
 							<input type="email" id="signInEmailMail" name="email" required="required" > <br>		
 						Password 

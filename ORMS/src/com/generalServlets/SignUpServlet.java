@@ -42,7 +42,10 @@ public class SignUpServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		if(flag==true) {
+			request.getSession().setAttribute("loginAfterSignUp", "You have sucessfully Signed up.Login to continue");
 			response.sendRedirect("signIn.jsp");
+		}else {
+			System.out.println("Not Working");
 		}
 		System.out.println("Sign up servlet");
 	}
