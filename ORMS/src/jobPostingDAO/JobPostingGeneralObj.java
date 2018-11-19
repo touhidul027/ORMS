@@ -21,6 +21,9 @@ public class JobPostingGeneralObj {
 	private	String jobPostingCompanyCellPhoneNumber ; 
 	private	String jobPostingCompanyWebsite ;
 	
+	public String description() {
+		return jobPostingJobDescription.substring(0, 10) ; 
+	}
 	    public JobPostingGeneralObj() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -63,7 +66,7 @@ public class JobPostingGeneralObj {
 				+ Arrays.toString(jobPostingFacilities) + ", jobPostingAdditionalRequirementsinput="
 				+ jobPostingAdditionalRequirementsinput + ", jobPostingCompanyAdress=" + jobPostingCompanyAdress
 				+ "\n, jobPostingCompanyEmail=" + jobPostingCompanyEmail + ", jobPostingCompanyCellPhoneNumber="
-				+ jobPostingCompanyCellPhoneNumber + ", jobPostingCompanyWebsite=" + jobPostingCompanyWebsite + "]";
+				+ jobPostingCompanyCellPhoneNumber + ", jobPostingCompanyWebsite=" + jobPostingCompanyWebsite + "]\n\n";
 	}
 		public int getJobId() {
 		return jobId;

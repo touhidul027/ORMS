@@ -14,6 +14,7 @@ import com.generalDAO.BasicUser;
 import com.generalDAO.SignInDAO;
 import com.generalDAO.User;
 import com.jobSeekerDAO.JobSeeker;
+import com.jobSeekerDAO.JobSeekerGetProfileInfo;
 
 /**
  * Servlet implementation class SignInServlet
@@ -56,11 +57,13 @@ public class SignInServlet extends HttpServlet {
 
 			// depending on the type set attribute to the session 
 			if(aBasicUser.getUserType().equals("jobSeeker")) {
-				JobSeeker jobSeeker = new JobSeeker(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword()) ;  ; 
-				
-				userSession.setAttribute("jobSeeker", jobSeeker );
+				JobSeeker jobSeeker = new JobSeeker(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword()) ;  ; 							
 				request.removeAttribute("loginError");
-				response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
+				
+				// now get the all the information 
+				jobSeeker = JobSeekerGetProfileInfo.getJobSeeker(jobSeeker) ; 
+				userSession.setAttribute("jobSeeker", jobSeeker );
+ 				response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
 			}
 			else {
 				userSession.setAttribute("aJobPoster", aBasicUser );

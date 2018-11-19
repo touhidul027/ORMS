@@ -9,7 +9,7 @@ public class JobSeeker {
 	
 	private	String objective ; 
 	private	String email ; 
-	private	String adress;
+	private	String address;
 	private	String password ; 
 	private	String gender ; 
 	private	String nid ; 
@@ -35,7 +35,7 @@ public class JobSeeker {
 	@Override
 	public String toString() {
 		return "JobSeeker [id=" + id + ", fullName=" + fullName + ", userType=" + userType + ", objective=" + objective
-				+ ", email=" + email + ", adress=" + adress + ", password=" + password + ", gender=" + gender + ", nid="
+				+ ", email=" + email + ", adress=" + address + ", password=" + password + ", gender=" + gender + ", nid="
 				+ nid + ", cellPhoneNumber=" + cellPhoneNumber + ", experience=" + experience + ", activities="
 				+ activities + ", education=" + education + ", certification=" + certification + ", interests="
 				+ interests + ", skills=" + skills + ", jobTypes=" + jobTypes + "]";
@@ -89,11 +89,11 @@ public class JobSeeker {
 	}
 
 	public String getAdress() {
-		return adress;
+		return address;
 	}
 
 	public void setAdress(String adress) {
-		this.adress = adress;
+		this.address = adress;
 	}
 
 	public String getPassword() {

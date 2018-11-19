@@ -46,7 +46,7 @@
 							<input type="submit" id="signInEmailSubmitButton" value="Update Profile" >
 						</form>
 							
-						<a href="profileCreationJobSeekerProfileOverview.jsp">Profile Overview</a>
+						<a href="profileOverview.jsp">Profile Overview</a>
 						<a href="#about">Dashboard</a>						
 						<a href="../JobSeekerLogOutServlet">Log out</a>
 					  </div>

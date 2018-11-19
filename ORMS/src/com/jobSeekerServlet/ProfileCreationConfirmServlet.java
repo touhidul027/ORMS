@@ -70,6 +70,7 @@ public class ProfileCreationConfirmServlet extends HttpServlet {
 	  JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 
 		System.out.println(jobSeeker);
 	  ProfileCreationDAO.createJobSeekerProfile(jobSeeker);
+	  response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
 	}
 
 }
