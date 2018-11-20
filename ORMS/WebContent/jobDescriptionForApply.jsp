@@ -213,7 +213,7 @@
 
 
 
-   <a href="#" class="btn btn-primary">Apply This Job</a>
+   <a href="ConditionCheckForApplyToJob" class="btn btn-primary">Apply This Job</a>
   </div>
 </div>
 </body>

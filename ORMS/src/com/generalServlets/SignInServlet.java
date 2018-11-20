@@ -57,13 +57,24 @@ public class SignInServlet extends HttpServlet {
 
 			// depending on the type set attribute to the session 
 			if(aBasicUser.getUserType().equals("jobSeeker")) {
+				// first remove the conditional session 
+				userSession.removeAttribute("messageForAppyJobWithoutSignIn");
+				
 				JobSeeker jobSeeker = new JobSeeker(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword()) ;  ; 							
 				request.removeAttribute("loginError");
 				
 				// now get the all the information 
 				jobSeeker = JobSeekerGetProfileInfo.getJobSeeker(jobSeeker) ; 
 				userSession.setAttribute("jobSeeker", jobSeeker );
- 				response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
+				
+				// conditional forward,if have any
+				String nextPage=(String) userSession.getAttribute("nextPage") ; 
+				if(nextPage!=null && nextPage.isEmpty()==false) {
+					userSession.removeAttribute("nextPage");
+					response.sendRedirect(nextPage);
+				}else {				
+ 				 response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
+				}
 			}
 			else {
 				userSession.setAttribute("aJobPoster", aBasicUser );

@@ -28,7 +28,10 @@
 		 <form action="SignInServlet" method="post" >
 		 
  		 		<div id="signInEmail" >
+ 		 		<!-- put the condition checking and show the message  -->
  		 		<h3> ${loginAfterSignUp}</h3>
+ 		 		<h3>${messageForAppyJobWithoutSignIn}</h3>
+ 		 		
 						Email
 							<input type="email" id="signInEmailMail" name="email" required="required" > <br>		
 						Password 

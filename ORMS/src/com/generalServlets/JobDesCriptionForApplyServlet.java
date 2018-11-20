@@ -16,7 +16,7 @@ import jobPostingDAO.JobPostingGeneralObj;
  * Servlet implementation class JobDesCriptionForApply
  */
 @WebServlet("/JobDesCriptionForApply")
-public class JobDesCriptionForApply extends HttpServlet {
+public class JobDesCriptionForApplyServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**

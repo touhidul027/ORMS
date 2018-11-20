@@ -15,7 +15,7 @@
 
 </head>
 <body>
-
+ 
 		 
 <!-- localhost/phpmyadmin/ -->
 		<!-- Including the header -->
