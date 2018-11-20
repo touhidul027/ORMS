@@ -21,7 +21,7 @@ public class SearchJobs {
 		//	 `experience`, `salary`, `salary_review`, `additional_requirements`, `company_email`, 
 		//	 `company_cell_phone_number`, `adress`, `company_website`	
 			 
-				String signInQuery = "SELECT * FROM job_posting WHERE CONCAT(company_name,job_title) LIKE ? AND CONCAT(job_location,adress) LIKE ?" ; 
+				String signInQuery = "SELECT * FROM job_posting WHERE CONCAT(company_name,job_title) LIKE ? OR CONCAT(job_location,adress) LIKE ?" ; 
 				ResultSet rs = null ; 
 	 			try {
 			        PreparedStatement pst =  conn.prepareStatement(signInQuery) ; 
@@ -40,7 +40,7 @@ public class SearchJobs {
 			        		 jobPostingGeneralObj =  AllJobPostingGeneralObjDAO.getAJobPostingGeneralObj(rs.getInt("job_id"));  
 			        		 
 			        		// let us check we got everything  or not
-			        		 System.out.println(jobPostingGeneralObj);
+			        		// System.out.println(jobPostingGeneralObj);
 			        		 
 			        		 
 			        		 allJobPostingGeneralObj.add(jobPostingGeneralObj) ; 

@@ -21,8 +21,11 @@ public class JobPostingGeneralObj {
 	private	String jobPostingCompanyCellPhoneNumber ; 
 	private	String jobPostingCompanyWebsite ;
 	
-	public String description() {
-		return jobPostingJobDescription.substring(0, 10) ; 
+	public String shortDescription() {
+		if(jobPostingJobDescription.length()>60){
+		 return jobPostingJobDescription.substring(0, 60) ; 
+		}
+		return jobPostingJobDescription ; 
 	}
 	    public JobPostingGeneralObj() {
 		super();

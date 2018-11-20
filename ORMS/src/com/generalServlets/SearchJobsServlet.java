@@ -30,7 +30,7 @@ public class SearchJobsServlet extends HttpServlet {
 		
 		 ArrayList<JobPostingGeneralObj> jobsForApply = SearchJobs.searchs(jobTitle, location)  ;
 		 HttpSession session= request.getSession() ; 
-		 System.out.println(jobsForApply);
+		// System.out.println(jobsForApply);
 		 session.setAttribute("jobsForApply", jobsForApply);
 		 response.sendRedirect("jobSummary.jsp");
 	}

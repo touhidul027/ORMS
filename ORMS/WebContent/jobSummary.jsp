@@ -37,19 +37,39 @@
 			</c:forEach> | Salary ${job.jobPostingSalary} </h5>
 	</h5>
     <p class="card-text" style="text-align:left;" >
-					 ${job.description()}			
+					 ${job.shortDescription()}			
  	</p>
     <a href="#" class="btn btn-primary">Save this job</a>
 	<a href="#" class="btn btn-primary">Send this job to your friends</a>
-	<a href="#" class="btn btn-primary">Save this job</a>
+	
+	<a href="JobDesCriptionForApply?jobId=${job.jobId}" class="btn btn-primary">See Details</a>
+ 
   </div>
 </div>
 </c:forEach>
 
 </c:when>
 <c:otherwise>
+		<div class="card text-center" style="width:750px ; margin:20px ; " >
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#"><b>0 matching jobs</b></a>
+      </li>      
+    </ul>
+  </div>
+  <div class="card-body">
+   <h5 class="card-title">	 		 
+	</h5>
 	
-</c:otherwise>
+    <p class="card-text" style="text-align:left;" >
+			No job match your search criteria		
+ 	</p>    
+	
+	<a href="JobDesCriptionForApply?jobId=${job.jobId}" class="btn btn-primary">Back</a>
+ 
+  </div>
+</div></c:otherwise>
 
 </c:choose>
 
