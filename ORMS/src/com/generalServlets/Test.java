@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
+import java.util.concurrent.TimeUnit;
 import java.sql.* ; 
 
 import javax.servlet.ServletException;
@@ -38,6 +39,7 @@ public class Test extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		System.out.println("hello");
+		
 	   try {
 		   java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
 		  
@@ -49,7 +51,7 @@ public class Test extends HttpServlet {
 	 		PreparedStatement pst = conn.prepareStatement(insertQuuery) ; 
 	 		pst.setDate(1, sqlDate);
 	 		pst.executeUpdate() ; 
-	 		*/
+	 		
 		    String insertQuuery = "SELECT apply_date FROM jobs_application WHERE application_id=?" ;
 	 		PreparedStatement pst = conn.prepareStatement(insertQuuery) ; 
 	 		pst.setInt(1, 1);
@@ -61,14 +63,31 @@ public class Test extends HttpServlet {
 	 			java.util.Calendar cal = java.util.Calendar.getInstance();
 	 			cal.setTime(old);
 	 			cal.add(Calendar.DATE, +4);
+	 		
 	 			//System.out.println(cal.getTime());
-	 			System.out.println(new SimpleDateFormat("YYY-MM-dd", Locale.ENGLISH).format(cal.getTime()));
-	 			 
-	 			
+	 			System.out.println(new SimpleDateFormat("YYY-MM-dd", Locale.ENGLISH).format(cal.getTime()));	 			 	 			
 	 		}
+	 		*/
  	 		
+		    long currentTime = System.currentTimeMillis() ; 
+		    
+	        long days = TimeUnit.MILLISECONDS.toDays(currentTime)/365;
+	        System.out.println(days);
+		    System.out.println("hi");
+		    
+		    
+		    
+		    
+		  //  Date currentDate = new Date(currentTime) ; 
+		    
+ 		//	new SimpleDateFormat("dd-MM-YYYY", Locale.ENGLISH).format(currentTime);	 			 	 			
+
+		    
+		    
+		   // System.out.println(currentDate);
+		    
 	   }catch(Exception e) {
-		   System.out.println(e.toString());
+		 //  System.out.println(e.toString());
 	   }
 		
 	}
