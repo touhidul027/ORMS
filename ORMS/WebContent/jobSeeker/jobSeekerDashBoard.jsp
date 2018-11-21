@@ -23,16 +23,16 @@
 <h2>This is job Seeker Dashboard</h2>
 
 <c:forEach var="appliedJob" items="${jobSeeker.appliedJobs}" > 
-<div class="card" style="width:300px ; margin:30px;" >
-  <div class="card-header">
-    Featured
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">${appliedJob.title}</h5>
-    <p class="card-text">${appliedJob.companyName}</p>
-    <a href="#" class="btn btn-primary">See Details</a>
-  </div>
-</div>
+	<div class="card" style="width:300px ; margin:30px;" >
+	  <div class="card-header">
+	    Featured
+	  </div>
+	  <div class="card-body">
+	    <h5 class="card-title">${appliedJob.title}</h5>
+	    <p class="card-text">${appliedJob.companyName}</p>
+	    <a href="../SeeAppliedJobServlet?jobId=${appliedJob.jobId}" class="btn btn-primary">See Details</a>
+	  </div>
+	</div>
 </c:forEach>
 
 </body>
