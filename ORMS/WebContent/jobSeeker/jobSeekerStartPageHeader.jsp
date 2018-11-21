@@ -47,7 +47,7 @@
 						</form>
 							
 						<a href="profileOverview.jsp">Profile Overview</a>
-						<a href="#about">Dashboard</a>						
+						<a href="jobSeekerDashBoard.jsp">Dashboard</a>						
 						<a href="../JobSeekerLogOutServlet">Log out</a>
 					  </div>
 					</div>

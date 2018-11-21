@@ -9,6 +9,8 @@ import java.util.ArrayList;
 import com.generalDAO.BasicUser;
 import com.generalDAO.JDBCUtil;
 
+import jobs.Job;
+
 public class JobSeekerGetProfileInfo {
 	
 	// get the id from when this method is called 
@@ -21,8 +23,9 @@ public class JobSeekerGetProfileInfo {
 		jobSeeker.setInterests(interests(userId));
 		jobSeeker.setEducation( getEducation(userId) );
 		jobSeeker.setExperience(getExperiences(userId));
-		jobSeeker.setSkills(getAllSkills(userId));
-		JobSeekerAppliedJobs.getAppliedJobsList(userId);
+		jobSeeker.setSkills(getAllSkills(userId));		
+		jobSeeker.setAppliedJobs(JobSeekerAppliedJobs.getAppliedJobsList(userId));
+		
 		return jobSeeker ; 
 	}
 	

@@ -13,10 +13,8 @@ import jobs.JobDAO;
 
 public class JobSeekerAppliedJobs {
 	
-public static void getAppliedJobsList(int jobSeekerId) {
+public static ArrayList<Job> getAppliedJobsList(int jobSeekerId) {
 	ArrayList<Job> jobs = new ArrayList<>() ;
-	 
-	 // select all the job id 
 	
 		 Connection conn = JDBCUtil.getConnection() ; 
 			
@@ -37,26 +35,23 @@ public static void getAppliedJobsList(int jobSeekerId) {
 		        		 Job job = new Job() ; 
 		        		 
 		        		 // now select all the available values from the jobs table 
-		        		 job =  JobDAO.getJob(rs.getInt("job_id")) ;
+		        		 job = JobDAO.getJob(rs.getInt("job_id")) ;
 		        		 
 		        		// let us check we got everything  or not
-		        		// System.out.println(Job);
+		        		// System.out.println(job);		        		 
 		        		 
-		        		 
-		        		// jobs.add(Job) ; 
+		        		 jobs.add(job) ; 
 		        	    //	 
 		        	 }
-		        //	 return allJob ; 
+		        	 return jobs ; 
 		        	 
 		           
 		       } 
 		       catch (SQLException ex) 
 		       {
-		    	   System.out.println("SignInDAO catch block");
+		    	  // System.out.println("Exception");
 		       }
-	
-	 
-	
+			return null;
 	// return null ; 
 }
 

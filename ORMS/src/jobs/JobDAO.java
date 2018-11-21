@@ -33,47 +33,42 @@ public class JobDAO {
 	        		 job.setJobId(jobId);
 	        		 job.setAdditionalRequirement(rs.getString("additional_requirements"));
 	        		 job.setCompanyName(rs.getString("company_name"));
-	        		 job.setTitle(rs.getString("job_title"));
+	        		 job.setTitle(rs.getString("title"));
 	        		 job.setLocation(rs.getString("location"));
 	        		 job.setDescription(rs.getString("description"));
 	        		 job.setEducationLevel(rs.getString("education_level"));
 	        		 job.setExperience(rs.getString("experience"));
 	        		 job.setSalary(rs.getString("salary"));
-	        		 
-	        		 Job.setJobPostingSalary();
-	        		 Job.setJobPostingSalaryReview(rs.getString("salary_review"));
-	        		 Job.setJobPostingAdditionalRequirementsinput();
-	        		 Job.setJobPostingCompanyEmail(rs.getString("company_email"));
-	        		 Job.setJobPostingCompanyCellPhoneNumber(rs.getString("company_cell_phone_number")) ; 
-	        		 Job.setJobPostingCompanyAdress(rs.getString("adress"));
-	        		 Job.setJobPostingCompanyWebsite(rs.getString("company_website"));
+	        		 job.setCompanyCellPhoneNumber(rs.getString("company_cell_phone_number"));
+	        		 job.setSalaryReview(rs.getString("salary_review") );
+	        		 job.setCompanyEmail(rs.getString("company_email"));
+	        		 job.setCompanyAddress(rs.getString("adress"));
+	        		 job.setWebsite(rs.getString("website"));	        		 	        		 
 	        		
-	        		 ArrayList<String> skillNames = getAllSkills(jobId) ;        		 
-	        		 String[] skillNames2 = new String[skillNames.size()];
-	        		 skillNames2 = skillNames.toArray(skillNames2);
-	         		 Job.setJobPosterKeySkillsSelection(skillNames2);
+	        		 ArrayList<String> skills = getAllSkills(jobId) ;        		 
+ 	         		 job.setSkills(skills);
 	         		 
-	         		ArrayList<String> jobTypesNames = getTypes(jobId) ;  ;        		 
-	       	     	String[] jobTypesNames2 = new String[jobTypesNames.size()];
-	       	        jobTypesNames2 = jobTypesNames.toArray(jobTypesNames2);
-	       	        Job.setJobPostingJobType(jobTypesNames2);
 	         		 
-	         		ArrayList<String> benefitsNames = getAllJobBenefits(jobId) ;  ;        		 
-	       	     	String[] benefitsNames2 = new String[benefitsNames.size()];
-	       	     	benefitsNames2 = benefitsNames.toArray(benefitsNames2);
-	          		Job.setJobPostingFacilities(benefitsNames2); 
+	         		ArrayList<String> jobType = getTypes(jobId) ;  ;        		 
+	         		job.setJobType(jobType);
+	         		
+	         		ArrayList<String> facilities = getAllJobBenefits(jobId) ;  ;        		 
+ 	          		job.setFacilities(facilities);
 	         		
 	          		
-	        		// System.out.println(Job);//ok
+	        		// System.out.println(job);//ok
 	      		 
-	        		 return  Job ; 
+	        		 return  job ; 
+	        	 }else {
+	        		 
 	        	 }
 	       } 
-	       catch (SQLException ex) 
+	       catch (Exception ex) 
 	       {
-	    	   System.out.println("SignInDAO catch block");
+	    	  // System.out.println(ex.toString());
 	       }
-			return Job ; 
+			// return Job ; 
+			return null;
 	}
 	
 	private static ArrayList<String> getTypes(int jobId) {

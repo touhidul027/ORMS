@@ -1,31 +1,51 @@
 package jobs;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Job {
 	private int jobId ; 
-    private String title ; 
-    private String location ;
+    
+	private String title ; 
+    @Override
+	public String toString() {
+		return "Job [jobId=" + jobId + ", title=" + title + ", location=" + location + ", description=" + description
+				+ ", skills=" + skills + ", companyName=" + companyName + ", educationLevel=" + educationLevel
+				+ ", experience=" + experience + ", jobType=" + jobType + ", salary=" + salary + ", salaryReview="
+				+ salaryReview + ", facilities=" + facilities + ", additionalRequirement=" + additionalRequirement
+				+ ", companyAddress=" + companyAddress + ", companyEmail=" + companyEmail + ", companyCellPhoneNumber="
+				+ companyCellPhoneNumber + ", website=" + website + "]";
+	}
+	private String location ;
     private String description;
-    private String[] skills  ;
+    private ArrayList<String> skills  ;
     private	String companyName ; 
 	private String educationLevel ; 
 	private String experience ; 
-	private String[] jobType ;
+	private ArrayList<String> jobType ;
 	private	String salary ;   
 	private	String salaryReview ;  
-	private	String[] facilities ;
+	private	ArrayList<String> facilities ;
+	
+	private	String additionalRequirement ;
+	private String companyAddress ; 
+	private String companyEmail ; 
+	private	String companyCellPhoneNumber ; 
+	private	String website ;
+	
+	
+	public String getWebsite() {
+		return website;
+	}
+	public void setWebsite(String website) {
+		this.website = website;
+	}
 	public String getExperience() {
 		return experience;
 	}
 	public void setExperience(String experience) {
 		this.experience = experience;
 	}
-	private	String additionalRequirement ;
-	private String companyAddress ; 
-	private String companyEmail ; 
-	private	String companyCellPhoneNumber ; 
-	private	String companyWebsite ;
 	
 	public String shortDescription() {
 		if(description.length()>60){
@@ -62,10 +82,10 @@ public class Job {
 		public void setDescription(String description) {
 			this.description = description;
 		}
-		public String[] getSkills() {
+		public ArrayList<String> getSkills() {
 			return skills;
 		}
-		public void setSkills(String[] skills) {
+		public void setSkills(ArrayList<String> skills) {
 			this.skills = skills;
 		}
 		public String getCompanyName() {
@@ -80,10 +100,10 @@ public class Job {
 		public void setEducationLevel(String educationLevel) {
 			this.educationLevel = educationLevel;
 		}
-		public String[] getJobType() {
+		public ArrayList<String> getJobType() {
 			return jobType;
 		}
-		public void setJobType(String[] jobType) {
+		public void setJobType(ArrayList<String> jobType) {
 			this.jobType = jobType;
 		}
 		public String getSalary() {
@@ -98,10 +118,10 @@ public class Job {
 		public void setSalaryReview(String salaryReview) {
 			this.salaryReview = salaryReview;
 		}
-		public String[] getFacilities() {
+		public ArrayList<String> getFacilities() {
 			return facilities;
 		}
-		public void setFacilities(String[] facilities) {
+		public void setFacilities(ArrayList<String> facilities) {
 			this.facilities = facilities;
 		}
 		public String getAdditionalRequirement() {
@@ -128,20 +148,7 @@ public class Job {
 		public void setCompanyCellPhoneNumber(String companyCellPhoneNumber) {
 			this.companyCellPhoneNumber = companyCellPhoneNumber;
 		}
-		public String getCompanyWebsite() {
-			return companyWebsite;
-		}
-		public void setCompanyWebsite(String companyWebsite) {
-			this.companyWebsite = companyWebsite;
-		}
-		@Override
-		public String toString() {
-			return "Job [jobId=" + jobId + ", title=" + title + ", location=" + location + ", description="
-					+ description + ", skills=" + Arrays.toString(skills) + ", companyName=" + companyName
-					+ ", educationLevel=" + educationLevel + ", experience=" + experience + ", jobType="
-					+ Arrays.toString(jobType) + ", salary=" + salary + ", salaryReview=" + salaryReview
-					+ ", facilities=" + Arrays.toString(facilities) + ", additionalRequirement=" + additionalRequirement
-					+ ", companyAddress=" + companyAddress + ", companyEmail=" + companyEmail
-					+ ", companyCellPhoneNumber=" + companyCellPhoneNumber + ", companyWebsite=" + companyWebsite + "]";
-		}
+		 
+		 
+		
 }

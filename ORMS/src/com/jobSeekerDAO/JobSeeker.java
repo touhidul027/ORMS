@@ -27,9 +27,9 @@ public class JobSeeker {
 	private	ArrayList<String> skills; // done
 	private	ArrayList<String> jobTypes ; 	// not available now 
 	
+	// newly added 
 	private ArrayList<Job> appliedJobs ; // newly added , M-M 
 	
-	private	ArrayList<String> certification ; // no need of db now
 	
 	 	
 	public String getUserType() {
@@ -212,4 +212,6 @@ public class JobSeeker {
 	public void setJobTypes(ArrayList<String> jobTypes) {
 		this.jobTypes = jobTypes;
 	}
+	private	ArrayList<String> certification ; // no need of db now
+
 }
