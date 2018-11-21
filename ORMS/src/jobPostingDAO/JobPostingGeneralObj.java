@@ -2,6 +2,7 @@ package jobPostingDAO;
 
 import java.util.Arrays;
 
+// this class will contain all the information of a single job 
 public class JobPostingGeneralObj {
 	private int jobId ; 
     private String jobPostingJobTitle ; 

@@ -22,6 +22,7 @@ public class JobSeekerGetProfileInfo {
 		jobSeeker.setEducation( getEducation(userId) );
 		jobSeeker.setExperience(getExperiences(userId));
 		jobSeeker.setSkills(getAllSkills(userId));
+		JobSeekerAppliedJobs.getAppliedJobsList(userId);
 		return jobSeeker ; 
 	}
 	

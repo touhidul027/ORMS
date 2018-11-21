@@ -13,6 +13,7 @@ public class AllJobPostingGeneralObjDAO {
 	
 //	public static void getSingleJobPostingGeneralO
 	
+// this method will return a list object containing all the jobs that a Recruiter had posted	
 public static ArrayList<JobPostingGeneralObj> getAllJobPostingGeneralObj(int jobPosterSerialNumber) {	
 	
 	ArrayList<JobPostingGeneralObj> allJobPostingGeneralObj = new ArrayList<>() ;

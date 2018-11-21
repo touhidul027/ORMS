@@ -2,6 +2,8 @@ package com.jobSeekerDAO;
 
 import java.util.*;
 
+import jobs.Job;
+
 public class JobSeeker {
 	private int id ;  
 	private	String fullName ; 
@@ -22,23 +24,50 @@ public class JobSeeker {
 	private	ArrayList<String> interests ; // done 
 	
 	//M-M
+	private	ArrayList<String> skills; // done
+	private	ArrayList<String> jobTypes ; 	// not available now 
 	
+	private ArrayList<Job> appliedJobs ; // newly added , M-M 
 	
 	private	ArrayList<String> certification ; // no need of db now
 	
 	 	
-	private	ArrayList<String> skills; // done
-	private	ArrayList<String> jobTypes ; 	// not available now 
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public ArrayList<Job> getAppliedJobs() {
+		return appliedJobs;
+	}
+
+	public void setAppliedJobs(ArrayList<Job> appliedJobs) {
+		this.appliedJobs = appliedJobs;
+	}
+
+	
 	
 	 
 	
 	@Override
 	public String toString() {
 		return "JobSeeker [id=" + id + ", fullName=" + fullName + ", userType=" + userType + ", objective=" + objective
-				+ ", email=" + email + ", adress=" + address + ", password=" + password + ", gender=" + gender + ", nid="
-				+ nid + ", cellPhoneNumber=" + cellPhoneNumber + ", experience=" + experience + ", activities="
-				+ activities + ", education=" + education + ", certification=" + certification + ", interests="
-				+ interests + ", skills=" + skills + ", jobTypes=" + jobTypes + "]";
+				+ ", email=" + email + ", address=" + address + ", password=" + password + ", gender=" + gender
+				+ ", nid=" + nid + ", cellPhoneNumber=" + cellPhoneNumber + ", experience=" + experience
+				+ ", education=" + education + ", activities=" + activities + ", interests=" + interests
+				+ ", certification=" + certification + ", skills=" + skills + ", jobTypes=" + jobTypes
+				+ ", appliedJobs=" + appliedJobs + "]";
 	}
 
 	public JobSeeker(int id,String fullName, String email, String password) {

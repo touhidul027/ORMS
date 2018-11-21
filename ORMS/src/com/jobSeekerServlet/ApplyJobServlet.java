@@ -24,6 +24,9 @@ public class ApplyJobServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub		
+		// get the session instance of jobSeeker and make it updated 
+		// pre- update the model object first
+		
 		
 		int jobId = Integer.parseInt(request.getParameter("jobId")); 
 		int jobSeekerId = Integer.parseInt(request.getParameter("jobSeekerId")) ;
