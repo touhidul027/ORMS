@@ -7,15 +7,7 @@ public class Job {
 	private int jobId ; 
     
 	private String title ; 
-    @Override
-	public String toString() {
-		return "Job [jobId=" + jobId + ", title=" + title + ", location=" + location + ", description=" + description
-				+ ", skills=" + skills + ", companyName=" + companyName + ", educationLevel=" + educationLevel
-				+ ", experience=" + experience + ", jobType=" + jobType + ", salary=" + salary + ", salaryReview="
-				+ salaryReview + ", facilities=" + facilities + ", additionalRequirement=" + additionalRequirement
-				+ ", companyAddress=" + companyAddress + ", companyEmail=" + companyEmail + ", companyCellPhoneNumber="
-				+ companyCellPhoneNumber + ", website=" + website + "]";
-	}
+    
 	private String location ;
     private String description;
     private ArrayList<String> skills  ;
@@ -33,6 +25,16 @@ public class Job {
 	private	String companyCellPhoneNumber ; 
 	private	String website ;
 	
+	
+	@Override
+	public String toString() {
+		return "Job [jobId=" + jobId + ", title=" + title + ", location=" + location + ", description=" + description
+				+ ", skills=" + skills + ", companyName=" + companyName + ", educationLevel=" + educationLevel
+				+ ", experience=" + experience + ", jobType=" + jobType + ", salary=" + salary + ", salaryReview="
+				+ salaryReview + ", facilities=" + facilities + ", additionalRequirement=" + additionalRequirement
+				+ ", companyAddress=" + companyAddress + ", companyEmail=" + companyEmail + ", companyCellPhoneNumber="
+				+ companyCellPhoneNumber + ", website=" + website + "]";
+	}
 	
 	public String getWebsite() {
 		return website;

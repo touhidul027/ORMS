@@ -13,8 +13,8 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class JobPostingLogOutServlet
  */
-@WebServlet("/JobPostingLogOutServlet")
-public class JobPostingLogOutServlet extends HttpServlet {
+@WebServlet("/RecruiterLogOutServlet")
+public class RecruiterLogOutServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**

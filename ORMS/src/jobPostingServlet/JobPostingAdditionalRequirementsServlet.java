@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import jobPostingDAO.JobPostingAdditionalRequirements;
 import jobPostingDAO.JobPostingAdditionalRequirementsDAO;
 import jobPostingDAO.JobPostingGeneralObj;
+import jobs.Job;
 
 /**
  * Servlet implementation class JobPostingAdditionalRequirements
@@ -19,10 +20,7 @@ import jobPostingDAO.JobPostingGeneralObj;
 public class JobPostingAdditionalRequirementsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/**protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		
@@ -38,6 +36,23 @@ public class JobPostingAdditionalRequirementsServlet extends HttpServlet {
 		session.setAttribute("jobPostingGeneralObj", jobPostingGeneralObj );
 		session.setAttribute("nextPageName", "jobPostingCompanyInfo.jsp");
 		response.sendRedirect("jobPoster\\jobPostingSeries.jsp");
+ 	}
+	 * 
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession();
+		
+		String additionalRequirement = request.getParameter("jobPostingAdditionalRequirementsinput") ; 
+		 
+		// get the model object 
+		Job job = (Job) session.getAttribute("job") ; 
+		job.setAdditionalRequirement(additionalRequirement);		 
+		
+		session.setAttribute("job", job );
+		session.setAttribute("nextPageName", "jobPostingCompanyInfo.jsp");
+		response.sendRedirect("recruiter\\jobPostingSeries.jsp");
  	}
 
 }

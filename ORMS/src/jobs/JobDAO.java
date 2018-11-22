@@ -12,6 +12,9 @@ import com.generalDAO.JDBCUtil;
 
 public class JobDAO {
 	
+	// Post a job 
+	
+	
 	// it will return a job information  matching with jobId
 	public static Job getJob(int jobId) {
 		Job job = new Job() ; 

@@ -16,6 +16,8 @@ import com.generalDAO.User;
 import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerGetProfileInfo;
 
+import recruiter.Recruiter;
+
 /**
  * Servlet implementation class SignInServlet
  */
@@ -54,8 +56,7 @@ public class SignInServlet extends HttpServlet {
 			aBasicUser = SignInDAO.doSignIn(email, password) ; 		
 			// store the information in the session
 			HttpSession userSession = request.getSession() ;
-
-			// depending on the type set attribute to the session 
+ 			// depending on the type set attribute to the session 
 			if(aBasicUser.getUserType().equals("jobSeeker")) {
 				// first remove the conditional session 
 				userSession.removeAttribute("messageForAppyJobWithoutSignIn");
@@ -76,9 +77,13 @@ public class SignInServlet extends HttpServlet {
  				 response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
 				}
 			}
-			else {
-				userSession.setAttribute("aJobPoster", aBasicUser );
-				response.sendRedirect("jobPoster\\jobPosterDashBoard.jsp") ;
+			else if(aBasicUser.getUserType().equals("employeer")){
+				// create the recruiter obj 
+				Recruiter recruiter = new Recruiter(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword(),aBasicUser.getUserType()) ; 
+				
+				//System.out.println("go to dashboard.buddy");
+				userSession.setAttribute("recruiter", recruiter );
+				response.sendRedirect("recruiter\\recruiterDashBoard.jsp") ;				
 			}
 			
 		}else if( userStatus == User.forgettableUser) {

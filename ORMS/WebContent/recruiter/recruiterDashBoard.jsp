@@ -9,7 +9,7 @@
 <body>
 	<%
 	response.setHeader("Cache-Control", "no-cache , no-store , must-revalidate");	
-		if (session.getAttribute("aJobPoster")== null){		
+		if (session.getAttribute("recruiter")== null){		
 			response.sendRedirect("..\\index.jsp");		
 		}	
 	%>
@@ -27,7 +27,7 @@
 				</div>
 				
 				<div> 
-					<form action="..\JobPostingLogOutServlet" method="post" >
+					<form action="..\RecruiterLogOutServlet" method="post" >
 						 <a> 
 					       <input type="submit" value="Log Out" >
 					     </a>
