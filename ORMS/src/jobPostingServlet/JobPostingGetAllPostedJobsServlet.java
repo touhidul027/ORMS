@@ -15,6 +15,9 @@ import com.generalDAO.BasicUser;
 import jobPostingDAO.AllJobPostingGeneralObj;
 import jobPostingDAO.AllJobPostingGeneralObjDAO;
 import jobPostingDAO.JobPostingGeneralObj;
+import jobs.GetAllJobsDAO;
+import jobs.Job;
+import recruiter.Recruiter;
 
 /**
  * Servlet implementation class JobPostingGetAllPostedJobs
@@ -32,9 +35,7 @@ public class JobPostingGetAllPostedJobsServlet extends HttpServlet {
     }
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	 * protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession(); 
 		// check the session is old or not -> do it later 
@@ -56,6 +57,38 @@ public class JobPostingGetAllPostedJobsServlet extends HttpServlet {
 				
 				session.setAttribute("allPostedJobs", allPostedJobArrayListOfTypeJobPostingGeneralObj);
 			    response.sendRedirect("jobPoster\\jobPosterAllPostedJob.jsp");
+			}
+		}else {
+			request.setAttribute("loginInformation", "Job Posting Information");
+			request.setAttribute("missingThing", "Account Existencity");
+			request.setAttribute("loginInformationMissingThingmessage", "create a new recruiter account or Sign in old account to post a job.");
+			// forward to a error page 
+			response.sendRedirect("error404.jsp");
+		}
+	}
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		HttpSession session = request.getSession(); 
+		// check the session is old or not -> do it later 
+		if(session!=null) {
+			Recruiter recruiter = (Recruiter) session.getAttribute("recruiter") ;
+		
+			if(recruiter==null) {
+				request.setAttribute("loginInformation", "Job Posting Information");
+				request.setAttribute("missingThing", "Account Existencity");
+				request.setAttribute("loginInformationMissingThingmessage", "create a new recruiter account or Sign in old account to post a job.");
+				// forward to a error page 
+				response.sendRedirect("error404.jsp");
+			}
+			else {
+				// get the initialized object holding all the information job posted  by him 		
+				//System.out.println("I am executing");
+				ArrayList<Job> postedJobs = GetAllJobsDAO.getAllJob(recruiter.getId()) ; ; 							   
+				recruiter.setJobs(postedJobs);
+				session.setAttribute("recruiter", recruiter);
+			    response.sendRedirect("recruiter\\jobPosterAllPostedJob.jsp");
 			}
 		}else {
 			request.setAttribute("loginInformation", "Job Posting Information");

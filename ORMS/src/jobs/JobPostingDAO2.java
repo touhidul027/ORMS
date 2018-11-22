@@ -61,7 +61,7 @@ public class JobPostingDAO2 {
 		           
 	        } 
 	       catch (SQLException ex) {	      
-	    	   System.out.println("Inserting job posting cause exception,mate.");
+	    	  // System.out.println("Inserting job posting cause exception,mate.");
 	    	   System.out.println(ex.toString());
 	        }
 			return job;	        
