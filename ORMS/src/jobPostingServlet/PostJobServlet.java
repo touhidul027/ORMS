@@ -38,6 +38,8 @@ public class PostJobServlet extends HttpServlet {
 		Recruiter recruiter = (Recruiter) session.getAttribute("recruiter") ; 
 		job = JobPostingDAO2.postJob(job) ; 
 		
+		
+		
 		JobPosterJoinJobPostingDAO.insertIntoJobPosterJobPostingJoinTable(recruiter.getId(), job.getJobId()) ; 		
 		session.removeAttribute("job");
 		response.sendRedirect("recruiter\\recruiterDashBoard.jsp");

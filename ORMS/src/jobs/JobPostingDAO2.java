@@ -22,7 +22,8 @@ public class JobPostingDAO2 {
         insertJobSkills(job.getJobId(),job.getSkills()) ; 
 		insertJobjobTypes(job.getJobId(), job.getJobType()) ; 
 		insertJobBenefits(job.getJobId(), job.getFacilities()) ; 
-		System.out.println("Done");
+		// System.out.println("Done");
+	
 		return job ; 
 	}
 	
@@ -33,7 +34,7 @@ public class JobPostingDAO2 {
 	String insertQuuery = "INSERT INTO jobs(company_name,title,location,description,education_level,experience,salary,salary_review,additional_requirements,company_email,company_cell_phone_number,adress,website) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
 	       
 		   try {			   
-		           PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
+		           PreparedStatement pst =  conn.prepareStatement(insertQuuery,PreparedStatement.RETURN_GENERATED_KEYS) ; 
 			           pst.setString(1, job.getCompanyName());
 			           pst.setString(2, job.getTitle());
 			           pst.setString(3, job.getLocation());
@@ -48,18 +49,13 @@ public class JobPostingDAO2 {
 			           pst.setString( 12,job.getCompanyAddress()  );
 			           pst.setString( 13,job.getWebsite()  );
 			           
-		           boolean flag =  pst.executeUpdate()!=0 ; 
+			           pst.executeUpdate(); 
 		           
-		        // set the accurate job id from here 
-					
-						if(getJobId()==getJobId(job)) {
-							jobId = getJobId(job) ; 
-							job.setJobId(jobId);
-						}
+		           ResultSet rs = pst.getGeneratedKeys();  
+		            jobId = rs.next() ? rs.getInt(1) : 0;
+		           	job.setJobId(jobId);
 		           
-		          
-		           
-	        } 
+        } 
 	       catch (SQLException ex) {	      
 	    	  // System.out.println("Inserting job posting cause exception,mate.");
 	    	   System.out.println(ex.toString());
@@ -72,18 +68,18 @@ public class JobPostingDAO2 {
 
 		try {			
 			Connection conn=  JDBCUtil.getConnection() ; 
-			String job_id_query="SELECT * FROM job_posting ORDER BY job_id DESC LIMIT 1" ; 
+			String job_id_query="SELECT * FROM jobs ORDER BY job_id DESC LIMIT 1" ; 
 	      	PreparedStatement pst2 =  conn.prepareStatement(job_id_query) ; 
             ResultSet rs = pst2.executeQuery() ; 
         	 
               if(rs.next()){
         		 jobId = rs.getInt("job_id") ;       		
                }else {
-        		  System.out.println("No id mate");
+        		 // System.out.println("No id mate");
         	  }
        	  
 			}catch(Exception p) {
-				System.out.println(p.toString());
+				//System.out.println(p.toString());
 			}
 		return jobId;
 	}
@@ -93,7 +89,7 @@ public class JobPostingDAO2 {
 
 		try {			
 			Connection conn=  JDBCUtil.getConnection() ; 
-			String job_id_query="SELECT job_id FROM job_posting WHERE job_title=? AND company_name=? AND job_location=?" ; 
+			String job_id_query="SELECT job_id FROM jobs WHERE job_title=? AND company_name=? AND job_location=?" ; 
 	      	 PreparedStatement pst =  conn.prepareStatement(job_id_query) ;
 	      	   pst.setString(1, job.getTitle() );
  	      	   pst.setString(2, job.getCompanyName());
@@ -104,11 +100,11 @@ public class JobPostingDAO2 {
               if(rs.next()){
         		 jobId = rs.getInt("job_id") ;       		
                }else {
-        		  System.out.println("No id mate");
+        		 // System.out.println("No id mate");
         	  }
        	  
 			}catch(Exception p) {
-				System.out.println(p.toString());
+				// System.out.println(p.toString());
 			}
 		return jobId;
 	}
@@ -142,8 +138,8 @@ public class JobPostingDAO2 {
 	       } 
 	       catch (SQLException ex) 
 	        {
-	    	   System.out.println("u r getting it .");
-	    	   System.out.println(ex.toString());
+	    	  //  System.out.println("u r getting it .");
+	    	  // System.out.println(ex.toString());
 	        }
 		 }
 	       return false ; 
@@ -164,7 +160,7 @@ public class JobPostingDAO2 {
 	    	  }
 	   	  
 			}catch(Exception p) {
-				System.out.println(p.toString());
+				//System.out.println(p.toString());
 			}
 	  return skillId;		 
 }
@@ -199,8 +195,8 @@ public class JobPostingDAO2 {
 		       } 
 		       catch (SQLException ex) 
 		        {
-		    	   System.out.println("u r getting it .");
-		    	   System.out.println(ex.toString());
+//		    	   System.out.println("u r getting it .");
+//		    	   System.out.println(ex.toString());
 		        }
 		 }
 	       return false ; 
@@ -222,7 +218,7 @@ public class JobPostingDAO2 {
 	    	  }
 	   	  
 			}catch(Exception p) {
-				System.out.println(p.toString());
+				//System.out.println(p.toString());
 			}
 		
 		return jobTypeId;
@@ -259,8 +255,8 @@ public class JobPostingDAO2 {
 		       } 
 		       catch (SQLException ex) 
 		        {
-		    	   System.out.println("u r getting it .");
-		    	   System.out.println(ex.toString());
+//		    	   System.out.println("u r getting it .");
+//		    	   System.out.println(ex.toString());
 		        }
 		 }
 	       return false ; 
@@ -282,7 +278,7 @@ public class JobPostingDAO2 {
 	    	  }
 	   	  
 			}catch(Exception p) {
-				System.out.println(p.toString());
+				// System.out.println(p.toString());
 			}
 		
 		return facilityId;

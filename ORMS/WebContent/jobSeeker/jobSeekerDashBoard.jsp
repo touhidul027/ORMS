@@ -20,7 +20,7 @@
 					response.sendRedirect("..\\index.jsp");		
 				}	
 %>
-<h2>This is job Seeker Dashboard</h2>
+<h2>Dash board of applied jobs</h2>
 
 <c:forEach var="appliedJob" items="${jobSeeker.appliedJobs}" > 
 	<div class="card" style="width:300px ; margin:30px;" >

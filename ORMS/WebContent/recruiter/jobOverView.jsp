@@ -36,7 +36,6 @@
     </ul>
   </div>
   <div class="card-body">
-  
     <div id="jobDescriptionA" style="text-align:left;" >
 					<div>
 						<table border="0" cellpadding="0" cellspacing="0" align="center" width="750">
@@ -44,12 +43,12 @@
 									<tr>
 										<td colspan="6">
 										<table border="0" align="center" cellpadding="0" cellspacing="0" width="100%">
-											<tbody><tr>
+											<tbody>
+											<tr>
 													<td width="73%" height="" align="left" valign="bottom" class="BDJApplicantsName">
 														<!--Job Title Name:-->
 														<h4>${job.title}</h4>
-													</td>
-												 
+													</td>												 
 											</tr>
 									
 											<tr>
