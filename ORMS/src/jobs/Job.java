@@ -3,6 +3,10 @@ package jobs;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.jobSeekerDAO.JobSeeker;
+
+import recruiter.Recruiter;
+
 public class Job {
 	private int jobId ; 
     
@@ -25,7 +29,27 @@ public class Job {
 	private	String companyCellPhoneNumber ; 
 	private	String website ;
 	
+	// new added
+	private Recruiter recruiter ; 
+	private ArrayList<JobSeeker> applicants ;  
 	
+
+	public Recruiter getRecruiter() {
+		return recruiter;
+	}
+
+	public void setRecruiter(Recruiter recruiter) {
+		this.recruiter = recruiter;
+	}
+
+	public ArrayList<JobSeeker> getApplicants() {
+		return applicants;
+	}
+
+	public void setApplicants(ArrayList<JobSeeker> applicants) {
+		this.applicants = applicants;
+	}
+
 	@Override
 	public String toString() {
 		return "Job [jobId=" + jobId + ", title=" + title + ", location=" + location + ", description=" + description

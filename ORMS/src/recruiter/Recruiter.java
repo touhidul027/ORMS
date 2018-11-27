@@ -13,7 +13,17 @@ public class Recruiter {
 	
 	private ArrayList<Job> jobs ; 
 	
+	// newly added 11/26/2018 
+	private ArrayList<ApplicantNotification> applicantNotifications ; 
 	
+	public ArrayList<ApplicantNotification> getApplicantNotifications() {
+		return applicantNotifications;
+	}
+
+	public void setApplicantNotifications(ArrayList<ApplicantNotification> applicantNotifications) {
+		this.applicantNotifications = applicantNotifications;
+	}
+
 	public Recruiter(int id, String fullName, String email, String password, String userType) {
 		super();
 		this.id = id;

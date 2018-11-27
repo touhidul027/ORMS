@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,10 +29,26 @@
 <c:if test="${recruiter.jobs!=null && not empty recruiter.jobs}" >  
        
  <c:forEach var="job" items="${recruiter.jobs}">
- <div class="card" style="width:700px ; margin:50px;" >
-  <div class="card-header">
-    ${job.jobId}
-  </div>
+ <div class="card" style="width:700px ; margin:50px;" >  
+  
+ 	<div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+       ${job.jobId}
+      </li>
+      
+      <li class="nav-item" style="margin-left: 50px ; " >
+      
+        Applicants : ${fn:length(job.applicants)} 
+      </li>
+      
+      <li class="nav-item" style="margin-left: 50px ; " >
+        Invitation Sent: 0
+      </li>
+      
+    </ul>
+   </div> 	
+  
 	  <div class="card-body">
 	    <h5 class="card-title">${job.title} </h5>
 	    <p class="card-text"> ${job.companyName} </p>

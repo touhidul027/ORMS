@@ -37,8 +37,15 @@
 		<jsp:include page="jobSeekerStartPageHeader.jsp"></jsp:include>
 		
 		<!-- General search -->
-		<jsp:include page="..\\generalSearch.html"></jsp:include>
-		
+ 		
+ 		<form action="../SearchJobsServlet" method="post" >
+				<div id="generalSearchOption" >
+ 					<input type="text" name="jobTitle" id="generalTextInput" placeholder="Job Title" > <br>	
+					<input type="text" name="location" id="generalTextInput" placeholder="Place,Location,City"> <br>					
+					<input type="submit" id="generalTextInputSubmitButton" value="search" > 
+				</div>			
+			</form>
+ 		
 		<!-- Main Footer Part  -->
 		<jsp:include page="..\\mainFooter.html"></jsp:include>
 </body>

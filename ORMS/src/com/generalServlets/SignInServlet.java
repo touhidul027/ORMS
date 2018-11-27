@@ -2,6 +2,7 @@ package com.generalServlets;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,6 +17,9 @@ import com.generalDAO.User;
 import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerGetProfileInfo;
 
+import jobs.GetAllJobsDAO;
+import jobs.Job;
+import recruiter.ApplicantNotificationDAO;
 import recruiter.Recruiter;
 
 /**
@@ -80,6 +84,14 @@ public class SignInServlet extends HttpServlet {
 			else if(aBasicUser.getUserType().equals("employeer")){
 				// create the recruiter obj 
 				Recruiter recruiter = new Recruiter(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword(),aBasicUser.getUserType()) ; 
+				
+				// get the initialized object holding all the information job posted  by him 		
+				ArrayList<Job> postedJobs = GetAllJobsDAO.getAllJob(recruiter.getId()) ; ; 							   
+				recruiter.setJobs(postedJobs);
+				
+				// set recruiter applicant notifications 
+				recruiter.setApplicantNotifications(ApplicantNotificationDAO.getNotifications(postedJobs));				 
+
 				
 				//System.out.println("go to dashboard.buddy");
 				userSession.setAttribute("recruiter", recruiter );

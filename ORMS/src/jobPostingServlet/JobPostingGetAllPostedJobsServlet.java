@@ -17,6 +17,7 @@ import jobPostingDAO.AllJobPostingGeneralObjDAO;
 import jobPostingDAO.JobPostingGeneralObj;
 import jobs.GetAllJobsDAO;
 import jobs.Job;
+import recruiter.ApplicantNotificationDAO;
 import recruiter.Recruiter;
 
 /**
@@ -87,6 +88,10 @@ public class JobPostingGetAllPostedJobsServlet extends HttpServlet {
 				//System.out.println("I am executing");
 				ArrayList<Job> postedJobs = GetAllJobsDAO.getAllJob(recruiter.getId()) ; ; 							   
 				recruiter.setJobs(postedJobs);
+				
+				// set recruiter applicant notifications 
+				recruiter.setApplicantNotifications(ApplicantNotificationDAO.getNotifications(postedJobs));				 
+				
 				session.setAttribute("recruiter", recruiter);
 			    response.sendRedirect("recruiter\\jobPosterAllPostedJob.jsp");
 			}

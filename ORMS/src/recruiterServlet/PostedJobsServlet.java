@@ -21,9 +21,10 @@ public class PostedJobsServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+	// will give us a job details from the session object
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
- int jobId = Integer.parseInt(request.getParameter("jobId")) ; 		 
+        int jobId = Integer.parseInt(request.getParameter("jobId")) ; 		 
 		 HttpSession session = request.getSession() ;
 		Recruiter recruiter = (Recruiter) session.getAttribute("recruiter") ; 
  	

@@ -31,12 +31,16 @@ public class JobSeekerGetProfileInfo {
 	
 	private static JobSeeker getPersonalInfo(JobSeeker jobSeeker) {
 		Connection conn = JDBCUtil.getConnection() ; 
-			String signInQuery = "SELECT * FROM job_seeker WHERE id=?" ; 
+		//String signInQuery = "SELECT * FROM job_seeker WHERE id=?" ;
+		String signInQuery =
+				"SELECT job_seeker.*,sign_up.full_name FROM job_seeker JOIN sign_up ON sign_up.user_serial=job_seeker.id WHERE job_seeker.id=?" ;
+				
+				
 		ResultSet rs = null ; 
 			try {
 	        PreparedStatement pst =  conn.prepareStatement(signInQuery) ; 		           
 		           pst.setInt(1 , jobSeeker.getId() );
-	           rs = pst.executeQuery() ;
+	               rs = pst.executeQuery() ;
 	           
 	           if(rs.next()) {
 	        	   
@@ -44,12 +48,15 @@ public class JobSeekerGetProfileInfo {
 	        	   String objective = rs.getString("objective") ; 
 	        	   String gender = rs.getString("gender") ; 
 	        	   String nid = rs.getString("nid") ; 
+	        	   String fullName = rs.getString("full_name") ; 
+	        	   
+	        	  // System.out.println(fullName);
 	        	   
 	        	   jobSeeker.setAdress(address);
 	        	   jobSeeker.setObjective(objective);
 	        	   jobSeeker.setGender(gender);
 	        	   jobSeeker.setNid(nid);
-	        	   
+	        	   jobSeeker.setFullName(fullName);
 	        	   return jobSeeker ; 
 	           }
 	       } 
