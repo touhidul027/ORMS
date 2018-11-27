@@ -35,7 +35,7 @@
   </div>
 </div>
 	
-	<h3>Posting job</h3>
+	<h3>Posting job </h3>
 	<h3>My Posted Job</h3>
 	
 
