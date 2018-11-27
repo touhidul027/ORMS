@@ -9,17 +9,23 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="..\bootstrap\css\bootstrap.css">
  <style>
-			   			 
-			
-				p{
-					margin-left: 50px ; 
-				}	
+p{
+margin-left: 50px ; 
+}				
 		</style>
 </head>
 <body>
 
+<%
+	response.setHeader("Cache-Control", "no-cache , no-store , must-revalidate");	
+		if (session.getAttribute("recruiter")== null){		
+			response.sendRedirect("..\\index.jsp");		
+		}	
+%>
+
 <div class="card" style="margin:20px ; ">
-  <h5 class="card-header">Featured</h5>
+  <a href="..\SentJobInvitationServlet?jobId=${job.jobId}&jobSeekerId=${jobSeeker.id}"><h5 class="card-header">Sent Invitation</h5></a>
+   
   <div class="card-body">
   
   <div class="row" style="margin:10px ; ">
@@ -564,6 +570,7 @@
 </div>
    </div>
 </div>
+
 
  
 

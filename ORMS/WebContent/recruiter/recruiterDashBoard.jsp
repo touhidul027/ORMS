@@ -23,7 +23,7 @@
 	%>
 	<h1>This is the dash board of Recruiter</h1>
 	
-	<div class="dropdown">
+<div class="dropdown">
 <button onclick="myFunction()" class="dropbtn">Appicant Notification</button>
   <div id="myDropdown" class="dropdown-content">
     <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
@@ -55,10 +55,7 @@
 					</form>
 				</div>
 				
-				
-				
-				
- 
+
 <script>
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
