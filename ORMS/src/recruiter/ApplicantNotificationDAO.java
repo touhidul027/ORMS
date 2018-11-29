@@ -93,6 +93,21 @@ public class ApplicantNotificationDAO {
 }// end method
 	
 	
+	public static void confirmInvitation(int jobId,int jobSeekerId,String interviewTimePlace) {
+	    Connection conn = JDBCUtil.getConnection() ; 
+		String selectQuery = "UPDATE jobs_application SET sent_invitation=?,interview_time_place=? WHERE job_id=? AND job_seeker_id=?" ; 			 
+				try {
+			      PreparedStatement pst =  conn.prepareStatement(selectQuery) ; 
+			         pst.setInt(1, 1);
+			         pst.setString(2,  interviewTimePlace);
+			         pst.setInt(3, jobId);
+			         pst.setInt(4, jobSeekerId);		         
+			         pst.executeUpdate() ; 		           			        	   
+		}catch(Exception e) {
+			System.out.println("ApplicantNotificationDAO.confirmInvitation()");
+ 		}	
+	} // end of method
+	
 } // class ends 
 	
 	

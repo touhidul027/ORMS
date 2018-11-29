@@ -1,4 +1,5 @@
  <!-- Make this word a little bit larger  , anchor to home page . -->
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 			
 		
 			
@@ -9,33 +10,7 @@
 			</div>			
 					
 		<div class="container">
-			<div class="row">
-			<div class="col-sm">
-				Find jobs
-			</div>
-			<div class="col-sm">
-				Post a job
-			</div>
-			
-			<div class="col-sm">
-				
-			</div>
-			<div class="col-sm">
-				
-			</div>
-			
-			<div class="col-sm">
-				
-			</div>
-			
-			<div class="col-sm">
-				
-			</div>
-			
-			<div class="col-sm">
-				 
-			</div>
-			
+			<div class="row">									
 			<div class="col-sm-4">
 				 
 				 <div class="dropdown">
@@ -76,7 +51,52 @@
 					</script>
 									
 				</div>
+				
+			<div class="col-sm-4" > 
+				<div class="dropdown">
+				<button onclick="notification()" class="dropbtn">Job Notifications</button>
+				  <div id="notify" class="dropdown-content">
+				    <input type="text" placeholder="Search.." id="key" onkeyup="notificationFilter()">
+				    
+				    <c:forEach var="notification" items="${jobSeeker.recruiterNotificaions}"> 
+				         <a href="..\AcceptInvitation" ><b>${notification}</b></a>
+				     </c:forEach>
+			  </div>
+				</div>				
 			</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown2 content */
+function notification() {
+    document.getElementById("notify").classList.toggle("show");
+}
+
+function notificationFilter() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById("key");
+    filter = input.value.toUpperCase();
+    div = document.getElementById("notify");
+    a = div.getElementsByTagName("a");
+    for (i = 0; i < a.length; i++) {
+        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
+            a[i].style.display = "";
+        } else {
+            a[i].style.display = "none";
+        }
+    }
+}
+</script>
+			
+				
+			</div>
+			
+			
+			
+				
 		</div>
+		
+		
+
 		
 		

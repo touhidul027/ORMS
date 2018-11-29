@@ -29,9 +29,18 @@ public class JobSeeker {
 	
 	// newly added 
 	private ArrayList<Job> appliedJobs ; // newly added , M-M 
+	private ArrayList<RecruiterNotification> recruiterNotificaions ; 
 	
 	
 	 	
+	public ArrayList<RecruiterNotification> getRecruiterNotificaions() {
+		return recruiterNotificaions;
+	}
+
+	public void setRecruiterNotificaions(ArrayList<RecruiterNotification> recruiterNotificaions) {
+		this.recruiterNotificaions = recruiterNotificaions;
+	}
+
 	public String getUserType() {
 		return userType;
 	}

@@ -37,9 +37,7 @@ public class Test extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		System.out.println("hello");
-		
+		// TODO Auto-generated method stu		
 	   try {
 		   java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
 		  
@@ -67,29 +65,40 @@ public class Test extends HttpServlet {
 	 			//System.out.println(cal.getTime());
 	 			System.out.println(new SimpleDateFormat("YYY-MM-dd", Locale.ENGLISH).format(cal.getTime()));	 			 	 			
 	 		}
-	 		*/
- 	 		
-		    long currentTime = System.currentTimeMillis() ; 
+	 		
+	 		  long currentTime = System.currentTimeMillis() ; 
 		    
 	        long days = TimeUnit.MILLISECONDS.toDays(currentTime)/365;
 	        System.out.println(days);
 		    System.out.println("hi");
-		    
-		    
-		    
-		    
+	 		*/		    
 		  //  Date currentDate = new Date(currentTime) ; 
 		    
  		//	new SimpleDateFormat("dd-MM-YYYY", Locale.ENGLISH).format(currentTime);	 			 	 			
-
-		    
-		    
 		   // System.out.println(currentDate);
-		    
-	   }catch(Exception e) {
+	 }catch(Exception e) {
 		 //  System.out.println(e.toString());
 	   }
 		
+	   try {
+		  String date =  request.getParameter("interviewDate") ; 
+		  String time =  request.getParameter("interviewTime") ; 
+			
+		  System.out.println(date);
+		  System.out.println(time);
+		  
+		
+		//creates a formatter that parses the date in the given format
+		SimpleDateFormat sdf = new SimpleDateFormat("YYYY/MM/dd");
+		Date f = sdf.parse(date);		
+		long timeInMillis = f.getTime();
+	
+		System.out.println(timeInMillis);
+		
+	   }catch(Exception e) {
+		   System.out.println(e.toString());
+	   }
+	   
 	}
 
 	/**

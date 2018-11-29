@@ -17,7 +17,7 @@
     Sent Job Invitation 
   </div>
   <div class="card-body">
-  <form action="..\ConfirmServlet" method="post" >
+  <form action="..\ConfirmInvitationServlet" method="post" >
   	<input type="hidden" name="jobId" value="${job.jobId}"/>
 	<input type="hidden" name="jobSeekerId" value="${jobSeeker.id}"/>
 	
@@ -27,9 +27,8 @@
     <h6 class="card-text">Comapny Name : ${job.companyName}</h6>
     <h6 class="card-text">Address : ${job.companyAddress}</h6>
     <h6 class="card-text">Email : ${recruiter.email}</h6>  
-    <h6 class="card-text">Interview Date :<input type="date" required>  </h6>
-    <h6 class="card-text">Interview Time :<input type="time"> </h6>
-    
+    <h6 class="card-text">Interview Timr and Place :<input type="text" name="interviewTimePlace" required>  </h6>
+     
     <br>
      <input class="btn btn-primary " type="submit" value="Confirm">  
      

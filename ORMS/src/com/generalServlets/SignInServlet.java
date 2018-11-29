@@ -16,6 +16,7 @@ import com.generalDAO.SignInDAO;
 import com.generalDAO.User;
 import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerGetProfileInfo;
+import com.jobSeekerDAO.RecruiterNotificationDAO;
 
 import jobs.GetAllJobsDAO;
 import jobs.Job;
@@ -70,6 +71,12 @@ public class SignInServlet extends HttpServlet {
 				
 				// now get the all the information 
 				jobSeeker = JobSeekerGetProfileInfo.getJobSeeker(jobSeeker) ; 
+				
+				
+				// get the job notifications and set it  
+				jobSeeker.setRecruiterNotificaions( RecruiterNotificationDAO.getNotifications(jobSeeker.getId(), jobSeeker.getAppliedJobs() ));
+				//System.out.println(jobSeeker.getRecruiterNotificaions());
+				// update the session
 				userSession.setAttribute("jobSeeker", jobSeeker );
 				
 				// conditional forward,if have any
