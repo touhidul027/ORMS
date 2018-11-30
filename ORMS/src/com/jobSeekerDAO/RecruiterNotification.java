@@ -4,11 +4,26 @@ import jobs.Job;
 import recruiter.Recruiter;
 
 public class RecruiterNotification {
+	private int applicationId ; 
 	private String interviewTimePlace ;
 	private Job job ;
 	private String recruiterName ;
 	private String recruiterEmail ; 		
+	private int hasSeenStatus ; 
 	
+	
+	public int getApplicationId() {
+		return applicationId;
+	}
+	public void setApplicationId(int applicationId) {
+		this.applicationId = applicationId;
+	}
+	public int getHasSeenStatus() {
+		return hasSeenStatus;
+	}
+	public void setHasSeenStatus(int hasSeenStatus) {
+		this.hasSeenStatus = hasSeenStatus;
+	}
 	public String getRecruiterName() {
 		return recruiterName;
 	}

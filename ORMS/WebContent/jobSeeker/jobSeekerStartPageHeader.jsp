@@ -54,14 +54,14 @@
 				
 			<div class="col-sm-4" > 
 				<div class="dropdown">
-				<button onclick="notification()" class="dropbtn">Job Notifications</button>
+				<button onclick="notification()" class="dropbtn">Job  Notifications</button>
 				  <div id="notify" class="dropdown-content">
 				    <input type="text" placeholder="Search.." id="key" onkeyup="notificationFilter()">
 				    
-				    <c:forEach var="notification" items="${jobSeeker.recruiterNotificaions}"> 
-				         <a href="..\AcceptInvitation" ><b>${notification}</b></a>
-				     </c:forEach>
-			  </div>
+				    <c:forEach var="recruiterNotificaion" items="${jobSeeker.recruiterNotificaions}"> 
+				         <a href="..\AcceptInvitationServlet?jobId=${recruiterNotificaion.job.jobId}" ><b>${recruiterNotificaion}</b></a>
+				    </c:forEach>
+			    </div>
 				</div>				
 			</div>
 
