@@ -15,13 +15,13 @@
 <body>
 <div class="card" style="margin:20px;" >
   <div class="card-header">
-    Confirm at 00:00 PM
+    Confirmed at <b><i> ${recruiterNotification.getTime()} </i></b> 
   </div>
   <div class="card-body">
-    <h5 class="card-title">Company Name :${recruiterNotification.job.companyName}</h5>
-    <h5 class="card-title">Job Title :${recruiterNotification.job.title}</h5>
-    <h5 class="card-title">Email :${recruiterNotification.recruiterEmail}</h5>
-    <h5 class="card-title">Interview Time,Place :${recruiterNotification.interviewTimePlace}</h5>    
+    <h6 class="card-title">Company Name :<b>${recruiterNotification.job.companyName}</b></h6>
+    <h6 class="card-title">Job Title :<b> ${recruiterNotification.job.title} </b> </h6>
+    <h6 class="card-title">Email :<b> ${recruiterNotification.recruiterEmail}</b> </h6>
+    <h6 class="card-title">Interview Time,Place : <b> ${recruiterNotification.interviewTimePlace}</b> </h6>    
    </div>
 </div>
 </body>

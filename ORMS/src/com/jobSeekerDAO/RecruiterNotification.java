@@ -1,5 +1,9 @@
 package com.jobSeekerDAO;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 import jobs.Job;
 import recruiter.Recruiter;
 
@@ -10,8 +14,15 @@ public class RecruiterNotification {
 	private String recruiterName ;
 	private String recruiterEmail ; 		
 	private int hasSeenStatus ; 
+	private long confirmTime ; 
 	
 	
+	public long getConfirmTime() {
+		return confirmTime;
+	}
+	public void setConfirmTime(long confirmTime) {
+		this.confirmTime = confirmTime;
+	}
 	public int getApplicationId() {
 		return applicationId;
 	}
@@ -56,4 +67,8 @@ public class RecruiterNotification {
 		return "Interview offer from <i>"+ job.getCompanyName() +"</i>"; 
 	}
 	
-}
+	public String getTime() {		
+		return new SimpleDateFormat("dd:MM:yyyy HH:mm", Locale.ENGLISH).format(getConfirmTime());		
+	}
+	
+	}

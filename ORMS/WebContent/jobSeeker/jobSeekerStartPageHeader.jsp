@@ -59,7 +59,16 @@
 				    <input type="text" placeholder="Search.." id="key" onkeyup="notificationFilter()">
 				    
 				    <c:forEach var="recruiterNotificaion" items="${jobSeeker.recruiterNotificaions}"> 
-				         <a href="..\AcceptInvitationServlet?jobId=${recruiterNotificaion.job.jobId}" ><b>${recruiterNotificaion}</b></a>
+				         <a href="..\AcceptInvitationServlet?jobId=${recruiterNotificaion.job.jobId}" >
+				         		<c:choose>
+				         		<c:when test="${recruiterNotificaion.hasSeenStatus==1}"> 
+				         			<b>${recruiterNotificaion}</b>
+				         		</c:when>
+				         		 <c:otherwise>
+          						 	${recruiterNotificaion}
+         						</c:otherwise>
+				         		</c:choose>
+				         </a>
 				    </c:forEach>
 			    </div>
 				</div>				

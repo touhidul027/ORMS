@@ -50,15 +50,13 @@ public class RecruiterNotificationDAO {
 		           recruiterNotification.setRecruiterEmail(rs.getString("email"));		          
 		           recruiterNotification.setHasSeenStatus(rs.getInt("has_seen"));
 		           recruiterNotification.setApplicationId(rs.getInt("application_id"));
-		           recruiterNotifications.add(recruiterNotification);
-		           
-		           // System.out.println(recruiterNotification);		           
+		           recruiterNotification.setConfirmTime(rs.getLong("sent_invitation_time"));
+		           recruiterNotifications.add(recruiterNotification);		            		          
 		           }
 		            
 			}catch(Exception e) {
 				System.out.println(e.toString());
-			}
-	
+			}	
 			return recruiterNotifications;
 	}// end of method 
 	
