@@ -10,24 +10,72 @@
 	<link rel="stylesheet" type="text/css" href="css\commonStyle.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css\homePageHeader.css">
-			<link rel="stylesheet" type="text/css" href="css\signIn.css">
-	
+	<link rel="stylesheet" type="text/css" href="css\signIn.css">	
 	<link rel="stylesheet" type="text/css" href="css\mainFooter.css">	
 	<script src="bootstrap\js\bootstrap.js" > </script> 	 
+	<style >
+	
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
 
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color:black;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+     color:black;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+     color:black;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+     color:black;
+}
+
+.centered {
+color:black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+					
+	</style>
+	
 </head>
 <body>
-		
-		 <!-- 	Including Header part  -->
-		 <jsp:include page="homePageHeader.html"></jsp:include>
-		 
+
+<div class="container">
+
+<a href="index.jsp">  <img src="images/banner2.jpg" alt="Snow" style="width:100%;"> </a>
+  <div class="bottom-left">  </div>
+  <div class="top-left"><a href="index.jsp" ><h1>Home</h1></a></div>
+  <div class="top-right"></div>
+  <div class="bottom-right"></div>
+  <div class="centered"> </div>
+</div>		 
+	  
 		 <!-- Own part -->
-		 
-		  
-		
 		 <form action="SignInServlet" method="post" >
 		 
- 		 		<div id="signInEmail" >
+ 		 		<div id="signInEmail" style="padding-top:10px ;" >
  		 		<!-- put the condition checking and show the message  -->
  		 		<h3> ${loginAfterSignUp}</h3>
  		 		<h3>${messageForAppyJobWithoutSignIn}</h3>

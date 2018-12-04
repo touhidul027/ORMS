@@ -86,7 +86,7 @@ color:black;
         <a class="nav-link" href="signUp.jsp">Sign Up</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Disablgggggggggggged</a>
+        <a class="nav-link" href="#">Career Resources</a>
       </li>
     </ul>
   </div>

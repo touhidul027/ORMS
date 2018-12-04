@@ -21,40 +21,62 @@
 			response.sendRedirect("..\\index.jsp");		
 		}	
 	%>
-	<h1>This is the dash board of Recruiter</h1>
 	
-<div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">Appicant Notification</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    
-    <c:forEach var="applicantNotification" items="${recruiter.applicantNotifications}"> 
-    	 <a href="..\NotifyJobSeekerDecisionServlet?jobId=${applicantNotification.jobId}&jobSeekerId=${applicantNotification.jobSeekerId}"><b> ${applicantNotification}</b></a>
-    </c:forEach>
-    
+	<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="applications.jsp">Applicants application</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#"> Post a Job</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link disabled" href="#"> My Posted Jobs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div>
 	
-	<h3>Posting job</h3>
-	<h3>My Posted Job</h3>
+<div class="card text-center" style="margin:20px;" >
+  <div class="card-header">
+    <ul class="nav nav-pills card-header-pills">
+      <li class="nav-item">       
+        	<div class="dropdown">
+<button onclick="myFunction()" class="dropbtn">Appicant Notification</button>
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+    <c:forEach var="applicantNotification" items="${recruiter.applicantNotifications}"> 
+    	 <a href="..\NotifyJobSeekerDecisionServlet?jobId=${applicantNotification.jobId}&jobSeekerId=${applicantNotification.jobSeekerId}"><b> ${applicantNotification}</b></a>
+    </c:forEach>    
+  </div>
+</div>      
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link active" href="..\JobPostingStartingServlet">Post a job</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="..\JobPostingGetAllPostedJobsServlet">My Posted Jobs</a>
+      </li>
+      
+     
+      
+    </ul>
+  </div>
+</div>
 	
-
-				<div >
-					 <a href="..\JobPostingStartingServlet"><h1>Post a job</h1></a>
-				</div>
-				
-				<div >
-					 <a href="..\JobPostingGetAllPostedJobsServlet"><h1>My Posted Jobs</h1></a>
-				</div>
-				
-				<div> 
-					<form action="..\RecruiterLogOutServlet" method="post" >
-						 <a> 
-					       <input type="submit" value="Log Out" >
-					     </a>
-					</form>
-				</div>
-				
 
 <script>
 /* When the user clicks on the button,

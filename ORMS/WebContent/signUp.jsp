@@ -13,12 +13,62 @@
 	<link rel="stylesheet" type="text/css" href="css\mainFooter.css">	
 	<script src="bootstrap\js\bootstrap.js" > </script> 
 	<script src="js\passwordEqualityChecking.js" > </script> 
-	 	
+	<style >
+	
+.container2 {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color:black;
+}
+
+.top-left {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+     color:black;
+}
+
+.top-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+     color:black;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+     color:black;
+}
+
+.centered {
+color:black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+	</style>
 </head>
 <body>
-	<!-- Including the header -->
-		<jsp:include page="homePageHeader.html"></jsp:include>
 
+<div class="container2">
+
+<a href="index.jsp">  <img src="images/banner2.jpg" alt="Snow" style="width:100%;"> </a>
+  <div class="bottom-left">  </div>
+  <div class="top-left"><a href="index.jsp" ><h1>Home</h1></a></div>
+  <div class="top-right"></div>
+  <div class="bottom-right"></div>
+  <div class="centered"> </div>
+</div>	
 	<!-- Include the registration form  -->
 			<jsp:include page="registrationForm.html"></jsp:include>
 	

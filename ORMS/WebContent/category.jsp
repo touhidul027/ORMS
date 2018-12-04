@@ -1,4 +1,4 @@
-<div style="text-align:center ; margin:50px;" >
+<div style="text-align:left ; margin:50px;" >
     <h5>Browse Category </h5>
 
 <div class="row" style="margin:20px;" >

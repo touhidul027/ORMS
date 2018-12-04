@@ -1,11 +1,8 @@
-#signInEmail{
+			#signInEmail{
 				text-align:center ; 
-				padding-top:100px ; 
-			
-				
+				padding-top:10px ; 						
 			}
-				#signInEmailMail{
-					
+				#signInEmailMail{				
 					width: 400px;
  					border-top:none ; 
 					border-left:none ; 
@@ -13,10 +10,8 @@
 					border-bottom-color:black ; 
 					margin-top: 50px;
 					margin-left:29px ; 
-				}
-				
-				#signInEmailPassword{
-					
+				}			
+				#signInEmailPassword{					
 					width: 400px;
  					border-top:none ; 
 					border-left:none ; 

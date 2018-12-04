@@ -13,6 +13,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<!-- include job banner  -->
+
 
 <c:choose>
 <c:when test="${jobsForApply != null and not empty jobsForApply}">
