@@ -8,7 +8,8 @@
 
 <uri>MyFunctions</uri>
 <function> 
+	<name>notInvited</name>
 	<function-class>recruiter.InvitedApplicantDAO</function-class>
-	<function-signature>boolean notInvited(int jobId,int jobSeekerId);</function-signature>
+	<function-signature>boolean notInvited(int,int);</function-signature>
 </function>
 </taglib>

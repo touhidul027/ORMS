@@ -41,7 +41,7 @@ public class InvitedApplicantDAO {
  }
  
  public static boolean notInvited(int jobId,int jobSeekerId) {
-	 System.out.println("hi there");	 
+	 	 
 	    Connection conn = JDBCUtil.getConnection() ; 
 	    String selectQuery=
 	    		"SELECT * FROM jobs_application WHERE job_id=? AND job_seeker_id=? AND sent_invitation=0 LIMIT 1" ; 
@@ -52,17 +52,13 @@ public class InvitedApplicantDAO {
 	        pst.setInt(2, jobSeekerId);
 	        rs = pst.executeQuery() ; 		           
 	        
-	        if(rs.next()) {
+	        if(rs.next()) {        	
 	        	return true ; 
 	        }
  	        
 	     }catch (Exception e) {
 			}
 		return false;    
- }
- 
- public static int notInvithed() {
-	 return 120;
  }
  
 }

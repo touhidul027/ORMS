@@ -74,9 +74,10 @@
   <div class="card" style="text-align:left;margin:5px;">
   <div class="card-header">
     <b>${jobSeeker.fullName}</b>
-    ${myFunction:notInvited{job.jobId,jobSeeker.id} }
+    <c:set var="flag" value="${myFunction:notInvited(job.jobId,jobSeeker.id)}"></c:set>
+    
     <c:choose>
-    <c:when test="true">
+    <c:when test="${flag==true}">
 	   <a  href="..\SentJobInvitationServlet?jobId=${job.jobId}&jobSeekerId=${jobSeeker.id}" >
 	     <b style="float:right;">Sent Invitation</b>
 	   </a>
