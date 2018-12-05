@@ -58,10 +58,12 @@ public class JobPostingBenefitsServlet extends HttpServlet {
 		// get all the values 
 	String salary = request.getParameter("jobPostingSalary") ; 
 	String salaryReview = request.getParameter("jobPostingSalaryReview") ; 
-	String[] jobPostingFacilities = request.getParameterValues("jobPostingFacilities") ; 
-	ArrayList<String> facilities = new ArrayList<String>(Arrays.asList(jobPostingFacilities))   ; 
-
-
+	String[] jobPostingFacilities = request.getParameterValues("jobPostingFacilities") ; 	 
+	ArrayList<String> facilities=null ; 
+	
+	if(jobPostingFacilities!=null && jobPostingFacilities.length!=0) {
+		facilities = new ArrayList<String>(Arrays.asList(jobPostingFacilities))   ; 
+	}
 	
 	HttpSession session = request.getSession(); 		  
 	// get the general model object 

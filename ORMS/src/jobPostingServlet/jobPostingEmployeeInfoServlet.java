@@ -53,7 +53,10 @@ public class jobPostingEmployeeInfoServlet extends HttpServlet {
 		String educationLevel = request.getParameter("jobPostingEmployeeEducationLevel") ; 
 		String experience = request.getParameter("jobPostingEmployeeExperience") ; 
 		String[] jobTypeGot = request.getParameterValues("jobPostingJobType") ; 
-		ArrayList<String> jobType = new ArrayList<String>(Arrays.asList(jobTypeGot))   ; 
+		ArrayList<String> jobType = null ;
+		
+		if(jobTypeGot!=null && jobTypeGot.length!=0)
+			jobType = new ArrayList<String>(Arrays.asList(jobTypeGot))   ; 
 
 		
 		HttpSession session = request.getSession();

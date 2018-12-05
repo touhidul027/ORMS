@@ -62,7 +62,9 @@ public class JobPostingAboutJobServlet extends HttpServlet {
 		String location = request.getParameter("jobPostingJobLocation").trim() ; 
 		String description = request.getParameter("jobPostingJobDescription").trim() ; 
 		String[] skillsGot = request.getParameterValues("jobPosterKeySkillsSelection"); 
-		ArrayList<String> skills = new ArrayList<String>(Arrays.asList(skillsGot))   ; 
+		ArrayList<String> skills = null ; 
+		if(skillsGot!=null && skillsGot. length!=0)
+		  skills = new ArrayList<String>(Arrays.asList(skillsGot))   ; 
 
 		/*
 		     

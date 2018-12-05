@@ -22,17 +22,37 @@
 
 </head>
 <body>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link " href="recruiterDashBoard.jsp">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="applications.jsp">Applicants application</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link active" href="..\JobPostingGetAllPostedJobsServlet"> My Posted Jobs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</div>		
+
 	<div class="card text-center" style="width:700px;margin:50px ; " >
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link active" href="#">Job Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="jobStatistics.jsp">Statistics</a>
       </li>
     </ul>
   </div>

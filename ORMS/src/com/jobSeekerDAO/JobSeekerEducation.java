@@ -8,9 +8,7 @@ public class JobSeekerEducation {
 	
 	@Override
 	public String toString() {
-		return "JobSeekerEducation [jobSeekerEducationLevel=" + jobSeekerEducationLevel
-				+ ", jobSeekerEducationalInstituition=" + jobSeekerEducationalInstituition + ", jobSeekerDuration="
-				+ jobSeekerEducationalDuration + "]";
+		return  jobSeekerEducationLevel +" from " + jobSeekerEducationalInstituition; 
 	}
 	public String getJobSeekerEducationLevel() {
 		return jobSeekerEducationLevel;

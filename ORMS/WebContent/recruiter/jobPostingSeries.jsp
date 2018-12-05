@@ -28,14 +28,31 @@
  		
 </head>
 <body>
-	<!-- include job seeker start page Header Part . -->
-	
-	<!-- Include job series page header posting header -->
-	
+ 	
+ 	<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link " href="recruiterDashBoard.jsp">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="#">Applicants application</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="..\JobPostingStartingServlet"> Post a Job</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="..\JobPostingGetAllPostedJobsServlet"> My Posted Jobs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</div>	
 	
 	<!-- Include the file  -->
 		<jsp:include page="${nextPageName}"></jsp:include>	
-	
 	<!--  Include footer -->
 </body>
 </html>

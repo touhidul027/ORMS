@@ -32,10 +32,10 @@
         <a class="nav-link " href="applications.jsp">Applicants application</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#"> Post a Job</a>
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link disabled" href="#"> My Posted Jobs</a>
+        <a class="nav-link " href="..\JobPostingGetAllPostedJobsServlet"> My Posted Jobs</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
@@ -47,60 +47,7 @@
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
-</div>
-	
-<div class="card text-center" style="margin:20px;" >
-  <div class="card-header">
-    <ul class="nav nav-pills card-header-pills">
-      <li class="nav-item">       
-        	<div class="dropdown">
-<button onclick="myFunction()" class="dropbtn">Appicant Notification</button>
-  <div id="myDropdown" class="dropdown-content">
-    <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-    <c:forEach var="applicantNotification" items="${recruiter.applicantNotifications}"> 
-    	 <a href="..\NotifyJobSeekerDecisionServlet?jobId=${applicantNotification.jobId}&jobSeekerId=${applicantNotification.jobSeekerId}"><b> ${applicantNotification}</b></a>
-    </c:forEach>    
-  </div>
-</div>      
-      </li>
-      
-      <li class="nav-item">
-        <a class="nav-link active" href="..\JobPostingStartingServlet">Post a job</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="..\JobPostingGetAllPostedJobsServlet">My Posted Jobs</a>
-      </li>
-      
-     
-      
-    </ul>
-  </div>
-</div>
-	
-
-<script>
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
-function filterFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    div = document.getElementById("myDropdown");
-    a = div.getElementsByTagName("a");
-    for (i = 0; i < a.length; i++) {
-        if (a[i].innerHTML.toUpperCase().indexOf(filter) > -1) {
-            a[i].style.display = "";
-        } else {
-            a[i].style.display = "none";
-        }
-    }
-}
-</script>
-
+</div>		
 				
 </body>
 </html>

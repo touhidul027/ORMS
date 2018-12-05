@@ -22,7 +22,7 @@
 		}	
 	%>
 	
-	<div class="card text-center">
+ <div class="card text-center">
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
@@ -32,10 +32,10 @@
         <a class="nav-link active" href="#">Applicants application</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#"> Post a Job</a>
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
       </li>
        <li class="nav-item">
-        <a class="nav-link disabled" href="#"> My Posted Jobs</a>
+        <a class="nav-link " href="..\JobPostingGetAllPostedJobsServlet"> My Posted Jobs</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>

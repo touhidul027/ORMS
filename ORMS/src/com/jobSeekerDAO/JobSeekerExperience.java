@@ -41,8 +41,6 @@ public JobSeekerExperience(String jobSeekerOrganizationName, String jobSeekerDes
 
  @Override
 public String toString() {
-	return "JobSeekerExperience [jobSeekerOrganizationName=" + jobSeekerOrganizationName + ", jobSeekerDesignation="
-			+ jobSeekerDesignation + ", jobSeekerEmploymentDuration=" + jobSeekerEmploymentDuration
-			+ ", jobSeekerProjectName=" + jobSeekerProjectName + "]";
+	return jobSeekerEmploymentDuration+" years as " +jobSeekerDesignation + " at " +jobSeekerOrganizationName; 
 }
 }

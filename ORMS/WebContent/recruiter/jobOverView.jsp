@@ -21,18 +21,35 @@
 
 </head>
 <body>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link" href="recruiterDashBoard.jsp">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="applications.jsp">Applicants application</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="..\JobPostingStartingServlet"> Post a Job</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="..\JobPostingGetAllPostedJobsServlet"> My Posted Jobs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+</div>		
+
 	<div class="card text-center" style="width:700px;margin:50px ; " >
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+        <a class="nav-link active" href="#"><b>Overview</b></a>
+      </li>         
     </ul>
   </div>
   <div class="card-body">
@@ -97,7 +114,7 @@
 						</div>
 					</div>
 					 -->
-					<c:if test="${job.description!=null}" >					
+					<c:if test="${job.description!=null or not empty job.description}" >					
 					<hr size=2 noshade >
 					
 					<div id="jobRequirementDivA" class="divInfo" >
@@ -127,7 +144,7 @@
 							<p> ${job.experience } </p>
 					</div>
 					
-					<c:if test="${job.additionalRequirement!=null}">				
+					<c:if test="${job.additionalRequirement!=null or not empty job.additionalRequirement}">				
 					<hr size=2 noshade >
 					
 					<div id="additionalRequirementsA" class="divInfo" >
@@ -143,7 +160,7 @@
 					</div>
 					 </c:if>
 					 
-					 <c:if test="${job.skills!=null}">
+					 <c:if test="${job.skills!=null  or not empty job.skills}">
 						 <hr size=2 noshade >
 						
 						<div id="employementStatusA" class="divInfo" >
@@ -156,7 +173,7 @@
 					 </c:if>
 					 
 					 
-					 <c:if test="${job.facilities!=null}">
+					 <c:if test="${job.facilities!=null or not empty job.facilities}">
 						 <hr size=2 noshade >
 						
 						<div id="employementStatusA" class="divInfo" >
@@ -169,19 +186,18 @@
 					 </c:if>
 					 
 					 
-					 <c:if test="${job.jobType!=null}">
+					 <c:if test="${job.jobType!=null or not empty job.jobType}">
 						 <hr size=2 noshade >
 						
 						<div id="employementStatusA" class="divInfo" >
 							<h5>Job Types</h5>
 							<c:forEach var="type" items="${job.jobType}">
 								<p>${type}</p>
-							</c:forEach>	
-								
+							</c:forEach>		
 						</div>
 					 </c:if>
 					 
-					<c:if test="${job.location != null }"> 
+					<c:if test="${job.location != null or not empty job.location}"> 
 					<hr size=2 noshade >					
 					<div id="jobLocationA" class="divInfo" >
 						<h5>Job Location</h5>
@@ -204,9 +220,9 @@
 						<h5>Company Information</h5>
 							<p style="margin-left:50px ; "  >${job.companyName}</p>
 							<p style="margin-left:50px ; "  >${job.companyEmail}</p>	
-							<c:if test="${job.companyCellPhoneNumber != null}" > <p style="margin-left:50px ; "  >${job.companyCellPhoneNumber} </p></c:if>												
-							<c:if test="${job.companyAddress != null}" > <p style="margin-left:50px ; "  >${job.companyAddress} </p></c:if>
-						    <c:if test="${job.website != null}" >  <p style="margin-left:50px ; "  >Website : <a href="${job.website }"> ${job.website} </a> </p></c:if>
+							<c:if test="${job.companyCellPhoneNumber != null or not empty job.companyCellPhoneNumber }" > <p style="margin-left:50px ; "  >${job.companyCellPhoneNumber} </p></c:if>												
+							<c:if test="${job.companyAddress != null or not empty job.companyAddress}" > <p style="margin-left:50px ; "  >${job.companyAddress} </p></c:if>
+						    <c:if test="${job.website != null  or not empty job.website}" >  <p style="margin-left:50px ; "  >Website : <a href="${job.website }"> ${job.website} </a> </p></c:if>
 					</div>
 			</div>
   </div>
