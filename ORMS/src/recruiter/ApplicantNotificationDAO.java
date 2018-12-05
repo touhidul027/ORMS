@@ -13,7 +13,6 @@ import jobs.Job;
 public class ApplicantNotificationDAO {
 	
 // this method will return all the unread applicants applications for a single recruiter
-
 	public static ArrayList<ApplicantNotification> getNotifications( ArrayList<Job> postedJobs ) {
 		ArrayList<ApplicantNotification> applicantNotifications = new ArrayList<>() ; 
 		

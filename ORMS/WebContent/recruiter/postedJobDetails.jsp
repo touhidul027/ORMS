@@ -22,6 +22,7 @@
 
 </head>
 <body>
+<c:remove var="jobSeeker"/>
 
 <div class="card text-center">
   <div class="card-header">

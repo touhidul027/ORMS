@@ -13,11 +13,22 @@ public class Recruiter {
 	
 	private ArrayList<Job> jobs ; 
 	
-	// newly added 11/26/2018 
+	// newly added 11/26/2018 ,Recruiter receive informations 
 	private ArrayList<ApplicantNotification> applicantNotifications ; 
+	
+	//invited applicants list 
+	private ArrayList<InvitedApplicant> invitedApplicants;
 	
 	public ArrayList<ApplicantNotification> getApplicantNotifications() {
 		return applicantNotifications;
+	}
+
+	public ArrayList<InvitedApplicant> getInvitedApplicants() {
+		return invitedApplicants;
+	}
+
+	public void setInvitedApplicants(ArrayList<InvitedApplicant> invitedApplicants) {
+		this.invitedApplicants = invitedApplicants;
 	}
 
 	public void setApplicantNotifications(ArrayList<ApplicantNotification> applicantNotifications) {

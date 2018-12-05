@@ -36,7 +36,7 @@
         <a class="nav-link " href="recruiterDashBoard.jsp">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="#">Applicants application</a>
+        <a class="nav-link " href="applications.jsp">Applicants application</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="..\JobPostingStartingServlet"> Post a Job</a>

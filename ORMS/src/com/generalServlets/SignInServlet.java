@@ -21,6 +21,7 @@ import com.jobSeekerDAO.RecruiterNotificationDAO;
 import jobs.GetAllJobsDAO;
 import jobs.Job;
 import recruiter.ApplicantNotificationDAO;
+import recruiter.InvitedApplicantDAO;
 import recruiter.Recruiter;
 
 /**
@@ -102,7 +103,9 @@ public class SignInServlet extends HttpServlet {
 				
 				// set recruiter applicant notifications 
 				recruiter.setApplicantNotifications(ApplicantNotificationDAO.getNotifications(postedJobs));				 
-
+				
+				// set invited applicants 
+				recruiter.setInvitedApplicants(InvitedApplicantDAO.getApplicants(recruiter.getId()));
 				
 				//System.out.println("go to dashboard.buddy");
 				userSession.setAttribute("recruiter", recruiter );
