@@ -25,6 +25,8 @@ public class JobSeekerGetProfileInfo {
 		jobSeeker.setExperience(getExperiences(userId));
 		jobSeeker.setSkills(getAllSkills(userId));		
 		jobSeeker.setAppliedJobs(JobSeekerAppliedJobs.getAppliedJobsList(userId));
+		// now set the saved job 
+		jobSeeker.setSavedJobs(JobSeekerDAO.getSavedJobs(userId));
 		
 		return jobSeeker ; 
 	}

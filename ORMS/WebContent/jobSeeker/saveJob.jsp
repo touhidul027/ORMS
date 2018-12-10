@@ -22,6 +22,11 @@
     </ul>
   </div>
   <div class="card-body">
+  
+  <form action="../ConfirmSaveJobServlet" method="post" >
+  <input type="hidden" name="jobId" value="${job.jobId}">
+  <input type="hidden" name="jobSeekerId" value="${jobSeeker.id}">
+  
    <h5 class="card-title">
 		<div id="jobTitle">
 				<h4>${job.title}</h4>
@@ -37,13 +42,12 @@
   <div class="card-header">
     <div class="form-group">
     <label for="exampleInputEmail1">Your Note about this job</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Put your sticky note">
+    <input type="text" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Put your sticky note">
+    <input class="btn btn-primary" type="submit" value="Submit">
      </div>
   </div>
-</div>
-     
-     <a href="ConfirmSaveJobServlet?jobId=${job.jobId}&jobSeekerId=${jobSeeker.id}" class="btn btn-primary">Save this job</a>
- 
+</div>    
+ </form> 
   
   </div>
 </div>

@@ -5,6 +5,13 @@ import java.util.*;
 import jobs.Job;
 
 public class JobSeeker {
+	public ArrayList<SavedJob> getSavedJobs() {
+		return savedJobs;
+	}
+
+	public void setSavedJobs(ArrayList<SavedJob> savedJobs) {
+		this.savedJobs = savedJobs;
+	}
 	private int id ;  
 	private	String fullName ; 
 	private String userType="jobSeeker"; 
@@ -31,7 +38,8 @@ public class JobSeeker {
 	private ArrayList<Job> appliedJobs ; // newly added , M-M 
 	private ArrayList<RecruiterNotification> recruiterNotificaions ; 
 	
-	
+	// job seeker have many saved jobs 
+	private ArrayList<SavedJob> savedJobs ; 
 	 	
 	public ArrayList<RecruiterNotification> getRecruiterNotificaions() {
 		return recruiterNotificaions;

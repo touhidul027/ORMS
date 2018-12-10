@@ -40,8 +40,9 @@ public class SaveJobServlet extends HttpServlet {
 		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 
 		
 		ArrayList<Job> jobs = (ArrayList<Job>) session.getAttribute("jobsForApply") ; 
-		 
-		 for(Job job:jobs) {
+		session.setAttribute("loginMsgSaveJob", "In order to save a job you need to log in first.");
+		session.setAttribute("nextPage", "jobSeeker\\saveJob.jsp");
+		for(Job job:jobs) {
 			 if(job.getJobId()==jobId) {
 				 session.setAttribute("job", job);
 				// System.out.println(job);

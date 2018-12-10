@@ -12,4 +12,11 @@
 	<function-class>recruiter.InvitedApplicantDAO</function-class>
 	<function-signature>boolean notInvited(int,int);</function-signature>
 </function>
+
+<function> 
+	<name>getCompany</name>
+	<function-class>company.CompanyDAO</function-class>
+	<function-signature>company.Company getCompany(int);</function-signature>
+</function>
+
 </taglib>

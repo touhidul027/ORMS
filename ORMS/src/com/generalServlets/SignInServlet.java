@@ -15,6 +15,7 @@ import com.generalDAO.BasicUser;
 import com.generalDAO.SignInDAO;
 import com.generalDAO.User;
 import com.jobSeekerDAO.JobSeeker;
+import com.jobSeekerDAO.JobSeekerDAO;
 import com.jobSeekerDAO.JobSeekerGetProfileInfo;
 import com.jobSeekerDAO.RecruiterNotificationDAO;
 
@@ -70,6 +71,7 @@ public class SignInServlet extends HttpServlet {
 			if(aBasicUser.getUserType().equals("jobSeeker")) {
 				// first remove the conditional session 
 				userSession.removeAttribute("messageForAppyJobWithoutSignIn");
+				userSession.removeAttribute("loginMsgSaveJob");
 				
 				JobSeeker jobSeeker = new JobSeeker(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword()) ;  ; 							
 				request.removeAttribute("loginError");
@@ -81,6 +83,8 @@ public class SignInServlet extends HttpServlet {
 				// get the job notifications and set it  
 				jobSeeker.setRecruiterNotificaions( RecruiterNotificationDAO.getNotifications(jobSeeker.getId(), jobSeeker.getAppliedJobs() ));
 				//System.out.println(jobSeeker.getRecruiterNotificaions());
+				
+				
 				// update the session
 				userSession.setAttribute("jobSeeker", jobSeeker );
 				

@@ -21,7 +21,7 @@
 	<c:forEach var="job" items="${jobsForApply}">
 	
 	
-	<div class="card text-center" style="width:750px ; margin:20px ; " >
+<div class="card text-center" style="width:750px ; margin:20px ; " >
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">

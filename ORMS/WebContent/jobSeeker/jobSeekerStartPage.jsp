@@ -46,9 +46,14 @@
       <li class="nav-item">
         <a class="nav-link " href="notifications.jsp">Notifications</a>
       </li>
+      
        <li class="nav-item">
         <a class="nav-link " href="jobSeekerDashBoard.jsp"> All applied jobs</a>
       </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="savedJob.jsp"> Saved jobs</a>
+       </li>
       
        </li>
        <li class="nav-item">

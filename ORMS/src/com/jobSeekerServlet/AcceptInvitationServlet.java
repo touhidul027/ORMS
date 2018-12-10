@@ -34,7 +34,7 @@ public class AcceptInvitationServlet extends HttpServlet {
 		// get the job notifications and set it  
 		jobSeeker.setRecruiterNotificaions( RecruiterNotificationDAO.getNotifications(jobSeeker.getId(), jobSeeker.getAppliedJobs() ));
 		
-		// now set the job details in a session 
+		//now set the job details in a session 
 		
 		RecruiterNotification recruiterNotification= RecruiterNotificationDAO.getNotification(jobId,jobSeeker.getRecruiterNotificaions()) ; 
 		session.setAttribute("recruiterNotification", recruiterNotification);

@@ -28,10 +28,21 @@ public class Job {
 	private String companyEmail ; 
 	private	String companyCellPhoneNumber ; 
 	private	String website ;
+	private int companyId ; 
 	
 	// new added
-	private Recruiter recruiter ; 
-	private ArrayList<JobSeeker> applicants ;  
+		private Recruiter recruiter ; 
+		private ArrayList<JobSeeker> applicants ;  
+	
+	
+	public int getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
+	}
+	
 	
 
 	public Recruiter getRecruiter() {

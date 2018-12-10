@@ -12,7 +12,23 @@ import com.generalDAO.JDBCUtil;
 
 public class JobDAO {
 	
-	// Post a job 
+	// save a job
+	public static void saveJob(int jobId,int jobSeekerId,String note) {
+		Connection conn=  JDBCUtil.getConnection() ; 
+		// insert into common table 
+			String insertQuuery = "INSERT INTO save_jobs(job_id,job_seeker_id,note,time) VALUES(?,?,?,?)" ;
+	        try {
+	        PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 		      
+		    pst.setInt(1, jobId);
+		    pst.setInt(2, jobSeekerId);
+		    pst.setString(3, note);
+		    pst.setLong(4,System.currentTimeMillis());
+	        pst.executeUpdate() ; 
+	       } 
+	       catch (SQLException ex) 
+	        {
+ 	        }	
+	}
 	
 	
 	// it will return a job information  matching with jobId
@@ -47,7 +63,8 @@ public class JobDAO {
 	        		 job.setCompanyEmail(rs.getString("company_email"));
 	        		 job.setCompanyAddress(rs.getString("adress"));
 	        		 job.setWebsite(rs.getString("website"));	        		 	        		 
-	        		
+	        		 job.setCompanyId( rs.getInt("company_id"));
+	        		 
 	        		 ArrayList<String> skills = getAllSkills(jobId) ;        		 
  	         		 job.setSkills(skills);
 	         		 
@@ -59,7 +76,7 @@ public class JobDAO {
  	          		job.setFacilities(facilities);
 	         		
 	          		
-	        		 System.out.println(job);//ok
+	        		// System.out.println(job);//ok
 	      		 
 	        		 return  job ; 
 	        	 }else {

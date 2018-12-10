@@ -19,6 +19,17 @@ public class Recruiter {
 	//invited applicants list 
 	private ArrayList<InvitedApplicant> invitedApplicants;
 	
+	// company id 
+	private int companyId ; 
+	
+	public int getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(int companyId) {
+		this.companyId = companyId;
+	}
+
 	public ArrayList<ApplicantNotification> getApplicantNotifications() {
 		return applicantNotifications;
 	}
@@ -26,7 +37,10 @@ public class Recruiter {
 	public ArrayList<InvitedApplicant> getInvitedApplicants() {
 		return invitedApplicants;
 	}
-
+	public Recruiter() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	public void setInvitedApplicants(ArrayList<InvitedApplicant> invitedApplicants) {
 		this.invitedApplicants = invitedApplicants;
 	}

@@ -39,8 +39,7 @@ public class SearchJobs {
 			        		 job =  JobDAO. getJob(rs.getInt("job_id"));  
 			        		 
 			        		// let us check we got everything  or not
-			        		// System.out.println(job);
-			        		 
+			        		// System.out.println(job);			        		 
 			        		 
 			        		 jobs.add(job) ; 
 			        		 
