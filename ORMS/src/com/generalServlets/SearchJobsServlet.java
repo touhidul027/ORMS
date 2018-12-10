@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 import com.generalDAO.SearchJobs;
 
 import jobPostingDAO.JobPostingGeneralObj;
+import jobs.Job;
 
 @WebServlet("/SearchJobsServlet")
 public class SearchJobsServlet extends HttpServlet {
@@ -22,7 +23,7 @@ public class SearchJobsServlet extends HttpServlet {
 		String jobTitle = request.getParameter("jobTitle") ;    
 		String location = request.getParameter("location") ; 
 		
-		 ArrayList<JobPostingGeneralObj> jobsForApply = SearchJobs.searchs(jobTitle, location)  ;
+		 ArrayList<Job> jobsForApply = SearchJobs.searchs(jobTitle, location)  ;
 		 HttpSession session= request.getSession() ; 
 		 // System.out.println(jobsForApply);
 		 session.setAttribute("jobsForApply", jobsForApply);

@@ -13,7 +13,6 @@ import javax.servlet.http.HttpSession;
 import com.generalDAO.BasicUser;
 
 import jobPostingDAO.AllJobPostingGeneralObj;
-import jobPostingDAO.AllJobPostingGeneralObjDAO;
 import jobPostingDAO.JobPostingGeneralObj;
 import jobs.GetAllJobsDAO;
 import jobs.Job;

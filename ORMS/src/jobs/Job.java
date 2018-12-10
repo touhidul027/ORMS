@@ -175,6 +175,4 @@ public class Job {
 			this.companyCellPhoneNumber = companyCellPhoneNumber;
 		}
 		 
-		 
-		
 }

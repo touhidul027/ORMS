@@ -47,7 +47,7 @@
 											<tbody><tr>
 													<td width="73%" height="" align="left" valign="bottom" class="BDJApplicantsName">
 														<!--Job Title Name:-->
-														<h4>${singleJobDescriptionForApply.jobPostingJobTitle}</h4>
+														<h4>${singleJobDescriptionForApply.title}</h4>
 													</td>
 												 
 											</tr>
@@ -55,7 +55,7 @@
 											<tr>
 												<td class="BDJNormalText04" align="left" valign="middle">
 												<!--Comapany Name:-->										
-													<div style="margin-left:50px ; " >${singleJobDescriptionForApply.jobPostingCompanyName} </div>		 
+													<div style="margin-left:50px ; " >${singleJobDescriptionForApply.companyName} </div>		 
 												</td>
 											</tr>
 											</tbody>
@@ -98,13 +98,13 @@
 						</div>
 					</div>
 					 -->
-					<c:if test="${singleJobDescriptionForApply.jobPostingJobDescription!=null}" >					
+					<c:if test="${singleJobDescriptionForApply.description!=null}" >					
 					<hr size=2 noshade >
 					
 					<div id="jobRequirementDivA" class="divInfo" >
 						<h5>Job Descriptions</h5>
 							<div id="jobRequirementDescriptionA"  style="margin-left:50px ; " >
-								 ${singleJobDescriptionForApply.jobPostingJobDescription}
+								 ${singleJobDescriptionForApply.description}
 							</div>
 					</div>
 					</c:if>
@@ -116,7 +116,7 @@
 					
 					<div id="educationalRequirementA" class="divInfo" >
 						<h5>Educational Requirements</h5>
-							<p>${singleJobDescriptionForApply.jobPostingEmployeeEducationLevel}</p>
+							<p>${singleJobDescriptionForApply.educationLevel}</p>
 					</div>
 					
 					<hr size=2 noshade >
@@ -125,10 +125,10 @@
 						<h5>Experience Requirements</h5>
 						<!-- Here the loop will go-->
 						<!-- now just a single string for experience ,but later string array -->
-							<p> ${singleJobDescriptionForApply.jobPostingEmployeeExperience } </p>
+							<p> ${singleJobDescriptionForApply.experience } </p>
 					</div>
 					
-					<c:if test="${singleJobDescriptionForApply.jobPostingAdditionalRequirementsinput!=null}">				
+					<c:if test="${singleJobDescriptionForApply.additionalRequirement!=null}">				
 					<hr size=2 noshade >
 					
 					<div id="additionalRequirementsA" class="divInfo" >
@@ -137,19 +137,19 @@
 						<!-- Here the loop will go-->
 						<div id="additionalRequirementsPointA" >
 							 <ul style="margin-left:50px ; " >
-								<li>${singleJobDescriptionForApply.jobPostingAdditionalRequirementsinput}</li>
+								<li>${singleJobDescriptionForApply.additionalRequirement}</li>
 							 </ul>
 						</div>
 						
 					</div>
 					 </c:if>
 					 
-					 <c:if test="${singleJobDescriptionForApply.jobPosterKeySkillsSelection!=null}">
+					 <c:if test="${singleJobDescriptionForApply.skills!=null}">
 						 <hr size=2 noshade >
 						
 						<div id="employementStatusA" class="divInfo" >
 							<h5>Skills</h5>
-							<c:forEach var="skill" items="${singleJobDescriptionForApply.jobPosterKeySkillsSelection}">
+							<c:forEach var="skill" items="${singleJobDescriptionForApply.skills}">
 								<p>${skill}</p>
 							</c:forEach>	
 								
@@ -157,12 +157,12 @@
 					 </c:if>
 					 
 					 
-					 <c:if test="${singleJobDescriptionForApply.jobPostingFacilities!=null}">
+					 <c:if test="${singleJobDescriptionForApply.facilities!=null}">
 						 <hr size=2 noshade >
 						
 						<div id="employementStatusA" class="divInfo" >
 							<h5>Facility</h5>
-							<c:forEach var="facility" items="${singleJobDescriptionForApply.jobPostingFacilities}">
+							<c:forEach var="facility" items="${singleJobDescriptionForApply.facilities}">
 								<p>${facility}</p>
 							</c:forEach>	
 								
@@ -170,23 +170,23 @@
 					 </c:if>
 					 
 					 
-					 <c:if test="${singleJobDescriptionForApply.jobPostingJobType!=null}">
+					 <c:if test="${singleJobDescriptionForApply.jobType!=null}">
 						 <hr size=2 noshade >
 						
 						<div id="employementStatusA" class="divInfo" >
 							<h5>Job Types</h5>
-							<c:forEach var="type" items="${singleJobDescriptionForApply.jobPostingJobType}">
+							<c:forEach var="type" items="${singleJobDescriptionForApply.jobType}">
 								<p>${type}</p>
 							</c:forEach>	
 								
 						</div>
 					 </c:if>
 					 
-					<c:if test="${singleJobDescriptionForApply.jobPostingJobLocation != null }"> 
+					<c:if test="${singleJobDescriptionForApply.location != null }"> 
 					<hr size=2 noshade >					
 					<div id="jobLocationA" class="divInfo" >
 						<h5>Job Location</h5>
-							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.jobPostingJobLocation}</p>
+							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.location}</p>
 					</div>
 					</c:if>
 					
@@ -195,7 +195,7 @@
 					
 					<div id="" class="divInfo" >
 						<h5>Salary</h5>
-							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.jobPostingSalary}</p>
+							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.salary}</p>
 					</div>
 					
 					<hr size=2 noshade >
@@ -203,11 +203,11 @@
 					
 					<div id="" class="divInfo" >
 						<h5>Company Information</h5>
-							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.jobPostingCompanyName}</p>
-							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.jobPostingCompanyEmail}</p>	
-							<c:if test="${singleJobDescriptionForApply.jobPostingCompanyCellPhoneNumber != null}" > <p style="margin-left:50px ; "  >${singleJobDescriptionForApply.jobPostingCompanyCellPhoneNumber} </p></c:if>												
-							<c:if test="${singleJobDescriptionForApply.jobPostingCompanyAdress != null}" > <p style="margin-left:50px ; "  >${singleJobDescriptionForApply.jobPostingCompanyAdress} </p></c:if>
-						    <c:if test="${singleJobDescriptionForApply.jobPostingCompanyWebsite != null}" >  <p style="margin-left:50px ; "  >Website : <a href="${singleJobDescriptionForApply.jobPostingCompanyWebsite }"> ${singleJobDescriptionForApply.jobPostingCompanyWebsite} </a> </p></c:if>
+							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.companyName}</p>
+							<p style="margin-left:50px ; "  >${singleJobDescriptionForApply.companyEmail}</p>	
+							<c:if test="${singleJobDescriptionForApply.companyCellPhoneNumber != null}" > <p style="margin-left:50px ; "  >${singleJobDescriptionForApply.companyCellPhoneNumber} </p></c:if>												
+							<c:if test="${singleJobDescriptionForApply.companyAddress != null}" > <p style="margin-left:50px ; "  >${singleJobDescriptionForApply.companyAddress} </p></c:if>
+						    <c:if test="${singleJobDescriptionForApply.website != null}" >  <p style="margin-left:50px ; "  >Website : <a href="${singleJobDescriptionForApply.website }"> ${singleJobDescriptionForApply.website} </a> </p></c:if>
 					</div>
 			</div>
 

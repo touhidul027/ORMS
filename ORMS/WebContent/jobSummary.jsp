@@ -32,16 +32,16 @@
   <div class="card-body">
    <h5 class="card-title">
 		<div id="jobTitle">
-				<h4>${job.jobPostingJobTitle}</h4>
-				<h5> ${job.jobPostingCompanyName} <h5>
+				<h4>${job.title}</h4>
+				<h5> ${job.companyName} <h5>
 			</div>
-			<h5>${job.jobPostingJobLocation} |<c:forEach var="jobType" items="${job.jobPostingJobType}"> ${jobType} |
-			</c:forEach> | Salary ${job.jobPostingSalary} </h5>
+			<h5>${job.location} |<c:forEach var="jobType" items="${job.jobType}"> ${jobType} |
+			</c:forEach> | Salary ${job.salary} </h5>
 	</h5>
     <p class="card-text" style="text-align:left;" >
 					 ${job.shortDescription()}			
  	</p>
-    <a href="#" class="btn btn-primary">Save this job</a>
+    <a href="SaveJobServlet?jobId=${job.jobId}" class="btn btn-primary">Save this job</a>
 	<a href="#" class="btn btn-primary">Send this job to your friends</a>
 	
 	<a href="JobDesCriptionForApply?jobId=${job.jobId}" class="btn btn-primary">See Details</a>

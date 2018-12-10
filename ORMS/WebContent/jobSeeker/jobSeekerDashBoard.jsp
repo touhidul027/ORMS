@@ -20,15 +20,33 @@
 					response.sendRedirect("..\\index.jsp");		
 				}	
 %>
-<a href="jobSeekerStartPage.jsp">Go Home</a>
-<h2>Dash Board </h2>
 
-<h3>Applied jobs </h3>
-
-<c:forEach var="appliedJob" items="${jobSeeker.appliedJobs}" > 
-	<div class="card" style="width:300px ; margin:30px;" >
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link " href="jobSeekerStartPage.jsp">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="profileOverview.jsp">Profile Overview</a>
+      </li>						 
+      <li class="nav-item">
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link active" href="..\JobPostingGetAllPostedJobsServlet"> All Applied Jobs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="../JobSeekerLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="card-body" style="text-align:left;">
+    <c:forEach var="appliedJob" items="${jobSeeker.appliedJobs}" > 
+	<div class="card" style=" margin:30px;" >
 	  <div class="card-header">
-	    Featured
+	    Apply time 
 	  </div>
 	  <div class="card-body">
 	    <h5 class="card-title">${appliedJob.title}</h5>
@@ -37,6 +55,16 @@
 	  </div>
 	</div>
 </c:forEach>
+
+  </div>
+</div>	
+
+<a href="jobSeekerStartPage.jsp">Go Home</a>
+<h2>Dash Board </h2>
+
+<h3>Applied jobs </h3>
+
+
 
 </body>
 </html>

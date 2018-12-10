@@ -33,14 +33,14 @@
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Job Title</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="${singleJobDescriptionForApply.jobPostingJobTitle }">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="${singleJobDescriptionForApply.title }">
     </div>
   </div>
   
   <div class="form-group row">
     <label for="staticEmail" class="col-sm-2 col-form-label">Company Name</label>
     <div class="col-sm-10">
-      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="${singleJobDescriptionForApply.jobPostingCompanyName }">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="${singleJobDescriptionForApply.companyName }">
     </div>
   </div>
   

@@ -59,7 +59,7 @@ public class JobDAO {
  	          		job.setFacilities(facilities);
 	         		
 	          		
-	        		// System.out.println(job);//ok
+	        		 System.out.println(job);//ok
 	      		 
 	        		 return  job ; 
 	        	 }else {

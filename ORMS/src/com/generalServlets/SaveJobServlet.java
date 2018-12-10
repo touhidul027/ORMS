@@ -10,36 +10,51 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import jobPostingDAO.JobPostingGeneralObj;
+import com.jobSeekerDAO.JobSeeker;
+
 import jobs.Job;
 
 /**
- * Servlet implementation class JobDesCriptionForApply
+ * Servlet implementation class SaveJobServlet
  */
-@WebServlet("/JobDesCriptionForApply")
-public class JobDesCriptionForApplyServlet extends HttpServlet {
+@WebServlet("/SaveJobServlet")
+public class SaveJobServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public SaveJobServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-			//System.out.println(request.getParameter("jobId"));
-		 int jobId = Integer.parseInt(request.getParameter("jobId")) ; 
-		 
-		 HttpSession session = request.getSession() ; 
-		 ArrayList<Job> jobs = (ArrayList<Job>) session.getAttribute("jobsForApply") ; 
+		int jobId = Integer.parseInt(request.getParameter("jobId")) ; 
+		
+		HttpSession session = request.getSession() ; 
+		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 
+		
+		ArrayList<Job> jobs = (ArrayList<Job>) session.getAttribute("jobsForApply") ; 
 		 
 		 for(Job job:jobs) {
 			 if(job.getJobId()==jobId) {
-				 session.setAttribute("singleJobDescriptionForApply", job);
+				 session.setAttribute("job", job);
 				// System.out.println(job);
 				 break ; 
 			 }
 		 }
-		 
-		 response.sendRedirect("jobDescriptionForApply.jsp");
+		
+		
+		if(jobSeeker==null) {
+			response.sendRedirect("signIn.jsp");
+		}else {
+			response.sendRedirect("jobSeeker\\saveJob.jsp");
+		}
 	}
 
 }

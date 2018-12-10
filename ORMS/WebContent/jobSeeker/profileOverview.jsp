@@ -69,7 +69,29 @@
 </head>
 <body>
  
- <div id="profileView">
+ <div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link " href="jobSeekerStartPage.jsp">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="profileOverview.jsp">Profile Overview</a>
+      </li>						 
+      <li class="nav-item">
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="jobSeekerDashBoard.jsp"> All applied jobs</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="../JobSeekerLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="card-body">
+    <div id="profileView">
 			
 	<div>
 				<table border="0" cellpadding="0" cellspacing="0" align="center" width="750">
@@ -419,6 +441,10 @@
 					
 			</div>
 		
+  </div>
+</div>	
+ 
+ 
  
 </body>
 </html>

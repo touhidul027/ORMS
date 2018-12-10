@@ -38,13 +38,13 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="jobSeekerStartPage.jsp">Dashboard</a>
+        <a class="nav-link " href="jobSeekerStartPage.jsp">Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link " href="profileOverview.jsp">Profile Overview</a>
       </li>						 
       <li class="nav-item">
-        <a class="nav-link " href="notifications.jsp">Notifications</a>
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
       </li>
        <li class="nav-item">
         <a class="nav-link " href="jobSeekerDashBoard.jsp"> All applied jobs</a>
@@ -52,7 +52,7 @@
       
        </li>
        <li class="nav-item">
-        <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
+        <a class="nav-link active" href="updateProfile.jsp"> Update profile</a>
       </li>
       
        <li class="nav-item">
@@ -62,29 +62,15 @@
   </div>
   
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Update profile is coming soon</h5>
   </div>
 </div>		
 
 		
 		
-		<!-- include job seeker start page Header Part . -->
-		<jsp:include page="jobSeekerStartPageHeader.jsp"></jsp:include>
+	
 		
-		<!-- General search -->
- 		
- 		<form action="../SearchJobsServlet" method="post" >
-				<div id="generalSearchOption" >
- 					<input type="text" name="jobTitle" id="generalTextInput" placeholder="Job Title" > <br>	
-					<input type="text" name="location" id="generalTextInput" placeholder="Place,Location,City"> <br>					
-					<input type="submit" id="generalTextInputSubmitButton" value="search" > 
-				</div>			
-		</form>
- 		 
-		<!-- Main Footer Part  -->
-		<jsp:include page="..\\mainFooter.html"></jsp:include>
+		
 </body>
 	
 </html>
