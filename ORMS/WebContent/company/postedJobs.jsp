@@ -29,15 +29,37 @@
     </ul>
   </div>
   <div class="card-body" style="text-align:left" >
+ 
    <c:set var="companyId" value="${param.companyId}"></c:set>
    <c:set var="company" value="${myFunction:getCompany(companyId)}"></c:set> 	
-  	<b>
-  	Name : ${company.companyName} <br>
-  	Company Type :  ${company.industryType} Company <br>
-  	Size : ${company.size} <br>
-  	Founded year:${company.founded} <br>
-  	Head Quarters : ${company.headQuarter}
-  	</b>
+  
+   <c:set var="recruiters" value="${company.recruiters}"></c:set>
+   
+  	 <c:forEach var="recruiter" items="${recruiters}"> 4
+  	 	<c:forEach var="job" items="${recruiter.jobs}"> 5
+  	 		 <div class="card-body">
+			  
+			   <h5 class="card-title">
+					<div id="jobTitle">
+							<h4>${job.title}</h4>
+							<h5> ${job.companyName} <h5>
+						</div>
+						<h5>${job.location} |<c:forEach var="jobType" items="${job.jobType}"> ${jobType} |
+						</c:forEach> | Salary ${job.salary} </h5>
+				</h5>
+			    <p class="card-text" style="text-align:left;" >
+								 ${job.shortDescription()}			
+			 	</p>
+			 	<a href="../SaveJobServlet?jobId=${job.jobId}" class="btn btn-primary">Save this job</a>			 	
+			 	
+				<a href="#" class="btn btn-primary">Send this job to your friends</a>
+				
+				<a href="../JobDesCriptionForApply?jobId=${job.jobId}" class="btn btn-primary">See Details</a>
+			 
+			  </div>
+  	 	</c:forEach>
+  	 </c:forEach>
+  	 
   </div>
 </div>
 

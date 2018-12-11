@@ -9,13 +9,20 @@ public class Company {
 private int company_id ; 
 private String companyName ; 
 private String headQuarter ; 
-private long founded ; 
+private String founded ; 
 private String industryType ; 
 private int size ;
 private ArrayList<Recruiter> recruiters ; 
 
 // add review later 
+private ArrayList<Review> reviews ; 
 
+public ArrayList<Review> getReviews() {
+	return reviews;
+}
+public void setReviews(ArrayList<Review> reviews) {
+	this.reviews = reviews;
+}
 public String getIndustryType() {
 	return industryType;
 }
@@ -48,10 +55,10 @@ public String getHeadQuarter() {
 public void setHeadQuarter(String headQuarter) {
 	this.headQuarter = headQuarter;
 }
-public long getFounded() {
+public String getFounded() {
 	return founded;
 }
-public void setFounded(long founded) {
+public void setFounded(String founded) {
 	this.founded = founded;
 }
 public String getType() {

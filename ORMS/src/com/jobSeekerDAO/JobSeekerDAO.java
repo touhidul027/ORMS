@@ -33,6 +33,7 @@ public class JobSeekerDAO {
  }catch(Exception e ) {
 	 
  }
+		// System.out.println(savedJobs);
 return  savedJobs ; 
  }	 
  

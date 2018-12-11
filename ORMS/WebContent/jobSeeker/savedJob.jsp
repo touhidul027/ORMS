@@ -45,6 +45,7 @@
     <p class="card-text" style="text-align:left;" >
 					 ${job.shortDescription()}			
  	</p>
+ 	
 	<a href="#" class="btn btn-primary">Send this job to your friends</a>
 	
 	<a href="../JobDesCriptionForApply?jobId=${job.jobId}" class="btn btn-primary">See Details</a>

@@ -78,4 +78,46 @@ public class GetAllJobsDAO {
 		      }
 			return jobSeekers;
 	}
+	
+public static ArrayList<Job> getAllJob(int companyId,int recruiterId) {	
+		
+		ArrayList<Job> allJob = new ArrayList<>() ;
+		 
+		 // select all the job id 		
+			 Connection conn = JDBCUtil.getConnection() ; 
+				
+				String selectQuery = "SELECT * FROM jobs WHERE recruiter_id=?" ; 
+				ResultSet rs = null ; 
+	 			try {
+			        PreparedStatement pst =  conn.prepareStatement(selectQuery) ; 
+			           pst.setInt(1, recruiterId);
+			           rs = pst.executeQuery() ; 
+			           //System.out.println(recruiterId);
+			           
+			        	 while(rs.next()) {
+			        		//System.out.println("job id " +rs.getInt("job_id") );
+			        		 // create a object that hold a single job information 
+			        		 Job job = new Job() ; 
+			        		 
+			        		 // now select all the available values from the job posting table 
+			        		 job = JobDAO.getJob(rs.getInt("job_id")) ; 
+			        		 
+			        		 // get all the applicants it has 
+			        		 job.setApplicants(getApplicants(job.getJobId()));
+			        		
+			        		 // let us check we got everything  or not
+			        		//  System.out.println(job);			        		 
+			        		 
+			        		 allJob.add(job) ; 			        		 
+			        	 }
+			        	 return allJob ; 			        	 	 		           
+			       } 
+			       catch (SQLException ex) 
+			       {
+			    	  // System.out.println("SignInDAO catch block");
+			       }
+	 	
+		return null ; 
+	}
+	
 }

@@ -31,13 +31,44 @@
   <div class="card-body" style="text-align:left" >
    <c:set var="companyId" value="${param.companyId}"></c:set>
    <c:set var="company" value="${myFunction:getCompany(companyId)}"></c:set> 	
-  	<b>
-  	Name : ${company.companyName} <br>
-  	Company Type :  ${company.industryType} Company <br>
-  	Size : ${company.size} <br>
-  	Founded year:${company.founded} <br>
-  	Head Quarters : ${company.headQuarter}
-  	</b>
+  	<c:set var="reviews" value="${company.reviews}" ></c:set>
+  	
+  		<c:forEach var="review" items="${reviews}"> 
+  			
+		 <div class="card" style="margin-bottom:5px;width:750px;">
+		  <div class="card-header">
+		    ${review.review_title}
+		  </div>
+		  <div class="card-body">
+		  
+			 <div class="card">
+			  <div class="card-body">
+			   Pros : ${review.pros}
+			  </div>
+			 </div>
+			
+			<div class="card">
+			  <div class="card-body">
+			   Cons : ${review.cons}
+			  </div>
+			 </div>
+			 
+			 <div class="card">
+			  <div class="card-body">
+			   Outlook : ${review.outlook}
+			  </div>
+			 </div>
+			 
+			 <div class="card">
+			  <div class="card-body">
+			   Advice to management : ${review.advice}
+			  </div>
+			 </div>
+			 			 		  
+		  </div>
+		</div>
+  			
+  		</c:forEach>
   </div>
 </div>
 
