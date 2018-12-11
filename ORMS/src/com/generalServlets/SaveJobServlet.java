@@ -2,6 +2,7 @@ package com.generalServlets;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,16 +41,23 @@ public class SaveJobServlet extends HttpServlet {
 		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 
 		
 		ArrayList<Job> jobs = (ArrayList<Job>) session.getAttribute("jobsForApply") ; 
-		session.setAttribute("loginMsgSaveJob", "In order to save a job you need to log in first.");
-		session.setAttribute("nextPage", "jobSeeker\\saveJob.jsp");
-		for(Job job:jobs) {
+		
+		// create stack of page 
+				Stack<String> pagesStack =(Stack<String>) session.getAttribute("pagesStack") ; 
+				if(pagesStack==null) {
+					pagesStack = new Stack<>() ; 
+				}				
+				pagesStack.push("jobSeeker/saveJob.jsp") ; 
+				session.setAttribute("pagesStack", pagesStack);
+				session.setAttribute("msg", "In order to save a job you need to log in first.");
+		
+ 		for(Job job:jobs) {
 			 if(job.getJobId()==jobId) {
 				 session.setAttribute("job", job);
-				// System.out.println(job);
+ 				// System.out.println(job);
 				 break ; 
 			 }
-		 }
-		
+		 }		
 		
 		if(jobSeeker==null) {
 			response.sendRedirect("signIn.jsp");

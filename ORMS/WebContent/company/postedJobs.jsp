@@ -35,11 +35,12 @@
   
    <c:set var="recruiters" value="${company.recruiters}"></c:set>
    
-  	 <c:forEach var="recruiter" items="${recruiters}"> 4
-  	 	<c:forEach var="job" items="${recruiter.jobs}"> 5
-  	 		 <div class="card-body">
-			  
-			   <h5 class="card-title">
+  	 <c:forEach var="recruiter" items="${recruiters}"> 
+  	 	<c:forEach var="job" items="${recruiter.jobs}"> 
+  	 		<div class="card-body">			  
+			   <div class="card">
+		  <div class="card-header">
+		    <h5 class="card-title">
 					<div id="jobTitle">
 							<h4>${job.title}</h4>
 							<h5> ${job.companyName} <h5>
@@ -56,8 +57,10 @@
 				
 				<a href="../JobDesCriptionForApply?jobId=${job.jobId}" class="btn btn-primary">See Details</a>
 			 
-			  </div>
-  	 	</c:forEach>
+		  </div>	  
+		</div>
+			</div>
+	 	</c:forEach>
   	 </c:forEach>
   	 
   </div>

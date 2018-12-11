@@ -79,17 +79,14 @@ color:black;
  		 		<!-- put the condition checking and show the message  -->
  		 		<h3> ${loginAfterSignUp}</h3>
  		 		
- 		 		<c:choose> 
+ 		 		<c:choose> 		 		
+ 		 		
  		 			<c:when test="${messageForAppyJobWithoutSignIn!=null && not empty messageForAppyJobWithoutSignIn}"> 
  		 			<h3>${messageForAppyJobWithoutSignIn}</h3>
  		 			</c:when>
- 		 			
- 		 			<c:when test="${loginMsgSaveJob!=null && not empty loginMsgSaveJob}"> 
- 		 			<h3>${loginMsgSaveJob}</h3>
- 		 			</c:when>
- 		 			
+ 	 			
  		 		</c:choose>
- 		 		
+ 		 		<h3>${msg}</h3>
 						Email
 							<input type="email" id="signInEmailMail" name="email" required="required" > <br>		
 						Password 

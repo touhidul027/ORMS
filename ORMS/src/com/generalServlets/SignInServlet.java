@@ -3,6 +3,7 @@ package com.generalServlets;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Stack;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -81,7 +82,7 @@ public class SignInServlet extends HttpServlet {
 				
 				
 				// get the job notifications and set it  
-				jobSeeker.setRecruiterNotificaions( RecruiterNotificationDAO.getNotifications(jobSeeker.getId(), jobSeeker.getAppliedJobs() ));
+				//jobSeeker.setRecruiterNotificaions( RecruiterNotificationDAO.getNotifications(jobSeeker.getId(), jobSeeker.getAppliedJobs() ));
 				//System.out.println(jobSeeker.getRecruiterNotificaions());
 				
 				
@@ -90,7 +91,19 @@ public class SignInServlet extends HttpServlet {
 				
 				// conditional forward,if have any
 				String nextPage=(String) userSession.getAttribute("nextPage") ; 
-				if(nextPage!=null && nextPage.isEmpty()==false) {
+				
+				// this is updated one 
+				Stack<String> pagesStack =  (Stack<String>) userSession.getAttribute("pagesStack") ; 
+				String next = null ; 
+				
+				if(pagesStack!=null && pagesStack.isEmpty()==false) {
+					next = pagesStack.pop() ;
+				}
+				
+				if(next!=null && next.isEmpty()==false) {
+					response.sendRedirect(next);
+				}
+				else if(nextPage!=null && nextPage.isEmpty()==false) {
 					userSession.removeAttribute("nextPage");
 					response.sendRedirect(nextPage);
 				}else {				

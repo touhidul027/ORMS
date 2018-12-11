@@ -101,4 +101,19 @@ private static ArrayList<Review> getReviews(int companyId) {
 		}
 	return reviews;
 }// end method
+
+	// followers registry in the company
+	public static void follow(int companyId,int jobSeekerId) {
+		Connection conn=  JDBCUtil.getConnection() ; 
+		String insertQuuery = "INSERT INTO company_followers(company_id,follower_id) VALUES(?,?)" ;
+	       try {
+	       PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
+	          pst.setInt(1, companyId);
+	          pst.setInt(2, jobSeekerId);
+	         
+	          pst.executeUpdate() ; 	          
+	}catch(Exception e) {
+		
+	}
+	}// end method
 }

@@ -5,14 +5,8 @@ import java.util.*;
 import jobs.Job;
 
 public class JobSeeker {
-	public ArrayList<SavedJob> getSavedJobs() {
-		return savedJobs;
-	}
-
-	public void setSavedJobs(ArrayList<SavedJob> savedJobs) {
-		this.savedJobs = savedJobs;
-	}
-	private int id ;  
+	private int id ;
+	
 	private	String fullName ; 
 	private String userType="jobSeeker"; 
 	
@@ -40,13 +34,36 @@ public class JobSeeker {
 	
 	// job seeker have many saved jobs 
 	private ArrayList<SavedJob> savedJobs ; 
-	 	
+	
+	// job seeker can follow many company 
+	private ArrayList<Integer> follwedCompany ;  
+	
+	public boolean isFollowedCompany(int companyId) {
+		return follwedCompany.contains(companyId) ; 
+	}
+	
 	public ArrayList<RecruiterNotification> getRecruiterNotificaions() {
 		return recruiterNotificaions;
 	}
 
 	public void setRecruiterNotificaions(ArrayList<RecruiterNotification> recruiterNotificaions) {
 		this.recruiterNotificaions = recruiterNotificaions;
+	}
+	
+	public ArrayList<SavedJob> getSavedJobs() {
+		return savedJobs;
+	}
+
+	public void setSavedJobs(ArrayList<SavedJob> savedJobs) {
+		this.savedJobs = savedJobs;
+	}
+	  
+	public ArrayList<Integer> getFollwedCompany() {
+		return follwedCompany;
+	}
+
+	public void setFollwedCompany(ArrayList<Integer> follwedCompany) {
+		this.follwedCompany = follwedCompany;
 	}
 
 	public String getUserType() {

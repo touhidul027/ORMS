@@ -28,6 +28,14 @@ public class JobSeekerGetProfileInfo {
 		// now set the saved job 
 		jobSeeker.setSavedJobs(JobSeekerDAO.getSavedJobs(userId));
 		
+		// get the job notifications and set it  
+		jobSeeker.setRecruiterNotificaions( RecruiterNotificationDAO.getNotifications(jobSeeker.getId(), jobSeeker.getAppliedJobs() ));
+		
+		// set the company that he has followed 
+		jobSeeker.setFollwedCompany(JobSeekerDAO.getFollowedCompany(userId));
+		
+		
+		
 		return jobSeeker ; 
 	}
 	

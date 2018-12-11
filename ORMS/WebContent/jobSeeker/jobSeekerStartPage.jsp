@@ -60,6 +60,11 @@
         <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
       </li>
       
+      </li>
+       <li class="nav-item">
+        <a class="nav-link " href="">Followed Company</a>
+      </li>
+      
        <li class="nav-item">
         <a class="nav-link" href="../JobSeekerLogOutServlet">Log Out</a>
       </li>

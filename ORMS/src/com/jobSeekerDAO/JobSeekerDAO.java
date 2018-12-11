@@ -33,8 +33,31 @@ public class JobSeekerDAO {
  }catch(Exception e ) {
 	 
  }
-		// System.out.println(savedJobs);
+// System.out.println(savedJobs);
 return  savedJobs ; 
  }	 
+ 
+ // company id list that had been followed 
+ public static ArrayList<Integer> getFollowedCompany(int followerId) {
+     ArrayList<Integer> followedCompanies = new ArrayList<>() ; 
+	 
+	 Connection conn = JDBCUtil.getConnection() ; 
+ 	 String signInQuery = "SELECT company_id FROM company_followers WHERE follower_id=?" ; 
+	 ResultSet rs = null ; 
+	 try {
+	     PreparedStatement pst =  conn.prepareStatement(signInQuery) ; 
+	     pst.setInt(1,followerId);
+	     rs=pst.executeQuery() ; 
+	     
+	     while(rs.next()) {
+	    	 followedCompanies.add( rs.getInt("company_id") ) ; 	    	 
+	     }
+	     
+	      
+	 }catch(Exception e) {
+		 
+	 }
+	 return followedCompanies ; 
+ }// end method 
  
 }

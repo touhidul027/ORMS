@@ -31,14 +31,31 @@
   <div class="card-body" style="text-align:left" >
    <c:set var="companyId" value="${param.companyId}"></c:set>
    <c:set var="company" value="${myFunction:getCompany(companyId)}"></c:set> 	
-  	<b>
-  	Name : ${company.companyName} <br>
-  	Company Type :  ${company.industryType} Company <br>
-  	Size : ${company.size} <br>
-  	Founded year:${company.founded} <br>
-  	Head Quarters : ${company.headQuarter}
-  	</b>
+  	
+    <div class="card-body">
+    <h5 class="card-title"> Name : ${company.companyName} </h5>
+    <p class="card-text">Company Type :  ${company.industryType} Company</p>
+    <p class="card-text">Size : ${company.size}</p>
+    <p class="card-text">Founded year:${company.founded}</p>
+    <p class="card-text">Head Quarters : ${company.headQuarter}</p>
+    </div>
+  	
+  	<br>
+  <c:choose>
+  <c:when test="${jobSeeker!=null && jobSeeker.isFollowedCompany(companyId)}">
+  	<h5 class="card-header">You already followed this company</h5>
+  </c:when>
+  <c:otherwise> 
+  	  <form action="../FollowServlet" method="post" >
+	  	<input type="hidden" name="companyId" value="${company.company_id}">
+	  	<input type="hidden" name="jobSeekerId" value="${jobSeeker.id}" > 
+	  	<input class="btn btn-primary" type="submit" value="Follow This Company">
+	  </form>
+  </c:otherwise>
+  </c:choose>
+  
   </div>
+  
 </div>
 
 </body>
