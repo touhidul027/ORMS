@@ -38,6 +38,17 @@ public class JobSeeker {
 	// job seeker can follow many company 
 	private ArrayList<Integer> follwedCompany ;  
 	
+	// company posted job information will be holded here 
+	private ArrayList<FollowedCompanyNotification> followedCompanyNotifications ; 
+
+	public ArrayList<FollowedCompanyNotification> getFollowedCompanyNotifications() {
+		return followedCompanyNotifications;
+	}
+
+	public void setFollowedCompanyNotifications(ArrayList<FollowedCompanyNotification> followedCompanyNotifications) {
+		this.followedCompanyNotifications = followedCompanyNotifications;
+	}
+
 	public boolean isFollowedCompany(int companyId) {
 		return follwedCompany.contains(companyId) ; 
 	}
@@ -90,10 +101,6 @@ public class JobSeeker {
 		this.appliedJobs = appliedJobs;
 	}
 
-	
-	
-	 
-	
 	@Override
 	public String toString() {
 		return "JobSeeker [id=" + id + ", fullName=" + fullName + ", userType=" + userType + ", objective=" + objective

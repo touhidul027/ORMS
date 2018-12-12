@@ -20,12 +20,13 @@ public class CompanyDAO {
  public static void sentNotification(int companyId,int jobId) {
 	 // get the all followers 
 	 Connection conn=  JDBCUtil.getConnection() ; 
-	 String insertQuery="INSERT INTO job_post_notifications(job_id,follower_id,has_seen) \r\n" + 
-	 		"SELECT ?, follower_id,0 FROM company_followers WHERE company_followers.company_id=?" ; 
+	 String insertQuery="INSERT INTO job_post_notifications(company_id,job_id,follower_id,has_seen) \r\n" + 
+	 		"SELECT ?,?, follower_id,0 FROM company_followers WHERE company_followers.company_id=?" ; 
 	       
 		   try {			   
 		      PreparedStatement pst =  conn.prepareStatement(insertQuery) ; 
-			        pst.setInt(1, jobId);
+		      		pst.setInt(1, companyId);
+			        pst.setInt(2, jobId);
 			        pst.setInt(2, companyId);
 			        
 			        pst.executeUpdate() ; 

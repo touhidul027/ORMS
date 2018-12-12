@@ -34,8 +34,11 @@ public class JobSeekerGetProfileInfo {
 		// set the company that he has followed 
 		jobSeeker.setFollwedCompany(JobSeekerDAO.getFollowedCompany(userId));
 		
-		
-		
+		/* 
+		 *  following company posted job,so he get notification 
+		 */
+		jobSeeker.setFollowedCompanyNotifications(FollowedCompanyNotificationDAO.getFollowedCompanyNotification(userId));
+ 		
 		return jobSeeker ; 
 	}
 	

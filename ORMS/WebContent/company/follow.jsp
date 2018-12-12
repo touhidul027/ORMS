@@ -18,7 +18,7 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="../jobDescriptionForApply.jsp">Job details</a>
+        <a class="nav-link active" href="../jobSeeker/jobSeekerStartPage.jsp">Dashboard</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -29,7 +29,37 @@
     </ul>
   </div>
   <div class="card-body" style="text-align:left" >
-   
+  	  	
+  
+  <c:choose>
+  <c:when test="${jobSeeker.followedCompanyNotifications!=null && not empty jobSeeker.followedCompanyNotifications}">
+  	<c:forEach var="followedCompanyNotification" items="${jobSeeker.followedCompanyNotifications}">
+ 	  	<c:choose>  	
+	    <c:when test="${followedCompanyNotification.hasSeenStatus==0}">
+	    <div class="card">
+		  <div class="card-header">
+		    <b> ${followedCompanyNotification.companyName} </b> posted job. &nbsp;&nbsp; Title : <b>${followedCompanyNotification.jobTitle}</b>
+		  </div>
+	    </div>
+	    </c:when>
+	    <c:otherwise>
+	    <div class="card">
+		  <div class="card-header">
+		     ${followedCompanyNotification.jobTitle} posted at ${followedCompanyNotification.companyName} 
+		  </div>
+	    </div>
+	    </c:otherwise>
+	    </c:choose>
+  	</c:forEach>
+  </c:when>
+  <c:otherwise>
+  <div class="card">
+	  <div class="card-header">
+	    Quote
+	  </div>
+  </div>
+  </c:otherwise>
+  </c:choose>
   
   </div>
   
