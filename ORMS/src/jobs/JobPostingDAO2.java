@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.generalDAO.JDBCUtil;
 
+import company.CompanyDAO;
 import jobPostingDAO.JobPosterJoinJobPostingDAO;
 
 
@@ -17,37 +18,46 @@ public class JobPostingDAO2 {
 	// 1-M , M-M relations table will remaining same 
 	// need edited soon 
 	
-	public static Job postJob(Job job) {
-		job = insertAboutJob(job) ; 
+	public static Job postJob(Job job,int recruiterId,int companyId) {
+				
+		job = insertAboutJob(job,recruiterId,companyId) ; 
         insertJobSkills(job.getJobId(),job.getSkills()) ; 
 		insertJobjobTypes(job.getJobId(), job.getJobType()) ; 
 		insertJobBenefits(job.getJobId(), job.getFacilities()) ; 
-		// System.out.println("Done");
-	
+		
+		// follower should get notification 
+		CompanyDAO.sentNotification(companyId,job.getJobId());
+		
+		// System.out.println("Done");	
 		return job ; 
 	}
 	
-	public static Job insertAboutJob(Job job) {
+	public static Job insertAboutJob(Job job,int recruiterId,int companyId) {
 		Connection conn=  JDBCUtil.getConnection() ; 
-		int jobId;									
-											
-	String insertQuuery = "INSERT INTO jobs(company_name,title,location,description,education_level,experience,salary,salary_review,additional_requirements,company_email,company_cell_phone_number,adress,website) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
+		int jobId=0;		
+
+	String insertQuuery = "INSERT INTO jobs(recruiter_id,company_id,company_name,title,vacancy,location,description,education_level,experience,salary,salary_review,additional_requirements,company_email,company_cell_phone_number,adress,website,category,publish_time) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)" ;
 	       
 		   try {			   
 		           PreparedStatement pst =  conn.prepareStatement(insertQuuery,PreparedStatement.RETURN_GENERATED_KEYS) ; 
-			           pst.setString(1, job.getCompanyName());
-			           pst.setString(2, job.getTitle());
-			           pst.setString(3, job.getLocation());
-			           pst.setString(4, job.getDescription());
-			           pst.setString( 5,job.getEducationLevel());
-			           pst.setString(6, job.getExperience() );
-			           pst.setString(7,job.getSalary()  );
-			           pst.setString(8, job.getSalaryReview() );
-			           pst.setString(9, job.getAdditionalRequirement());
-			           pst.setString(10,job.getCompanyEmail()  );
-			           pst.setString( 11,job.getCompanyCellPhoneNumber()  );
-			           pst.setString( 12,job.getCompanyAddress()  );
-			           pst.setString( 13,job.getWebsite()  );
+			           pst.setInt(1, recruiterId);
+			           pst.setInt(2, companyId);
+		               pst.setString(3, job.getCompanyName());
+			           pst.setString(4, job.getTitle());
+			           pst.setString(5,"undefined");
+			           pst.setString(6, job.getLocation());
+			           pst.setString(7, job.getDescription());
+			           pst.setString( 8,job.getEducationLevel());
+			           pst.setString(9, job.getExperience() );
+			           pst.setString(10,job.getSalary()  );
+			           pst.setString(11, job.getSalaryReview() );
+			           pst.setString(12, job.getAdditionalRequirement());
+			           pst.setString(13,job.getCompanyEmail()  );
+			           pst.setString( 14,job.getCompanyCellPhoneNumber()  );
+			           pst.setString( 15,job.getCompanyAddress()  );
+			           pst.setString( 16,job.getWebsite()  );
+			           pst.setString(17, "IT/TELECOMMUNICATION");
+			           pst.setLong(18, System.currentTimeMillis());
 			           
 			           pst.executeUpdate(); 
 		           

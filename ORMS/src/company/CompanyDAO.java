@@ -16,7 +16,23 @@ import recruiter.InvitedApplicantDAO;
 import recruiter.Recruiter;
 
 public class CompanyDAO {
-	
+
+ public static void sentNotification(int companyId,int jobId) {
+	 // get the all followers 
+	 Connection conn=  JDBCUtil.getConnection() ; 
+	 String insertQuery="INSERT INTO job_post_notifications(job_id,follower_id,has_seen) \r\n" + 
+	 		"SELECT ?, follower_id,0 FROM company_followers WHERE company_followers.company_id=?" ; 
+	       
+		   try {			   
+		      PreparedStatement pst =  conn.prepareStatement(insertQuery) ; 
+			        pst.setInt(1, jobId);
+			        pst.setInt(2, companyId);
+			        
+			        pst.executeUpdate() ; 
+		   }catch(Exception e) {
+			   System.out.println(e.toString());
+		   }
+ }	
  public static Company getCompany(int companyId) {
 	 // select all the properties of a company 
 	 Connection conn = JDBCUtil.getConnection() ; 

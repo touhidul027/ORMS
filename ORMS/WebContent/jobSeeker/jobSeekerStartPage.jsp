@@ -62,7 +62,7 @@
       
       </li>
        <li class="nav-item">
-        <a class="nav-link " href="">Followed Company</a>
+        <a class="nav-link " href="follow.jsp">Followed Company</a>
       </li>
       
        <li class="nav-item">

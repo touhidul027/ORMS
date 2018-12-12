@@ -12,6 +12,13 @@ import com.generalDAO.JDBCUtil;
 
 public class JobDAO {
 	
+	// post a job 
+	public static void postJob() {
+		
+	}
+	
+	
+	
 	// save a job
 	public static void saveJob(int jobId,int jobSeekerId,String note) {
 		Connection conn=  JDBCUtil.getConnection() ; 

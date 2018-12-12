@@ -25,6 +25,7 @@ import jobs.Job;
 import recruiter.ApplicantNotificationDAO;
 import recruiter.InvitedApplicantDAO;
 import recruiter.Recruiter;
+import recruiter.RecruiterDAO;
 
 /**
  * Servlet implementation class SignInServlet
@@ -114,16 +115,7 @@ public class SignInServlet extends HttpServlet {
 				// create the recruiter obj 
 				Recruiter recruiter = new Recruiter(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword(),aBasicUser.getUserType()) ; 
 				
-				// get the initialized object holding all the information job posted  by him 		
-				ArrayList<Job> postedJobs = GetAllJobsDAO.getAllJob(recruiter.getId()) ; ; 							   
-				recruiter.setJobs(postedJobs);
-				
-				// set recruiter applicant notifications 
-				recruiter.setApplicantNotifications(ApplicantNotificationDAO.getNotifications(postedJobs));				 
-				
-				// set invited applicants 
-				recruiter.setInvitedApplicants(InvitedApplicantDAO.getApplicants(recruiter.getId()));
-				
+				recruiter=RecruiterDAO.getProfile(recruiter);
 				//System.out.println("go to dashboard.buddy");
 				userSession.setAttribute("recruiter", recruiter );
 				response.sendRedirect("recruiter\\recruiterDashBoard.jsp") ;				

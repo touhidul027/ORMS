@@ -82,7 +82,7 @@ public class JobPostingGetAllPostedJobsServlet extends HttpServlet {
 				// forward to a error page 
 				response.sendRedirect("error404.jsp");
 			}
-			else {
+			else{
 				// get the initialized object holding all the information job posted  by him 		
 				//System.out.println("I am executing");
 				ArrayList<Job> postedJobs = GetAllJobsDAO.getAllJob(recruiter.getId()) ; ; 							   

@@ -11,7 +11,6 @@ import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerGetProfileInfo;
 
 
-
 public class GetAllJobsDAO {
 	public static ArrayList<Job> getAllJob(int recruiterId) {	
 		
@@ -20,10 +19,10 @@ public class GetAllJobsDAO {
 		 // select all the job id 		
 			 Connection conn = JDBCUtil.getConnection() ; 
 				
-				String signInQuery = "SELECT * FROM job_poster_job_posting_join_table WHERE job_poster_id=?" ; 
+				String selectQuery = "SELECT job_id FROM jobs WHERE recruiter_id=?" ; 
 				ResultSet rs = null ; 
-	 			try {
-			        PreparedStatement pst =  conn.prepareStatement(signInQuery) ; 
+				try {
+			        PreparedStatement pst =  conn.prepareStatement(selectQuery) ; 
 			           pst.setInt(1, recruiterId);
 			           rs = pst.executeQuery() ; 
 			           
@@ -49,7 +48,7 @@ public class GetAllJobsDAO {
 			       catch (SQLException ex) 
 			       {
 			    	  // System.out.println("SignInDAO catch block");
-			       }
+			       }			
 	 	
 		return null ; 
 	}
