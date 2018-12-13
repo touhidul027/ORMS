@@ -47,9 +47,6 @@ public class JobDesCriptionForApplyServlet extends HttpServlet {
 		 }else {
 			 session.setAttribute("singleJobDescriptionForApply", JobDAO.getJob(jobId) );			 
 		 }
-		 
-		
-			 
 		 response.sendRedirect("jobDescriptionForApply.jsp");
 	}
 

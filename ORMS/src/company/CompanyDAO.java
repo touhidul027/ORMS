@@ -64,7 +64,7 @@ public class CompanyDAO {
  		return company ; 
 }// end method 
  
- private static ArrayList<Recruiter> getRecruiters(int companyId) {
+ public static ArrayList<Recruiter> getRecruiters(int companyId) {
 		Connection conn = JDBCUtil.getConnection() ; 
 	 	ArrayList<Recruiter> recruiters = new ArrayList<>() ; 
 			String selectQuery = "SELECT recruiter_id FROM recruiters WHERE company_id=?" ; 

@@ -55,12 +55,11 @@
         <a class="nav-link " href="savedJob.jsp"> Saved jobs</a>
        </li>
       
-       </li>
+     
        <li class="nav-item">
         <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
       </li>
       
-      </li>
        <li class="nav-item">
         <a class="nav-link " href="../company/follow.jsp">Followed Company</a>
       </li>

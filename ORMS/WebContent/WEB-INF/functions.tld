@@ -19,6 +19,16 @@
 	<function-signature>company.Company getCompany(int);</function-signature>
 </function>
 
- 
+<function> 
+	<name>getRecruiters</name>
+	<function-class>company.CompanyDAO</function-class>
+	<function-signature>java.util.ArrayList&lt;recruiter.Recruiter&gt; getRecruiters(int);</function-signature>
+</function>
+
+<function> 
+	<name>sentMail</name>
+	<function-class>com.generalDAO.T</function-class>
+	<function-signature>int sentMail();</function-signature>
+</function>
 
 </taglib>

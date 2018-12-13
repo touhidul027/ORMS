@@ -37,9 +37,10 @@
  	  	<c:choose>  	
 	    <c:when test="${followedCompanyNotification.hasSeenStatus==0}">
 	    <div class="card">
-		  <div class="card-header">
-		    <b> ${followedCompanyNotification.companyName} </b> posted job. &nbsp;&nbsp; Title : <b>${followedCompanyNotification.jobTitle}</b>
-		  </div>
+		  <div class="card-header"><h5>
+		   <a href="../JobDesCriptionForApply?jobId=${followedCompanyNotification.jobId}" > <b> ${followedCompanyNotification.companyName} </b> &nbsp;&nbsp; Title : 
+		   <b>${followedCompanyNotification.jobTitle}</b> </a>
+		  </h5></div>
 	    </div>
 	    </c:when>
 	    <c:otherwise>
@@ -55,7 +56,7 @@
   <c:otherwise>
   <div class="card">
 	  <div class="card-header">
-	    Quote
+	    Followed company did not post any job
 	  </div>
   </div>
   </c:otherwise>
