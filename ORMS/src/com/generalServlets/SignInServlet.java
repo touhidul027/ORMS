@@ -20,6 +20,7 @@ import com.jobSeekerDAO.JobSeekerDAO;
 import com.jobSeekerDAO.JobSeekerGetProfileInfo;
 import com.jobSeekerDAO.RecruiterNotificationDAO;
 
+import admin.Admin;
 import jobs.GetAllJobsDAO;
 import jobs.Job;
 import recruiter.ApplicantNotificationDAO;
@@ -119,6 +120,10 @@ public class SignInServlet extends HttpServlet {
 				//System.out.println("go to dashboard.buddy");
 				userSession.setAttribute("recruiter", recruiter );
 				response.sendRedirect("recruiter\\recruiterDashBoard.jsp") ;				
+			}else if(aBasicUser.getUserType().equals("admin")) {
+				Admin admin = new Admin(aBasicUser.getUserSerial(),aBasicUser.getFullName(),aBasicUser.getEmail(),aBasicUser.getPassword(),aBasicUser.getUserType()) ; 
+				userSession.setAttribute("admin", admin);
+				response.sendRedirect("admin/dashboard.jsp");
 			}
 			
 		}else if( userStatus == User.forgettableUser) {

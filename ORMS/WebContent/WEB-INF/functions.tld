@@ -31,4 +31,10 @@
 	<function-signature>int sentMail();</function-signature>
 </function>
 
+<function> 
+	<name>getRequestedJobPost</name>
+	<function-class>admin.AdminDAO</function-class>
+	<function-signature>java.util.ArrayList&lt;admin.Admin&gt; getRequestedJobPost();</function-signature>
+</function>
+
 </taglib>

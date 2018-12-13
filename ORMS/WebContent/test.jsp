@@ -11,7 +11,7 @@
 </head>
 <body>
 
-<c:set var="recruiters" value="${myFunction:sentMail()}"></c:set> 
+
    
 </body>
 </html>
