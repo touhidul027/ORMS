@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-    
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%@ taglib prefix="myFunction" uri="MyFunctions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>  
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -44,20 +46,49 @@
         <a class="nav-link " href="manageCompany.jsp">Manage Company</a>
       </li>	
         
-      <li class="nav-item">
-        <a class="nav-link " href="manageJobSeeker.jsp">Manage Job Seeker</a>
-      </li>	
-      
        <li class="nav-item">
         <a class="nav-link" href="">Log Out</a>
       </li>
     </ul>
   </div>
   
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="card-body">
+
+<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"  
+     url="jdbc:mysql://localhost/fshdb"  
+     user="root"  password=""/> 
+     
+<sql:query dataSource="${db}" var="rs">  
+SELECT job_seeker.id,job_seeker.address,job_seeker.nid,sign_up.full_name,sign_up.email FROM job_seeker
+JOIN sign_up ON sign_up.user_serial=job_seeker.id;
+</sql:query>  
+
+      
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>     
+      <th scope="col">Adrress</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+   	
+   <c:forEach var="jobSeeker" items="${rs.rows}">  
+   <tr>
+      <td>${jobSeeker.id} </td>
+      <td>${jobSeeker.full_name}</td>
+      <td>${jobSeeker.email}</td>
+      <td>${jobSeeker.address} </td>
+      <td><a href="../DeleteJobSeekerServlet?jobSeekerId=${jobSeeker.id}">delete</a></td>
+    </tr>   
+    </c:forEach>
+       
+  </tbody>
+</table>
+
   </div>
 </div>		
 

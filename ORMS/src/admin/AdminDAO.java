@@ -55,4 +55,9 @@ public static ArrayList<ManageJob> getRequestedJobPost() {
 	return manageJobs ; 
 } // end method
 
+// this method will delete a job seeker 
+public static void delete(int jobSeekerId) {
+	
+}
+
 }

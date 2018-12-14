@@ -17,6 +17,26 @@ import recruiter.Recruiter;
 
 public class CompanyDAO {
 
+ // this method will return all the company list 
+	public static  ArrayList<Company> allCompanies() {
+		 Connection conn = JDBCUtil.getConnection() ; 
+		 ArrayList<Company> companies = new ArrayList<>() ; 
+ 	  	
+			String selectQuery = "SELECT company_id FROM companies" ; 
+			ResultSet rs = null ; 
+	 		try {
+		        PreparedStatement pst =  conn.prepareStatement(selectQuery) ; 
+ 	 	           rs = pst.executeQuery() ; 
+		           while(rs.next()) {		        	   
+		        	  companies.add( getCompany( rs.getInt("company_id") )) ;  
+		           }
+	 		}catch(Exception e) {
+	 			
+	 		}
+	 		return companies ; 
+	}
+	
+	
  public static void sentNotification(int companyId,int jobId) {
 	 // get the all followers 
 	 Connection conn=  JDBCUtil.getConnection() ; 

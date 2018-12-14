@@ -12,6 +12,10 @@ import jobs.Job;
 import jobs.JobDAO;
 
 public class JobSeekerDAO {
+
+	public static void allJobSeekers() {
+		
+	}
 	
  public static ArrayList<SavedJob> getSavedJobs(int jobSeekerId) {
 	 ArrayList<SavedJob> savedJobs = new ArrayList<SavedJob>() ; 

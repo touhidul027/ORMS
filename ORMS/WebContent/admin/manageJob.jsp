@@ -72,14 +72,7 @@
     </tr>  
    </c:forEach>
   </tbody>
-</table>
-    
-    
-    
-    
-    
-    
-  	
+</table>	
 	
 	<script>
 /* When the user clicks on the button, 

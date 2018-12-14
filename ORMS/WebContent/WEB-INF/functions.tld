@@ -37,4 +37,10 @@
 	<function-signature>java.util.ArrayList&lt;admin.Admin&gt; getRequestedJobPost();</function-signature>
 </function>
 
+<function> 
+	<name>allCompanies</name>
+	<function-class>company.CompanyDAO</function-class>
+	<function-signature>java.util.ArrayList&lt;company.Company&gt; allCompanies();</function-signature>
+</function>
+
 </taglib>
