@@ -15,7 +15,7 @@
 					
 				   <div class="form-group">
 						<div class="col-sm-5 col-sm-offset-3">
-							<input type="submit" class="btn btn-default" id="submitButton" value="Submit"> 
+							<input type="submit" class="btn btn-default" id="submitButton" value="Next"> 
 						</div>
 					</div>
 					

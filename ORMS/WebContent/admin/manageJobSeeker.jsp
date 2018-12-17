@@ -35,7 +35,7 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="dashboard.jsp">Dashboard</a>
+        <a class="nav-link  " href="dashboard.jsp">Dashboard</a>
       </li>
       
       <li class="nav-item">
@@ -46,11 +46,16 @@
         <a class="nav-link " href="manageCompany.jsp">Manage Company</a>
       </li>	
         
+      <li class="nav-item">
+        <a class="nav-link active" href="manageJobSeeker.jsp">Manage Job Seeker</a>
+      </li>	
+      
        <li class="nav-item">
         <a class="nav-link" href="">Log Out</a>
       </li>
     </ul>
   </div>
+  
   
 <div class="card-body">
 

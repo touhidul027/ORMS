@@ -1,5 +1,41 @@
-<div id="registrationForm" >
-				<div class="container">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+  
+  
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="..\bootstrap\css\bootstrap.css">
+<link rel="stylesheet" type="text/css" href="all.css">
+
+
+</head>
+<body>
+	<%
+	response.setHeader("Cache-Control", "no-cache , no-store , must-revalidate");	
+		if (session.getAttribute("recruiter")== null){		
+			response.sendRedirect("..\\index.jsp");		
+		}	
+	%>	
+	
+<div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+      
+      	<progress value="40" max="100" style="width:700px;" >
+        </progress>
+      	
+      </li>
+         
+    </ul>
+  </div>
+				
+     <div id="" >
+			<div class="container">
 				<form class="form-horizontal"   role="form"  action="../JobPostingAboutJobServlet" method="post" >
 						
 					<div class="form-group">
@@ -54,10 +90,14 @@
 					
 				   <div class="form-group">
 						<div class="col-sm-8 col-sm-offset-5">
-							<input type="submit" class="btn btn-default" id="submitButton" style="width:200px;" value="Save and Next"> 
+							<input type="submit" class="btn btn-default" id="submitButton" style="width:200px;" value="Next"> 
 						</div>
 					</div>
 					
 				</form> <!-- /form -->
 			</div> <!-- ./container -->
 		</div>
+		
+</body>
+</html>
+		

@@ -29,11 +29,19 @@
       <li class="nav-item">
         <a class="nav-link " href="dashboard.jsp">Dashboard</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link active" href="manageJob.jsp">Manage Job</a>
-      </li>						 
-      
+      </li>	
+      					 
+      <li class="nav-item">
+        <a class="nav-link " href="manageCompany.jsp">Manage Company</a>
+      </li>	
         
+      <li class="nav-item">
+        <a class="nav-link " href="manageJobSeeker.jsp">Manage Job Seeker</a>
+      </li>	
+      
        <li class="nav-item">
         <a class="nav-link" href="">Log Out</a>
       </li>

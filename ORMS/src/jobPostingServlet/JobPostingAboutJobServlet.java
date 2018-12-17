@@ -27,28 +27,6 @@ import jobs.Job;
 public class JobPostingAboutJobServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
-	/*// make the general model object 
-				JobPostingGeneralObj jobPostingGeneralObj = new JobPostingGeneralObj() ; 
-				jobPostingGeneralObj.setJobPostingJobTitle(jobPostingJobTitle);
-				jobPostingGeneralObj.setJobPostingCompanyName(jobPostingCompanyName);
-				jobPostingGeneralObj.setJobPostingJobLocation(jobPostingJobLocation);
-				jobPostingGeneralObj.setJobPostingJobDescription(jobPostingJobDescription);
-				jobPostingGeneralObj.setJobPosterKeySkillsSelection(jobPosterKeySkillsSelection);
-				
-				// insert and update the database , get back the updated object
-				jobPostingGeneralObj = JobPostingDAO.insertAboutJob(jobPostingGeneralObj) ; 
-	 * System.out.println(jobPostingGeneralObj.getJobId());
-		HttpSession session = request.getSession(); 		 
-		session.setAttribute("jobPostingGeneralObj", jobPostingGeneralObj);
-		session.setAttribute("nextPageName", "jobPostingEmployeeInfo.jsp");
-		
-		// update  the join table
-		
-		BasicUser basicUser = (BasicUser) session.getAttribute("aJobPoster") ; 
-		JobPosterJoinJobPostingDAO.insertIntoJobPosterJobPostingJoinTable(basicUser.getUserSerial(),jobPostingGeneralObj.getJobId()) ; 
-		response.sendRedirect("jobPoster\\jobPostingSeries.jsp");
-	 * 
-	 */
 	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -83,6 +61,7 @@ public class JobPostingAboutJobServlet extends HttpServlet {
 		session.setAttribute("job", job);
 		
 		session.setAttribute("nextPageName", "jobPostingEmployeeInfo.jsp");
+		
 		response.sendRedirect("recruiter\\jobPostingSeries.jsp");
 	}
 

@@ -25,7 +25,7 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="#">Active</a>
+        <a class="nav-link active" href="#">Job description</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="company/company.jsp?companyId=${singleJobDescriptionForApply.companyId}">Company Details</a>

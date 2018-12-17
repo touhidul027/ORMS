@@ -18,16 +18,45 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="../jobSeeker/jobSeekerStartPage.jsp">Dashboard</a>
+        <a class="nav-link  " href="jobSeekerStartPage.jsp">Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+        <a class="nav-link " href="profileOverview.jsp">Profile Overview</a>
+      </li>						 
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link " href="notifications.jsp">Notifications</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="jobSeekerDashBoard.jsp"> All applied jobs</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="savedJob.jsp"> Saved jobs</a>
+       </li>
+      
+     
+       <li class="nav-item">
+        <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link active" href="../company/follow.jsp">Followed Company</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link" href="../JobSeekerLogOutServlet">Log Out</a>
       </li>
     </ul>
   </div>
+  
+  <div class="card-body">
+   
+   </div>
+</div>	
+
+<div class="card text-center">
+ 
   <div class="card-body" style="text-align:left" >
   	  	
   

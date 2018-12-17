@@ -34,12 +34,19 @@
       <li class="nav-item">
         <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
       </li>
+      
        <li class="nav-item">
         <a class="nav-link " href="..\JobPostingGetAllPostedJobsServlet"> My Posted Jobs</a>
       </li>
+       
        <li class="nav-item">
         <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="payment.jsp">Payment Demo</a>
+      </li>
+      
     </ul>
   </div>
   <div class="card-body">

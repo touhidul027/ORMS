@@ -6,7 +6,7 @@
 <html>
 	<head>
 	
-		<title> Note to self </title>
+		<title> Job Seeker </title>
 	    <meta charset="utf-8" >
 		
 		<link rel="stylesheet" type="text/css" href="..\css\commonStyle.css">			
@@ -16,7 +16,6 @@
         <link rel="stylesheet" type="text/css" href="..\css\jobSeekerStartPageHeader.css">		
 
 		
-		<link rel="stylesheet" type="text/css" href="..\css\generalSearch.css">	
 		<link rel="stylesheet" type="text/css" href="..\css\mainFooter.css">
 		
 		<script src="bootstrap\js\bootstrap.js" > </script> 
@@ -71,27 +70,17 @@
   </div>
   
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>		
-
-		
-		
-		<!-- include job seeker start page Header Part . -->
-		<jsp:include page="jobSeekerStartPageHeader.jsp"></jsp:include>
-		
-		<!-- General search -->
- 		
- 		<form action="../SearchJobsServlet" method="post" >
+  <form action="../SearchJobsServlet" method="post" >
 				<div id="generalSearchOption" >
  					<input type="text" name="jobTitle" id="generalTextInput" placeholder="Job Title" > <br>	
 					<input type="text" name="location" id="generalTextInput" placeholder="Place,Location,City"> <br>					
 					<input type="submit" id="generalTextInputSubmitButton" value="search" > 
 				</div>			
 		</form>
- 		 
+   </div>
+</div>		
+
+  		
 		<!-- Main Footer Part  -->
 		<jsp:include page="..\\mainFooter.html"></jsp:include>
 </body>

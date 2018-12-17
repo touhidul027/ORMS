@@ -16,12 +16,13 @@ public static ArrayList<FollowedCompanyNotification> getFollowedCompanyNotificat
 		
 		String selectQuery = "SELECT job_post_notifications.company_id,jobs.company_name, job_post_notifications.job_id, job_post_notifications.has_seen,jobs.publish_time,\r\n" + 
 				"jobs.title FROM `job_post_notifications`JOIN jobs ON jobs.job_id=job_post_notifications.job_id\r\n" + 
-				"WHERE follower_id=?  ORDER BY jobs.publish_time DESC" ; 
+				"WHERE follower_id=?  AND jobs.is_published=? ORDER BY jobs.publish_time DESC" ; 
 		ResultSet rs = null ; 
  		BasicUser aBasicUser = null ; 
 		try {
 	        PreparedStatement pst =  conn.prepareStatement(selectQuery) ; 
 	           pst.setInt(1, followerId);
+	           pst.setInt(2, 1);
  	           rs = pst.executeQuery() ; 
  	           while(rs.next()) {
  	        	  FollowedCompanyNotification followedCompanyNotification = new FollowedCompanyNotification() ; 
@@ -32,8 +33,7 @@ public static ArrayList<FollowedCompanyNotification> getFollowedCompanyNotificat
  	              followedCompanyNotification.setHasSeenStatus(rs.getInt("has_seen"));
  	              followedCompanyNotification.setPublishTime(rs.getLong("publish_time"));
 
- 	               
- 	             followedCompanyNotifications.add(followedCompanyNotification) ; 
+  	             followedCompanyNotifications.add(followedCompanyNotification) ; 
  	              
  	           }
  	           

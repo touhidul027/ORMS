@@ -47,11 +47,11 @@ public class CompanyDAO {
 		      PreparedStatement pst =  conn.prepareStatement(insertQuery) ; 
 		      		pst.setInt(1, companyId);
 			        pst.setInt(2, jobId);
-			        pst.setInt(2, companyId);
-			        
+ 			        pst.setInt(3, companyId);
+ 			        
 			        pst.executeUpdate() ; 
 		   }catch(Exception e) {
-			   System.out.println(e.toString());
+			  System.out.println(e.toString());
 		   }
  }	
  public static Company getCompany(int companyId) {

@@ -48,7 +48,7 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="#"><b>Overview</b></a>
+        <a class="nav-link active" href="#"><b>Job Overview</b></a>
       </li>         
     </ul>
   </div>
@@ -226,8 +226,7 @@
 					</div>
 			</div>
   </div>
-     <a href="../PostJobServlet" class="btn btn-primary">Publish This Job</a>
-  
+          <a href="payment.jsp" class="btn btn-primary">post job</a>  
 </div>
 </body>
 </html>

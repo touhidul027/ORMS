@@ -43,7 +43,7 @@
     <div class="form-group">
     <label for="exampleInputEmail1">Your Note about this job</label>
     <input type="text" name="note" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Put your sticky note">
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" type="submit" value="Save">
      </div>
   </div>
 </div>    

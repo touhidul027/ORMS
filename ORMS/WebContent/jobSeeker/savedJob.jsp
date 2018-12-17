@@ -8,11 +8,52 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Saved job</title>
 		<link rel="stylesheet" type="text/css" href="..\bootstrap\css\bootstrap.css">
 
 </head>
 <body>
+
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link " href="jobSeekerStartPage.jsp">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " href="profileOverview.jsp">Profile Overview</a>
+      </li>						 
+      <li class="nav-item">
+        <a class="nav-link " href="notifications.jsp">Notifications</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="jobSeekerDashBoard.jsp"> All applied jobs</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link active" href="savedJob.jsp"> Saved jobs</a>
+       </li>
+      
+     
+       <li class="nav-item">
+        <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="../company/follow.jsp">Followed Company</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link" href="../JobSeekerLogOutServlet">Log Out</a>
+      </li>
+    </ul>
+  </div>
+  
+</div>	
+
+
+
 <c:choose> 
  <c:when test="${jobSeeker.savedJobs!=null && not empty jobSeeker.savedJobs}"> 
  	

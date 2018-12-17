@@ -18,13 +18,16 @@
   <div class="card-header">
     <ul class="nav nav-tabs card-header-tabs">
       <li class="nav-item">
-        <a class="nav-link active" href="../jobDescriptionForApply.jsp">Job details</a>
+        <a class="nav-link " href="#">Job description</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="company/company.jsp?companyId=${singleJobDescriptionForApply.companyId}">Company Details</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="company/reviews.jsp?companyId=${singleJobDescriptionForApply.companyId}">Reviews</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="company/postedJobs.jsp?companyId=${singleJobDescriptionForApply.companyId}">All posted Job From This Company</a>
       </li>
     </ul>
   </div>

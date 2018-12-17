@@ -31,16 +31,32 @@
         <a class="nav-link " href="profileOverview.jsp">Profile Overview</a>
       </li>						 
       <li class="nav-item">
-        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
+        <a class="nav-link " href="notifications.jsp">Notifications</a>
       </li>
+      
        <li class="nav-item">
-        <a class="nav-link active" href="..\JobPostingGetAllPostedJobsServlet"> All Applied Jobs</a>
+        <a class="nav-link active" href="jobSeekerDashBoard.jsp"> All applied jobs</a>
       </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="savedJob.jsp"> Saved jobs</a>
+       </li>
+      
+     
+       <li class="nav-item">
+        <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
+      </li>
+      
+       <li class="nav-item">
+        <a class="nav-link " href="../company/follow.jsp">Followed Company</a>
+      </li>
+      
        <li class="nav-item">
         <a class="nav-link" href="../JobSeekerLogOutServlet">Log Out</a>
       </li>
     </ul>
   </div>
+  
   
   <div class="card-body" style="text-align:left;">
     <c:forEach var="appliedJob" items="${jobSeeker.appliedJobs}" > 
@@ -59,11 +75,7 @@
   </div>
 </div>	
 
-<a href="jobSeekerStartPage.jsp">Go Home</a>
-<h2>Dash Board </h2>
-
-<h3>Applied jobs </h3>
-
+ 
 
 
 </body>
