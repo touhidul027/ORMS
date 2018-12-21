@@ -64,4 +64,10 @@ return  savedJobs ;
 	 return followedCompanies ; 
  }// end method 
  
+ public static void upDateProfile(JobSeeker jobSeeker) {
+	 ProfileCreationDAO.createJobSeekerProfile(jobSeeker);
+ }
+ 
+ 
+ 
 }

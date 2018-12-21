@@ -16,8 +16,7 @@
         <link rel="stylesheet" type="text/css" href="..\css\jobSeekerStartPageHeader.css">		
 
 		
-		<link rel="stylesheet" type="text/css" href="..\css\mainFooter.css">
-		
+ 		
 		<script src="bootstrap\js\bootstrap.js" > </script> 
 		
 		<style>
@@ -82,7 +81,28 @@
 
   		
 		<!-- Main Footer Part  -->
-		<jsp:include page="..\\mainFooter.html"></jsp:include>
-</body>
+<div    style="list-style:none ; background-color:#FFFFFF; " >	
+				<ul id="" class="footer-information" >
+					<h3>For Job Seekers</h3>
+					<li><a href="">Find Job</a></li>
+					<li><a href="jobSeeker/jobSeekerStartPage.jsp" >Create Resume</a></li>
+					<li>Help</a></li>
+ 				</ul>
+				
+				
+				<ul id="" class="footer-information" >
+					 <h3><a href="aboutUs.jsp">About Us</a></h3>
+					<li>Career </a></li>
+					<li>Partner With Us</a></li>          
+ 				</ul>
+				
+				<ul id="" class="footer-information" >
+					<h3>Helpul Resource</h3>
+					<li>Contact us</a></li>
+					<li>privacy certer</a></li>
+                    <li>Terms of use</a></li>
+ 				</ul>
+ 				
+		</div></body>
 	
 </html>

@@ -92,12 +92,9 @@
   
   <div class="card-body">
     <div id="profileView">
-			
+		
 	<div>
 				<table border="0" cellpadding="0" cellspacing="0" align="center" width="750">
-
-
-
 					<tbody>
 					<tr>
 						<td colspan="6">
@@ -440,6 +437,8 @@
 					</c:if>
 					
 			</div>
+		
+		
 		
   </div>
 </div>	

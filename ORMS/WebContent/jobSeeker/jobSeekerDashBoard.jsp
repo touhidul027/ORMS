@@ -44,7 +44,7 @@
       
      
        <li class="nav-item">
-        <a class="nav-link " href="updateProfile.jsp"> Update profile</a>
+        <a class="nav-link " href=""> Update profile</a>
       </li>
       
        <li class="nav-item">

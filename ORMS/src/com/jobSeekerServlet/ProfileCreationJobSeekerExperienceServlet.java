@@ -40,6 +40,7 @@ public class ProfileCreationJobSeekerExperienceServlet extends HttpServlet {
  		HttpSession session = request.getSession(); 
  		JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 		 
  		jobSeeker.setExperience(experience);
+ 		
  		session.setAttribute("jobSeeker", jobSeeker);
 		session.setAttribute("nextPageName", "profileCreationJobSeekerSkills.jsp");
 		response.sendRedirect("jobSeeker\\jobSeekerProfileCreationSeries.jsp");

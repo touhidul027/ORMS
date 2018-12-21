@@ -81,7 +81,7 @@ public class JobSeekerGetProfileInfo {
 	
 	private static  ArrayList<String> getCellPhones(int userId) {		
 		Connection conn = JDBCUtil.getConnection() ; 
-		String signInQuery = "SELECT * FROM  cell_phone WHERE user_id=?" ; 
+		String signInQuery = "SELECT DISTINCT cell_phone_number FROM cell_phone WHERE user_id=?" ; 
 		ArrayList<String> cellPhoneNumber = new ArrayList<>() ; 
 		ResultSet rs = null ; 
 		try {
@@ -104,7 +104,7 @@ public class JobSeekerGetProfileInfo {
 	
 	private static ArrayList<String> activities(int userId){
 		Connection conn = JDBCUtil.getConnection() ; 
-		String signInQuery = "SELECT * FROM  activities WHERE user_id=?" ; 
+		String signInQuery = "SELECT DISTINCT activity_name FROM  activities WHERE user_id=?" ; 
 		
 		ArrayList<String> activities = new ArrayList<>() ; 
 		
@@ -129,7 +129,7 @@ public class JobSeekerGetProfileInfo {
 	
 	private static ArrayList<String> interests(int userId){
 		Connection conn = JDBCUtil.getConnection() ; 
-		String selectQuery = "SELECT * FROM  interests WHERE user_id=?" ; 
+		String selectQuery = "SELECT DISTINCT interest_name FROM  interests WHERE user_id=?" ; 
 		
 		ArrayList<String> interests = new ArrayList<>() ; 
 		
@@ -206,7 +206,7 @@ public class JobSeekerGetProfileInfo {
 	
 	private static ArrayList<String> getAllSkills(int userId) {
 	Connection conn = JDBCUtil.getConnection() ; 	
-		String signInQuery = "SELECT * FROM job_skills WHERE skill_id IN(SELECT skill_id FROM job_posting_job_skills_join_table WHERE job_id=?)" ; 
+		String signInQuery = "SELECT DISTINCT skill_name FROM job_skills WHERE skill_id IN(SELECT skill_id FROM job_posting_job_skills_join_table WHERE job_id=?)" ; 
 		ResultSet rs = null ; 
 		ArrayList<String> skillNames = new ArrayList<>() ; 
 		

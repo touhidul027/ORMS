@@ -26,7 +26,7 @@
  
  		<script src="..\js\profileCreationJobSeekerSkills.js" > </script> 
  		<script src="..\js\profileCreationJobSeekerActivity.js" ></script>
- 		 <script src="..\js\profileCreationJobSeekerInterests.js" ></script>
+ 		<script src="..\js\profileCreationJobSeekerInterests.js" ></script>
  		
 		
 	<style >
@@ -43,6 +43,7 @@
 		
 		<!--  page calling decision is coming from home -->		
 		<jsp:include page="${nextPageName}"></jsp:include>
+		
 		
 		
 		<!-- Main Footer Part  -->

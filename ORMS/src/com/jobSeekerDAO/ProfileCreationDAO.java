@@ -25,7 +25,7 @@ public class ProfileCreationDAO {
 	
 	private static boolean insertPersonalInfo(JobSeeker jobSeeker) {		
 		Connection conn=  JDBCUtil.getConnection() ; 		 
- 		String insertQuuery = "INSERT INTO job_seeker(id,address,objective,gender,nid) VALUES(?,?,?,?,?)" ;
+ 		String insertQuuery = "REPLACE INTO job_seeker(id,address,objective,gender,nid) VALUES(?,?,?,?,?)" ;
 	        
 		    try { 
 	          PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
@@ -40,7 +40,7 @@ public class ProfileCreationDAO {
 	       catch (SQLException ex) 
 	        {
 	    	//   System.out.println("Inserting Personal Info cause exception,mate.");
-	    	//   System.out.println(ex.toString());
+	    	   System.out.println(ex.toString());
 	        }
 	        return false ; 
 	}
@@ -49,7 +49,7 @@ public class ProfileCreationDAO {
 		Connection conn=  JDBCUtil.getConnection() ; 
 
 		if(cellPhones!=null && cellPhones.isEmpty()!=true) {
-		    String insertQuuery = "INSERT INTO cell_phone(user_id, cell_phone_number) VALUES(?,?)" ;
+		    String insertQuuery = "REPLACE INTO cell_phone(user_id, cell_phone_number) VALUES(?,?)" ;
 	        try {
 	          PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
 	          
@@ -75,7 +75,7 @@ public class ProfileCreationDAO {
 		 
 		 if( experiences!=null && experiences.isEmpty()!=true ) {
 
-			String insertQuuery = "	INSERT INTO experiences(id, organization_name, designation, duration, project_name) VALUES(?,?,?,?,?)";   
+			String insertQuuery = "	REPLACE INTO experiences(id, organization_name, designation, duration, project_name) VALUES(?,?,?,?,?)";   
 					
 	        try {
 	        	for(JobSeekerExperience experience : experiences) {
@@ -102,7 +102,7 @@ public class ProfileCreationDAO {
 		ArrayList<JobSeekerEducation> educations = jobSeeker.getEducation() ; 
 		
 		  
-		    String insertQuuery = "INSERT INTO education(user_id,education_level, institution, duration, department) VALUES(?,?,?,?,?)" ;
+		    String insertQuuery = "REPLACE INTO education(user_id,education_level, institution, duration, department) VALUES(?,?,?,?,?)" ;
 	        try {
 	        	
 	        	for(JobSeekerEducation education : educations) {
@@ -129,7 +129,7 @@ public class ProfileCreationDAO {
 		 ArrayList<String> activities = jobSeeker.getActivities() ; 
 		 
  		    if(activities != null && activities.isEmpty()!=true) {
-		    	String insertQuuery = "INSERT INTO activities(user_id, activity_name) VALUES(?,?)" ;
+		    	String insertQuuery = "REPLACE INTO activities(user_id, activity_name) VALUES(?,?)" ;
 		        try {
 		        	
 		          PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
@@ -154,7 +154,7 @@ public class ProfileCreationDAO {
 		
 		 
  		   if(interests !=null) {
-		 	String insertQuuery = "INSERT INTO interests(user_id, interest_name) VALUES(?,?)" ;
+		 	String insertQuuery = "REPLACE INTO interests(user_id, interest_name) VALUES(?,?)" ;
 	        try {
 	          PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
 	          
@@ -177,7 +177,7 @@ public class ProfileCreationDAO {
 		ArrayList<String> skills = jobSeeker.getSkills() ; 
 		 
 		 if(skills!=null) {
-		    String insertQuuery = "INSERT INTO job_skills(skill_name) VALUES(?)" ;
+		    String insertQuuery = "REPLACE INTO job_skills(skill_name) VALUES(?)" ;
 	        try {
 	          PreparedStatement pst =  conn.prepareStatement(insertQuuery) ; 
 	          
@@ -188,7 +188,7 @@ public class ProfileCreationDAO {
 	        		  }
 	        		  // skill already present in db 
 	        		  int skillId = getSkillId(skill) ; 
-	        		  String query =  "INSERT INTO job_posting_job_skills_join_table (job_id, skill_id) VALUES(?,?)" ; 	
+	        		  String query =  "REPLACE INTO job_posting_job_skills_join_table (job_id, skill_id) VALUES(?,?)" ; 	
 		        	  PreparedStatement pstInner = conn.prepareStatement(query) ; 
 			          pstInner.setInt(1,  jobSeeker.getId());
 			          pstInner.setInt(2, skillId );
@@ -198,7 +198,7 @@ public class ProfileCreationDAO {
 	       } 
 	       catch (SQLException ex) 
 	        {
-	    	   System.out.println("u r getting it .");
+	    	   // System.out.println("u r getting it .");
 	    	   System.out.println(ex.toString());
 	        }
 		 }
@@ -217,11 +217,11 @@ public class ProfileCreationDAO {
 	          if(rs.next()){
 	        	  skillId = rs.getInt("skill_id") ;       		
 	           }else {
-	    		  System.out.println("No id mate");
+	    		//  System.out.println("No id mate");
 	    	  }
 	   	  
 			}catch(Exception p) {
-				System.out.println(p.toString());
+				p.getStackTrace();
 			}
 	  return skillId;		 
 }

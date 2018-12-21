@@ -68,7 +68,7 @@ public class ProfileCreationConfirmServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 	  HttpSession session = request.getSession() ; 
 	  JobSeeker jobSeeker = (JobSeeker) session.getAttribute("jobSeeker") ; 
-		System.out.println(jobSeeker);
+		// System.out.println(jobSeeker);
 	  ProfileCreationDAO.createJobSeekerProfile(jobSeeker);
 	  response.sendRedirect("jobSeeker\\jobSeekerStartPage.jsp");
 	}
