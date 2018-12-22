@@ -1,6 +1,8 @@
 package com.jobSeekerServlet;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.generalDAO.JDBCUtil;
 import com.jobSeekerDAO.JobSeeker;
 import com.jobSeekerDAO.JobSeekerDAO;
 import com.jobSeekerDAO.JobSeekerEducation;
@@ -110,6 +113,18 @@ public class UpdateProfileServlet extends HttpServlet {
  		// summary 
  				String objective = request.getParameter("jobSeekerSummary") ; 		 
  				jobSeeker.setObjective(objective);
+ 				
+ 				// explicitly delete activities , interests , skills 
+ 				Connection conn=  JDBCUtil.getConnection() ; 
+ 		        try {
+					conn.prepareStatement("DELETE FROM activities WHERE user_id="+jobSeeker.getId()).executeUpdate() ;
+			        conn.prepareStatement("DELETE FROM interests WHERE user_id ="+jobSeeker.getId()).executeUpdate() ;       
+			        conn.prepareStatement("DELETE FROM job_posting_job_skills_join_table WHERE job_id="+jobSeeker.getId()).executeUpdate() ;       
+ 		        } catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}       
+
  				
  				JobSeekerDAO.upDateProfile(jobSeeker);
  				jobSeeker = JobSeekerGetProfileInfo.getJobSeeker(jobSeeker) ; 

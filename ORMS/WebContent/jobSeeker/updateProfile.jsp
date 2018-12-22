@@ -80,7 +80,6 @@
   
   <div class="card-body">
     <h5 class="card-title">Update Existed Profile</h5>
-    
     <hr size=2 noshade >
     <div>
 			<div class="container" style="text-align:left;" >
@@ -167,34 +166,32 @@
 						<div class="col-sm-5">
 							<input type="text" id="department" name="jobSeekerEducationalDepartment" value="${jobSeeker.education.get(0).jobSeekerEducationalDepartment}" placeholder="Your department eg. CSE department" class="form-control" autofocus>
  						</div>
-					</div>
-										
-					
+					</div>										
+					 
 					<div class="form-group"  >
 						<label for="email" class="col-sm-3 control-label">Duration</label>
 						<div class="col-sm-5"  >
-							<input type="text" id="education"  name="jobSeekerEducationalDuration"  placeholder="duration" class="form-control">						
-						</div>
-						 
-					</div>					 
+							<input type="text" id="education" value="${jobSeeker.education.get(0).getJobSeekerDuration()}" name="jobSeekerEducationalDuration"  placeholder="duration" class="form-control">						
+						</div>						 
+					</div>	
+									 
 				<hr size=2 noshade >
-			<div class="form-group">
+				
+			         <div class="form-group">
 						<label for="register" class="col-sm-3 control-label"><h4>Experience</h4></label>
 					</div>										
-					
-					 
 					
 					<div class="form-group">
 						<label for="organizationName" class="col-sm-3 control-label">Organization Name</label>
 						<div class="col-sm-5">
-							<input type="text" id="organizationName" name="jobSeekerOrganizationName" placeholder="Bit Mascot" class="form-control">
+							<input type="text" id="organizationName" value="${jobSeeker.experience.get(0).jobSeekerOrganizationName }"  name="jobSeekerOrganizationName" placeholder="Bit Mascot" class="form-control">
 						</div>
 					</div>
 					
 					<div class="form-group">
 						<label for="firstName" class="col-sm-3 control-label">Designation</label>
 						<div class="col-sm-5">
-							<input type="text" id="department" name="jobSeekerDesignation"  placeholder="Junior Java Developer" class="form-control" autofocus>
+							<input type="text" id="department" value="${jobSeeker.experience.get(0).jobSeekerDesignation}" name="jobSeekerDesignation"  placeholder="Junior Java Developer" class="form-control" autofocus>
  						</div>
 					</div>
 										
@@ -215,12 +212,15 @@
 					 <div class="form-group">
 						<label for="email" class="col-sm-3 control-label">Project Name</label>
 						<div class="col-sm-5">
-							<input type="text" id="jobSeekerProjectName" name="jobSeekerProjectName" placeholder="Prism ERP" class="form-control">
+							<input type="text" id="jobSeekerProjectName" value="${jobSeeker.experience.get(0).jobSeekerProjectName}" name="jobSeekerProjectName" placeholder="Prism ERP" class="form-control">
 						</div>
 					</div>	
 					
-				    
+				<hr size=2 noshade >	
+				    <h6>You need to provide skills,activities,interests again.</h6> 
+				    <h6>Previous skills,activities,interests value will be deleted if had any.</h6>
 				<hr size=2 noshade >
+				
 				<div class="form-group">
 						<label for="email" class="col-sm-3 control-label"><h4>Skills </h4> </label>
 						
@@ -237,7 +237,7 @@
 						<p>your skill/skills list :</p>
 				
 						   <select id="jobSeekerSkillsList" name="jobSeekerSkillsList" class="mdb-select md-form" multiple searchable="Search here..">							  
-							</select>
+						  </select>
 						  
 					</div>
 					
@@ -251,7 +251,7 @@
 						</div>
 						
 						<div class="col-sm-3">
-							<input type="button" class="btn btn-default" id="activityAddButton" onclick="activityAddingFunction() ; " value="Add Skill"></button>
+							<input type="button" class="btn btn-default" id="activityAddButton" onclick="activityAddingFunction() ; " value="Add Activity"></button>
 						</div>
 					</div>
 					
@@ -265,6 +265,7 @@
 					
 				  
 				<hr size=2 noshade >
+				
 				 <div class="form-group">
 						<label for="email" class="col-sm-3 control-label"><h4> Interests </h4> </label>
 						
@@ -273,7 +274,7 @@
 						</div>
 						
 						<div class="col-sm-3">
-							<input type="button" class="btn btn-default" id="interestAddButton" onclick="interestAddingFunction()" value="Add Skill"></button>
+							<input type="button" class="btn btn-default" id="interestAddButton" onclick="interestAddingFunction()" value="Add Interest"></button>
 						</div>
 					</div>
 					
@@ -312,7 +313,7 @@
 						<label for="email" class="col-sm-5 control-label">Tell Something About Yourself </label>
 						
 						 <div class="col-sm-5">
-							<textarea type="text" id="candidateSummary"   name="jobSeekerSummary" placeholder="Sell Yourself" class="form-control" ></textarea>
+							<textarea type="text" id="candidateSummary"  name="jobSeekerSummary" placeholder="Sell Yourself" class="form-control" >${jobSeeker.objective}</textarea>
 						</div>					
 					</div>					 				 			 									   
 					
