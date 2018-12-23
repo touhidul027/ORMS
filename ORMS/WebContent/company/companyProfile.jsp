@@ -28,9 +28,11 @@
       <li class="nav-item">
         <a class="nav-link active" href="#">Dashboard</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link " href="applications.jsp">Applicants application</a>
       </li>
+      
       <li class="nav-item">
         <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
       </li>
@@ -43,22 +45,17 @@
         <a class="nav-link " href="..\company\companyProfile.jsp"> Company Profile</a>
        </li>
       
-      <li class="nav-item">
-        <a class="nav-link " href="..\company\upDateCompanyProfile.jsp"> Update Company Profile</a>
-       </li> 
-       
        <li class="nav-item">
         <a class="nav-link" href="..\RecruiterLogOutServlet">Log Out</a>
       </li>
       
       <li class="nav-item">
         <a class="nav-link" href="payment.jsp">Payment Demo</a>
-      </li>
-      
+      </li>   
     </ul>
   </div>
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
+    <h5 class="card-title">Company Profile Coming soon</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>

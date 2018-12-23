@@ -315,7 +315,7 @@
 						 <div class="col-sm-5">
 							<textarea type="text" id="candidateSummary"  name="jobSeekerSummary" placeholder="Sell Yourself" class="form-control" >${jobSeeker.objective}</textarea>
 						</div>					
-					</div>					 				 			 									   
+					</div>										 				 			 									   
 					
 					<div class="form-group">
 						<div class="col-sm-5 col-sm-offset-3">
