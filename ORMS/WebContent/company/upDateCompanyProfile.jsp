@@ -3,6 +3,7 @@
  <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
  <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>  
+  <%@ taglib prefix="myFunction" uri="MyFunctions" %>
   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -57,25 +58,7 @@
       
     </ul>
   </div>
-  <div class="card-body">     
- 
- <h5>
- Updating will be performed here.
- 
-
-<c:if test="${pageContext.request.method == 'POST'}"> 
-	 <c:out value="${param.companyName}" />
-	 <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"  
-     url="jdbc:mysql://localhost/fshdb"  
-     user="root"  password=""/>  
-     
-	<sql:update dataSource="${db}" var="count">  
-	 REPLACE INTO Students VALUES (154,'Nasreen', 'jaha', 25);  
-	</sql:update>  
-	 
-</c:if>
-
- </h5>
+  <div class="card-body">       
  
 <div class="container">
 	<div class="row">
@@ -90,63 +73,60 @@
 		            </div>
 		            <div class="row">
 		                <div class="col-md-12">
-		                    <form action="upDateCompanyProfile.jsp" method="post" >
-		                 
-<sql:setDataSource var="db" driver="com.mysql.jdbc.Driver"  
-     url="jdbc:mysql://localhost/fshdb"  
-     user="root"  password=""/>  
-  
-<sql:query dataSource="${db}" var="rs">  
-	SELECT * from Students;  
-</sql:query>  
-   
-		                    
-                              <div class="form-group row">
-                                <label for="username" class="col-4 col-form-label">Company Name </label> 
-                                <div class="col-8">
-                                  <input id="username" name="companyName" placeholder="BJIT" class="form-control here" required="required" type="text">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label for="name" class="col-4 col-form-label">Company Address</label> 
-                                <div class="col-8">
-                                  <input id="name" name="name" placeholder="eg. Uttara,Road 12,Sector-10" class="form-control here" type="text">
-                                </div>
-                              </div>
-                             
+		                
+<form action="../UpdateCompanyProfile" method="post" >    
+<c:set var="companyId" value="${recruiter.companyId}"></c:set>
+ 
+<c:set var="company" value="${myFunction:getCompany(companyId)}"></c:set> 	
+
+<input type="hidden" name="companyId" value="${companyId}" > 	
+               
+             <div class="form-group row">
+                  <label for="username" class="col-4 col-form-label">Company Name </label> 
+                    <div class="col-8">
+                   <input id="username" name="companyName" value="${company.companyName}" placeholder="BJIT" class="form-control here" required="required" type="text">
+                   </div>
+             </div>
                               
-                              <div class="form-group row">
-                                <label for="email" class="col-4 col-form-label">Email*</label> 
-                                <div class="col-8">
-                                  <input id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text">
-                                </div>
-                              </div>
+            <div class="form-group row">
+                   <label for="name" class="col-4 col-form-label">Company Address</label> 
+                   <div class="col-8">
+                    <input id="name" name="company_address" value="${company.company_address }" placeholder="eg. Uttara,Road 12,Sector-10" class="form-control here" type="text">
+                   </div>
+            </div>                            
+                              
+                   <div class="form-group row">
+                    <label for="email" class="col-4 col-form-label"> Email* </label> 
+                     <div class="col-8">
+                       <input id="email" name="email" value="${company.email}"  placeholder="Email" class="form-control here" required="required" type="text">
+                     </div>
+                   </div>
                               
                               <div class="form-group row">
                                 <label for="newpass" class="col-4 col-form-label">Cell phone Number  </label> 
                                 <div class="col-8">
-                                  <input id="newpass" name="newpass" placeholder="" class="form-control here" type="text">
+                                  <input id="newpass" name="cellPhoneNumber" value="${company.cellPhoneNumber}" placeholder="" class="form-control here" type="text">
                                 </div>
                               </div> 
                               
                               <div class="form-group row">
                                 <label for="website" class="col-4 col-form-label">Website</label> 
                                 <div class="col-8">
-                                  <input id="website" name="website" placeholder="website" class="form-control here" type="text">
+                                  <input id="website" name="website" value="${company.website}" placeholder="website" class="form-control here" type="text">
                                 </div>
                               </div>
                               
                               <div class="form-group row">
                                 <label for="companySize" class="col-4 col-form-label">Company Size</label> 
                                 <div class="col-8">
-                                  <input id="companySize" name="size" placeholder="eg. 50-200" class="form-control here" type="text">
+                                  <input id="companySize" name="size" value="${company.size}" placeholder="eg. 50-200" class="form-control here" type="text">
                                 </div>
                               </div>
                               
                                <div class="form-group row">
                                  <label for="select" class="col-4 col-form-label">Company Type</label> 
                                 <div class="col-8">
-                                  <select id="select" name="select" class="custom-select">
+                                  <select id="select" name="industryType" class="custom-select">
                                     <option value="privately held company">privately held company</option>
                                     <option value="publicly held company">publicly held company</option>                                    
                                   </select>
@@ -156,7 +136,7 @@
                                <div class="form-group row">
                                 <label for="foundedYear" class="col-4 col-form-label">Founded Year</label> 
                                 <div class="col-8">
-                                  <input id="foundedYear" name="size" placeholder="e.g. 2000" class="form-control here" type="text">
+                                  <input id="foundedYear" name="founded" value="${company.founded}" placeholder="e.g. 2000" class="form-control here" type="text">
                                 </div>
                               </div>
                               
@@ -164,14 +144,14 @@
                                <div class="form-group row">
                                 <label for="headQuarters" class="col-4 col-form-label">Head Quarters</label> 
                                 <div class="col-8">
-                                  <input id="headQuarters" name="size" placeholder="japan" class="form-control here" type="text">
+                                  <input id="headQuarters" name="headQuarter" value="${company.headQuarter}" placeholder="japan" class="form-control here" type="text">
                                 </div>
                               </div>
                               
                               <div class="form-group row">
                                 <label for="publicinfo" class="col-4 col-form-label">Public Info</label> 
                                 <div class="col-8">
-                                  <textarea id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control"></textarea>
+                                  <textarea id="publicinfo" name="publicInfo" cols="40" rows="4" class="form-control">${company.publicInfo }</textarea>
                                 </div>
                               </div>
                               

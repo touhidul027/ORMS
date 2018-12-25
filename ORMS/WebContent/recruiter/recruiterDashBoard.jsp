@@ -32,7 +32,11 @@
         <a class="nav-link " href="applications.jsp">Applicants application</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link " href="..\JobPostingStartingServlet"> Post a Job</a>
+        <a class="nav-link " href="..\JobPostingStartingServlet"> Old Post a Job</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link " href="postJob.jsp">Post a Job</a>
       </li>
       
        <li class="nav-item">

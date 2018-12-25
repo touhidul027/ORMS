@@ -54,6 +54,7 @@ public class CompanyDAO {
 			  System.out.println(e.toString());
 		   }
  }	
+ 
  public static Company getCompany(int companyId) {
 	 // select all the properties of a company 
 	 Connection conn = JDBCUtil.getConnection() ; 
@@ -73,7 +74,11 @@ public class CompanyDAO {
  	        	   company.setIndustryType(rs.getString("industry_type") );
  	        	   company.setSize( rs.getInt("size"));	        	  
  	        	   company.setHeadQuarter(rs.getString("head_quarter"));
- 	        	   company.setRecruiters(getRecruiters(companyId));  ; 
+ 	        	   company.setCompany_address(rs.getString("company_address"));
+ 	        	   company.setEmail(rs.getString("email"));
+ 	        	   company.setWebsite( rs.getString("website"));
+ 	        	   company.setCell_phone_number(rs.getString("cell_phone_number"));	        	   
+  	        	   company.setPublicInfo(rs.getString("public_info"));
  	        	   company.setReviews(getReviews(companyId));
 	           }
 	       } 
@@ -153,4 +158,32 @@ private static ArrayList<Review> getReviews(int companyId) {
 		
 	}
 	}// end method
+	
+	public static void updateCompany(Company company) {
+	Connection conn=  JDBCUtil.getConnection() ; 
+	String updateQuery = "UPDATE\r\n" + 
+			"  companies\r\n" + 
+			"SET\r\n" + 
+			"  company_name = ?, head_quarter = ?, founded = ?,  industry_type =?,  size = ?,\r\n" + 
+			"  company_address =?,  email = ?,  website =?,  cell_phone_number =?,  public_info = ?\r\n" + 
+			"WHERE\r\n" + 
+			"  company_id=?" ;
+	       try {
+	       PreparedStatement pst =  conn.prepareStatement(updateQuery) ; 
+	        pst.setString(1, company.getCompanyName() );
+	        pst.setString(2, company.getHeadQuarter());
+	        pst.setString(3,company.getFounded());
+	        pst.setString(4, company.getIndustryType());
+	        pst.setInt(5,company.getSize());
+	        pst.setString(6,company.getCompany_address());
+	        pst.setString(7,company.getEmail());
+	        pst.setString(8,company.getWebsite());
+	        pst.setString(9,company.getCellPhoneNumber());
+	        pst.setString(10,company.getPublicInfo() );
+	        pst.setInt(11, company.getCompany_id());	         
+	        pst.executeUpdate() ; 	          
+	}catch(Exception e) {
+		System.out.println(e);
+	}	
+	}
 }

@@ -83,7 +83,7 @@
 						   <select id="jobPosterKeySkillsSelection" name="jobPosterKeySkillsSelection"   multiple  style="width:400px ; ">							  						  
 						   </select>
 						  
-					</div>
+					     </div>
 					
  				 	</div>
 					 
