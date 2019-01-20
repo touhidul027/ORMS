@@ -14,7 +14,7 @@ public class Job {
     
 	private String location ;
     private String description;
-    private ArrayList<String> skills  ;
+    private String skills  ;
     private	String companyName ; 
 	private String educationLevel ; 
 	private String experience ; 
@@ -28,7 +28,7 @@ public class Job {
 	private String companyEmail ; 
 	private	String companyCellPhoneNumber ; 
 	private	String website ;
-	private int companyId ; 
+ 	private int companyId ; 
 	
 	// new added
 		private Recruiter recruiter ; 
@@ -119,10 +119,10 @@ public class Job {
 		public void setDescription(String description) {
 			this.description = description;
 		}
-		public ArrayList<String> getSkills() {
+		public String getSkills() {
 			return skills;
 		}
-		public void setSkills(ArrayList<String> skills) {
+		public void setSkills(String skills) {
 			this.skills = skills;
 		}
 		public String getCompanyName() {

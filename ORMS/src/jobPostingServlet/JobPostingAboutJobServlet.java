@@ -54,7 +54,7 @@ public class JobPostingAboutJobServlet extends HttpServlet {
 	    job.setCompanyName(companyName);
 	    job.setLocation(location);
 	    job.setDescription(description);
-		job.setSkills(skills);
+		//job.setSkills(skills);
 		
 		// put the job object into the session 
  		HttpSession session = request.getSession(); 		 

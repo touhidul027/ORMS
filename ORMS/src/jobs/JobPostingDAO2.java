@@ -21,7 +21,7 @@ public class JobPostingDAO2 {
 	public static Job postJob(Job job,int recruiterId,int companyId) {
 				
 		job = insertAboutJob(job,recruiterId,companyId) ; 
-        insertJobSkills(job.getJobId(),job.getSkills()) ; 
+       // insertJobSkills(job.getJobId(),job.getSkills()) ; 
 		insertJobjobTypes(job.getJobId(), job.getJobType()) ; 
 		insertJobBenefits(job.getJobId(), job.getFacilities()) ; 
 		

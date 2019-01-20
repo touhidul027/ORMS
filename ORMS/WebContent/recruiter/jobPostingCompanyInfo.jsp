@@ -7,10 +7,10 @@
 					</div>
 					
 					<div class="form-group">
-						<label for="email" class="col-sm-3 control-label">Company Adress </label>
+						<label for="email" class="col-sm-3 control-label">Company Address </label>
 						<div class="col-sm-5">
 						<!-- Before submitting test the validity by javaScript -->
-							<input type="text" id="email"  name="jobPostingCompanyAdress" placeholder="e.g.Jahanara Gardens (1st Fl), Green Road, Dhaka - 1207" class="form-control"    >
+							<input type="text" id="email"  name="companyAddress" placeholder="e.g.Jahanara Gardens (1st Fl), Green Road, Dhaka - 1207" class="form-control"    >
 						</div>
 					</div>
 					

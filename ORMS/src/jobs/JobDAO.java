@@ -73,7 +73,7 @@ public class JobDAO {
 	        		 job.setCompanyId( rs.getInt("company_id"));
 	        		 
 	        		 ArrayList<String> skills = getAllSkills(jobId) ;        		 
- 	         		 job.setSkills(skills);
+ 	         		// job.setSkills(skills);
 	         		 
 	         		 
 	         		ArrayList<String> jobType = getTypes(jobId) ;  ;        		 
