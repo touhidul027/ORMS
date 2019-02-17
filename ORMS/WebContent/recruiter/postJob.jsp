@@ -62,7 +62,7 @@
     </ul>
   </div>
   
-  <form action="../PostJobServlet" method="post" > 
+  <form action="../PostJob" method="post" > 
   
   <div class="card-body">
      <div class="container">

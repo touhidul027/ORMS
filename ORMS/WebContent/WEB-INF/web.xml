@@ -4,4 +4,16 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- mapping the job- post with its controller  -->
+  <servlet> 
+  <servlet-name>PostJob</servlet-name>
+  <servlet-class>recruiterServlet.RecruiterController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping> 
+  <servlet-name>PostJob</servlet-name>
+  <url-pattern>/PostJob</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -17,7 +17,7 @@ import jobs.JobPostingDAO2;
 import recruiter.Recruiter;
 
 /**
- * Servlet implementation class PostJobServlet
+ * This class old , new class is RecruiterController
  */
 @WebServlet("/PostJobServlet")
 public class PostJobServlet extends HttpServlet {
